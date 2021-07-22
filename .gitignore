@@ -1,0 +1,11 @@
+# DS_store
+.DS_store
+
+# node modules
+.node_modules
+
+#env
+.env
+
+#vs code
+.vscode
