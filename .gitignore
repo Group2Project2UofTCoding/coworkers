@@ -2,11 +2,7 @@
 .DS_store
 
 # node modules
-<<<<<<< HEAD
 node_modules
-=======
-**/node_modules
->>>>>>> b1b54e1df9b0b1a42053eb4518ca568f4d56a86e
 
 #env
 .env
