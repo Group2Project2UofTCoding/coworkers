@@ -1,4 +1,3 @@
-
 const path = require('path');
 const express = require('express');
 const routes = require('./controllers');
@@ -29,7 +28,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(routes);
 
-// turn on connection to DB
+// start connection
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listning on PORT ${PORT}`));
 });
