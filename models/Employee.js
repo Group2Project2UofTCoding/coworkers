@@ -41,6 +41,14 @@ Employee.init(
                 model: 'manager',
                 key: 'id'
             }
+        },
+        date_of_hire: {
+            type: DataTypes.DATE,
+            allowNull: false
+        },
+        photo: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     },
     {
