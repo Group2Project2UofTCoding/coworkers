@@ -81,7 +81,6 @@ router.post("/", (req, res) => {
 });
 
 // Update an employee
-// Update a post
 router.put("/:id", (req, res) => {
   Employee.update(
     {
@@ -102,7 +101,7 @@ router.put("/:id", (req, res) => {
       if (!dbEmployeeData) {
         res
           .json(404)
-          .res.json({ message: "Employee not found, please check the ID" });
+          .res.json({ message: "No employee found with this id" });
         return;
       }
       res.json(dbEmployeeData);
