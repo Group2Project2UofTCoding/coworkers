@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt');
+
+class Role extends Model {}
 
 Role.init(
     {
@@ -13,6 +14,18 @@ Role.init(
         role_name: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        salary: {
+            type: DataTypes.DECIMAL(10),
+            allowNull: false
+        },
+        department_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'department',
+                key: 'id'
+            }
         }
     },
     {
