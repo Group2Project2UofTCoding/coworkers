@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 require('dotenv').config();
 
-// create connection to db
+// connect to jawsdb if deployed to heroku, or localhost if not
 
 let sequelize;
 
