@@ -31,7 +31,7 @@ Employee.init(
             type: DataTypes.INTEGER,
             allowNull: true,
             references: {
-                model: 'manager',
+                model: Employee,
                 key: 'id'
             }
         },

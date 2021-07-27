@@ -90,6 +90,7 @@ router.delete('/:id', (req, res) => {
 // add a manager
 router.post('/', (req, res) => {
   Manager.create({
+    employee_id: req.body.employee_id,
     manager_name: req.body.manager_name,
     email: req.body.email,
     password: req.body.password

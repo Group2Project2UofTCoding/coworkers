@@ -5,6 +5,8 @@ const { Employee, Department, Manager, Role } = require('../../models');
 router.get('/', (req, res) => {
   Employee.findAll({
     include: [
+      'employees',
+      'manager',
       {
         model: Role,
         attributes: ['role_name', 'salary'],
@@ -14,10 +16,6 @@ router.get('/', (req, res) => {
             attributes: ['department_name']
           }
         ]
-      },
-      {
-        model: Manager,
-        attributes: ['email']
       }
     ]
   })
@@ -37,6 +35,8 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     include: [
+      'manager',
+      'employees',
       {
         model: Role,
         attributes: ['role_name'],
@@ -46,10 +46,6 @@ router.get('/:id', (req, res) => {
             attributes: ['department_name']
           }
         ]
-      },
-      {
-        model: Manager,
-        attributes: ['email']
       }
     ]
   })
