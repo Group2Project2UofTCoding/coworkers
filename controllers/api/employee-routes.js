@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Role,
-        attributes: ['role_name'],
+        attributes: ['role_name', 'salary'],
         include: [
           {
             model: Department,
