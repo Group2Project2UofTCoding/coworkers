@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
   })
   .then(dbEmployeeData => {
     const employees = dbEmployeeData.map(emp => emp.get({plain:true}));
-    // return employees;
+    // if we need more info other than just employees we could do it here
     res.render('dashboard', employees);
   })
 });
@@ -50,7 +50,6 @@ router.get('/edit/:id', (req, res) => {
   })
   .then(dbEmployeeData => {
     const employee = dbEmployeeData.get({plain:true});
-    // return employees;
     res.render('dashboard', employee);
   })
 });  
