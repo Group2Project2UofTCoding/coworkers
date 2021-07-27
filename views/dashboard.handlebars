@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-<h1>TEST</h1>
-=======
-{{!-- <!-- Employees' Tiles Container --> --}}
+    {{!-- <!-- Employees' Tiles Container --> --}}
     <div class="container">
         <div id="employeeTiles" class="card-deck"></div>
     </div>
@@ -19,7 +16,7 @@
     <div class="modal fade" id="addEditEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="employeeModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <!-- Modal Header -->
+                {{!-- <!-- Modal Header --> --}}
                 <div class="modal-header">
                 <h5 class="modal-title" id="employeeModalLabel">Employee Information</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -32,16 +29,16 @@
                     <form class="needs-validation" novalidate>
                         {{!-- <!-- First Form Row --> --}}
                         <div class="form-row">
-                            <!-- First Name Input -->
+                            {{!-- <!-- First Name Input --> --}}
                             <div class="col-md-4 mb-3">
                                 <label for="employeeFirstName">First Name</label>
-                                <input type="text" class="form-control" id="employeeFirstName" placeholder="First Name" required>
+                                <input type="text" class="form-control" id="employeeFirstName" placeholder="Enter First Name" required>
                             </div>
 
                             {{!-- <!-- Last Name Input --> --}}
                             <div class="col-md-4 mb-3">
                                 <label for="employeeLastName">Last Name</label>
-                                <input type="text" class="form-control" id="employeeLastName" placeholder="Last Name" required>
+                                <input type="text" class="form-control" id="employeeLastName" placeholder="Enter Last Name" required>
                             </div>
 
                             {{!-- <!-- Username Input --> --}}
@@ -51,7 +48,7 @@
                                 <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroupPrepend">@</span>
                                 </div>
-                                <input type="text" class="form-control" id="employeeUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+                                <input type="text" class="form-control" id="employeeUsername" placeholder="Enter Username" aria-describedby="inputGroupPrepend" required>
                                 <div class="invalid-feedback">
                                 Please choose a username.
                                 </div>
@@ -61,49 +58,49 @@
 
                         {{!-- <!-- Second Form Row --> --}}
                         <div class="form-row">
-                            {{!-- <!-- Email Input --> --}}
+                            <!-- Email Input -->
                             <div class="form-group col-md-6">
                                 <label for="employeeEmail">Email</label>
-                                <input type="email" class="form-control" id="employeeEmail" placeholder="Email" required>
+                                <input type="email" class="form-control" id="employeeEmail" placeholder="Enter Email" required>
                             </div>
 
                             {{!-- <!-- Password Input --> --}}
                             <div class="form-group col-md-6">
                                 <label for="employeePassword">Password</label>
-                                <input type="password" class="form-control" id="employeePassword" placeholder="Password" required>
+                                <input type="password" class="form-control" id="employeePassword" placeholder="Enter Password" required>
                             </div>
                         </div>
 
                         {{!-- <!-- Phone Number Input --> --}}
                         <div class="form-group">
                             <label for="employeePhoneNumber">Phone Number</label>
-                            <input type="tel" class="form-control" id="employeePhoneNumber" placeholder="Phone Number" required>
+                            <input type="tel" class="form-control" id="employeePhoneNumber" placeholder="Enter Phone Number" required>
                         </div>
 
                         {{!-- <!-- First Address Line Input --> --}}
                         <div class="form-group">
                             <label for="employeeAddress1">Address Line 1</label>
-                            <input type="text" class="form-control" id="employeeAddress1" placeholder="1234 Main St" required>
+                            <input type="text" class="form-control" id="employeeAddress1" placeholder="Enter Street Number and Name" required>
                         </div>
 
                         {{!-- <!-- Second Address Line Input --> --}}
                         <div class="form-group">
                             <label for="employeeAddress2">Address Line 2</label>
-                            <input type="text" class="form-control" id="employeeAddress2" placeholder="Apartment, studio, or floor">
+                            <input type="text" class="form-control" id="employeeAddress2" placeholder="Enter Apartment, Studio, or Floor Number">
                         </div>
 
                         <div class="form-row">
                             {{!-- <!-- City Input --> --}}
                             <div class="form-group col-md-6">
                             <label for="employeeCity">City</label>
-                            <input type="text" class="form-control" id="employeeCity" placeholder="City" required>
+                            <input type="text" class="form-control" id="employeeCity" placeholder="Enter City" required>
                             </div>
                             
                             {{!-- <!-- State Input --> --}}
                             <div class="form-group col-md-4">
                             <label for="employeeProvince">Province</label>
                             <select id="employeeProvince" class="form-control" required>
-                                <!-- <option selected>Choose...</option> -->
+                                {{!-- <!-- <option selected>Choose...</option> --> --}}
                                 <option value="Ontario" selected>Ontario</option>
                                 <option value="Quebec">Quebec</option>
                                 <option value="Nova Scotia">Nova Scotia</option>
@@ -120,7 +117,7 @@
                             {{!-- <!-- Zip Input --> --}}
                             <div class="form-group col-md-2">
                             <label for="employeeZIP">ZIP Code</label>
-                            <input type="text" class="form-control" id="employeeZIP" placeholder="ZIP Code" required>
+                            <input type="text" class="form-control" id="employeeZIP" placeholder="Enter ZIP Code" required>
                             </div>
                         </div>
 
@@ -129,14 +126,14 @@
                             <!-- SIN Input -->
                             <div class="form-group">
                                 <label for="employeeSIN">Social Insurance Number</label>
-                                <input type="tel" class="form-control" id="employeeSIN" placeholder="SIN" required>
+                                <input type="tel" class="form-control" id="employeeSIN" placeholder="Enter SIN" required>
                             </div>
 
                             {{!-- <!-- Role Input --> --}}
                             <div class="form-block">
                                 <label class="my-1 mr-2" for="employeeRole">Role</label>
                                 <select class="custom-select my-1 mr-sm-2" id="employeeRole" required>
-                                    <!-- <option selected>Choose...</option> -->
+                                    {{!-- <!-- <option selected>Choose...</option> --> --}}
                                     <option value="Product Manager">Product Manager</option>
                                     <option value="Product Designer">Product Designer</option>
                                     <option value="Software Engineer" selected>Software Engineer</option>
@@ -184,13 +181,13 @@
                             {{!-- <!-- Emergency Contact's Name Input --> --}}
                             <div class="form-group">
                                 <label for="employeeEmergencyContactName">Emergency Contact's Name</label>
-                                <input type="tel" class="form-control" id="employeeEmergencyContactPhoneNumber" placeholder="First and Last Name" required>
+                                <input type="tel" class="form-control" id="employeeEmergencyContactName" placeholder="Enter First and Last Name" required>
                             </div>
 
                             {{!-- <!-- Emergency Contact's Phone Number Input --> --}}
                             <div class="form-group">
-                                <label for="employeeEmergencyContactPhoneNumber">Phone Number</label>
-                                <input type="tel" class="form-control" id="employeeEmergencyContactPhoneNumber" placeholder="Phone Number" required>
+                                <label for="employeeEmergencyContactPhoneNumber">Emergency Contact's Phone Number</label>
+                                <input type="tel" class="form-control" id="employeeEmergencyContactPhoneNumber" placeholder="Enter Phone Number" required>
                             </div>
 
                             {{!-- <!-- Certification Input --> --}}
@@ -212,7 +209,7 @@
                     (function() {
                         'use strict';
                         window.addEventListener('load', function() {
-                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        {{!-- // Fetch all the forms we want to apply custom Bootstrap validation styles to --}}
                         var forms = document.getElementsByClassName('needs-validation');
                         // Loop over them and prevent submission
                         var validation = Array.prototype.filter.call(forms, function(form) {
@@ -237,4 +234,3 @@
             </div>
         </div>
     </div>
->>>>>>> develop
