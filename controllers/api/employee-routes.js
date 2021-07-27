@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
       },
       {
         model: Manager,
-        attributes: ['manager_name']
+        attributes: ['email']
       }
     ]
   })
@@ -49,7 +49,7 @@ router.get('/:id', (req, res) => {
       },
       {
         model: Manager,
-        attributes: ['manager_name']
+        attributes: ['email']
       }
     ]
   })

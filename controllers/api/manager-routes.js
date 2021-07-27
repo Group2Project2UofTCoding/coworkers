@@ -4,7 +4,9 @@ const { Employee, Manager } = require('../../models');
 // Get all managers
 router.get('/', (req,res) => {
   Manager.findAll({
-    attributes: {exclude: ['password']},
+    attributes: {
+      exclude: ['password'],
+    },
     include: [
       {
         model: Employee
@@ -42,8 +44,9 @@ router.get('/:id', (req,res) => {
 // Update a Manager
 router.put('/:id', (req, res) => {
   Manager.update({
+    manager_name: req.body.manager_name,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
   }, 
   {
     individualHooks: true,
@@ -84,6 +87,31 @@ router.delete('/:id', (req, res) => {
   });
 });
 
+// add a manager
+router.post('/', (req, res) => {
+  Manager.create({
+    manager_name: req.body.manager_name,
+    email: req.body.email,
+    password: req.body.password
+  })
+  .then(dbManagerData => {
+    req.session.save(() => {
+      // declare session variables
+      req.session.manager_id = dbManagerData.id;
+      req.session.email = dbManagerData.email;
+      req.session.loggedIn = true;
+      // send response
+      res.json({ user: dbManagerData, message: 'You are now logged in!' });
+      console.log(req.session);
+      res.json(dbManagerData);
+    })
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
 // Login route for Manager
 router.post('/login', (req, res) => {
   // {email: 'user@email.com', password: 'password' }
@@ -112,6 +140,10 @@ router.post('/login', (req, res) => {
       // send response
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   });
 });
 

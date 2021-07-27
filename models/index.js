@@ -29,12 +29,4 @@ Employee.belongsTo(Manager, {
   foreignKey: 'manager_id'
 });
 
-Manager.hasMany(Employee, {
-  foreignKey: 'employee_id'
-});
-
-Employee.belongsTo(Manager, {
-  foreignKey: 'employee_id'
-});
-
 module.exports = { Employee, Department, Role, Manager };

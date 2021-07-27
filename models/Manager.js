@@ -19,6 +19,10 @@ Manager.init(
             primaryKey: true,
             autoIncrement: true
         },
+        manager_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -36,14 +40,6 @@ Manager.init(
                 len: [8]
             }
         },
-        employee_id: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            references: {
-                model: 'employee',
-                key: 'id'
-            }
-        }
     },
     {   hooks: {
         // Using the hook to hash the password
