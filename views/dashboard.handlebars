@@ -1,0 +1,236 @@
+{{!-- <!-- Employees' Tiles Container --> --}}
+    <div class="container">
+        <div id="employeeTiles" class="card-deck"></div>
+    </div>
+
+    {{!-- <!-- Buttons to Trigger Modals --> --}}
+    <button id="addEmployeeButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addEditEmployeeModal">
+        Add Employee
+    </button>
+{{!--     
+    <!-------------------->
+    <!-- Modals Section -->
+    <!-------------------->
+     --}}
+    {{!-- <!-- Add/Edit Employee Modal --> --}}
+    <div class="modal fade" id="addEditEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="employeeModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h5 class="modal-title" id="employeeModalLabel">Employee Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+
+                {{!-- <!-- Modal Body --> --}}
+                <div class="modal-body">
+                    <form class="needs-validation" novalidate>
+                        {{!-- <!-- First Form Row --> --}}
+                        <div class="form-row">
+                            <!-- First Name Input -->
+                            <div class="col-md-4 mb-3">
+                                <label for="employeeFirstName">First Name</label>
+                                <input type="text" class="form-control" id="employeeFirstName" placeholder="First Name" required>
+                            </div>
+
+                            {{!-- <!-- Last Name Input --> --}}
+                            <div class="col-md-4 mb-3">
+                                <label for="employeeLastName">Last Name</label>
+                                <input type="text" class="form-control" id="employeeLastName" placeholder="Last Name" required>
+                            </div>
+
+                            {{!-- <!-- Username Input --> --}}
+                            <div class="col-md-4 mb-3">
+                            <label for="employeeUsername">Username</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                </div>
+                                <input type="text" class="form-control" id="employeeUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                Please choose a username.
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        {{!-- <!-- Second Form Row --> --}}
+                        <div class="form-row">
+                            {{!-- <!-- Email Input --> --}}
+                            <div class="form-group col-md-6">
+                                <label for="employeeEmail">Email</label>
+                                <input type="email" class="form-control" id="employeeEmail" placeholder="Email" required>
+                            </div>
+
+                            {{!-- <!-- Password Input --> --}}
+                            <div class="form-group col-md-6">
+                                <label for="employeePassword">Password</label>
+                                <input type="password" class="form-control" id="employeePassword" placeholder="Password" required>
+                            </div>
+                        </div>
+
+                        {{!-- <!-- Phone Number Input --> --}}
+                        <div class="form-group">
+                            <label for="employeePhoneNumber">Phone Number</label>
+                            <input type="tel" class="form-control" id="employeePhoneNumber" placeholder="Phone Number" required>
+                        </div>
+
+                        {{!-- <!-- First Address Line Input --> --}}
+                        <div class="form-group">
+                            <label for="employeeAddress1">Address Line 1</label>
+                            <input type="text" class="form-control" id="employeeAddress1" placeholder="1234 Main St" required>
+                        </div>
+
+                        {{!-- <!-- Second Address Line Input --> --}}
+                        <div class="form-group">
+                            <label for="employeeAddress2">Address Line 2</label>
+                            <input type="text" class="form-control" id="employeeAddress2" placeholder="Apartment, studio, or floor">
+                        </div>
+
+                        <div class="form-row">
+                            {{!-- <!-- City Input --> --}}
+                            <div class="form-group col-md-6">
+                            <label for="employeeCity">City</label>
+                            <input type="text" class="form-control" id="employeeCity" placeholder="City" required>
+                            </div>
+                            
+                            {{!-- <!-- State Input --> --}}
+                            <div class="form-group col-md-4">
+                            <label for="employeeProvince">Province</label>
+                            <select id="employeeProvince" class="form-control" required>
+                                <!-- <option selected>Choose...</option> -->
+                                <option value="Ontario" selected>Ontario</option>
+                                <option value="Quebec">Quebec</option>
+                                <option value="Nova Scotia">Nova Scotia</option>
+                                <option value="New Brunswick">New Brunswick</option>
+                                <option value="Manitoba">Manitoba</option>
+                                <option value="British Columbia">British Columbia</option>
+                                <option value="Prince Edward Island">Prince Edward Island</option>
+                                <option value="Saskatchewan">Saskatchewan</option>
+                                <option value="Alberta">Alberta</option>
+                                <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                            </select>
+                            </div>
+
+                            {{!-- <!-- Zip Input --> --}}
+                            <div class="form-group col-md-2">
+                            <label for="employeeZIP">ZIP Code</label>
+                            <input type="text" class="form-control" id="employeeZIP" placeholder="ZIP Code" required>
+                            </div>
+                        </div>
+
+                        {{!-- <!-- The Rest of the Inputs --> --}}
+                        <div class="form-group">
+                            <!-- SIN Input -->
+                            <div class="form-group">
+                                <label for="employeeSIN">Social Insurance Number</label>
+                                <input type="tel" class="form-control" id="employeeSIN" placeholder="SIN" required>
+                            </div>
+
+                            {{!-- <!-- Role Input --> --}}
+                            <div class="form-block">
+                                <label class="my-1 mr-2" for="employeeRole">Role</label>
+                                <select class="custom-select my-1 mr-sm-2" id="employeeRole" required>
+                                    <!-- <option selected>Choose...</option> -->
+                                    <option value="Product Manager">Product Manager</option>
+                                    <option value="Product Designer">Product Designer</option>
+                                    <option value="Software Engineer" selected>Software Engineer</option>
+                                    <option value="Data Scientist">Data Scientist</option>
+                                </select>
+                            </div>
+
+                            {{!-- <!-- Level Input --> --}}
+                            <div class="form-block">
+                                <label class="my-1 mr-2" for="employeeLevel">Level</label>
+                                <select class="custom-select my-1 mr-sm-2" id="employeeLevel" required>
+                                    {{!-- <!-- <option selected>Choose...</option> --> --}}
+                                    <option value="Junior">Junior</option>
+                                    <option value="Senior">Senior</option>
+                                    <option value="Staff">Staff</option>
+                                    <option value="Vice-President">Vice-President</option>
+                                    <option value="Senior Vice-President">Senior Vice-President</option>
+                                    <option value="C-Suite/Partner">C-Suite/Partner</option>
+                                </select>
+                            </div>
+
+                            {{!-- <!-- Department Input --> --}}
+                            <div class="form-block">
+                                <label class="my-1 mr-2" for="employeeDepartment">Department</label>
+                                <select class="custom-select my-1 mr-sm-2" id="employeeDepartment" required>
+                                    {{!-- <!-- <option value="" selected>Choose...</option> --> --}}
+                                    <option value="Product">Production</option>
+                                    <option value="Research and Development">Research and Development</option>
+                                    <option value="Purchasing">Purchasing</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="Human Resources">Human Resource Management</option>
+                                    <option value="Accounting">Accounting and Finance</option>
+                                </select>
+                            </div>
+                            <br>
+
+                            {{!-- <!-- Salary Readonly Plain Text --> --}}
+                            <div class="form-group">
+                                <label for="employeeSalary">Salary</label>
+                                <div class="col-sm-10">
+                                  <input type="text" readonly class="form-control-plaintext" id="employeeSalary" value="$250, 000.00">
+                                </div>
+                              </div>
+
+                            {{!-- <!-- Emergency Contact's Name Input --> --}}
+                            <div class="form-group">
+                                <label for="employeeEmergencyContactName">Emergency Contact's Name</label>
+                                <input type="tel" class="form-control" id="employeeEmergencyContactPhoneNumber" placeholder="First and Last Name" required>
+                            </div>
+
+                            {{!-- <!-- Emergency Contact's Phone Number Input --> --}}
+                            <div class="form-group">
+                                <label for="employeeEmergencyContactPhoneNumber">Phone Number</label>
+                                <input type="tel" class="form-control" id="employeeEmergencyContactPhoneNumber" placeholder="Phone Number" required>
+                            </div>
+
+                            {{!-- <!-- Certification Input --> --}}
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="employeeCertification" required>
+                                <label class="form-check-label" for="employeeCertification">
+                                I certify that the above information is accurate
+                                </label>
+                                <div class="invalid-feedback">
+                                You must agree before submitting.
+                                </div>
+                            </div>
+                        </div>
+                        <button id="addEditEmployeeSubmit" class="btn btn-primary" type="submit">Submit</button>
+                    </form>
+                    
+                    <script>
+                    {{!-- // Example starter JavaScript for disabling form submissions if there are invalid fields --}}
+                    (function() {
+                        'use strict';
+                        window.addEventListener('load', function() {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName('needs-validation');
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(forms, function(form) {
+                            form.addEventListener('submit', function(event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                            }, false);
+                        });
+                        }, false);
+                    })();
+                    </script>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
