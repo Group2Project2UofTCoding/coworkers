@@ -60,18 +60,20 @@ function fetchEmployeesInformation() {
     })
     .then(employees => {
       console.log(employees);
+
+      employeesObject = employees;
       generateEmployeeTiles(employees);
     });
 }
 
 // Populate the dashboard with current employees' information
-function generateEmployeeTiles(employeesObject) {
+function generateEmployeeTiles(employees) {
   // Note that the employeesObject contains an employee's ID as the key and the information object as the value
 
-  console.log(employeesObject);
+  console.log(employees);
 
   // Creating HTML code for each employee in the employeesObject
-  for (const [key, value] of Object.entries(employeesObject)) {
+  for (const [key, value] of Object.entries(employees)) {
     console.log(`${key}: ${value}`);
 
     // Add HTML for an employee's tile to the employeesArray
