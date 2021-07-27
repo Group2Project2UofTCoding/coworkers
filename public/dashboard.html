@@ -17,21 +17,13 @@
 
     <!-- Employees' Tiles Container -->
     <div class="container">
-        <div id="employeeTiles" class="row"></div>
+        <div id="employeeTiles" class="card-deck"></div>
     </div>
 
     <!-- Buttons to Trigger Modals -->
     <button id="addEmployeeButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#employeeModal">
         Add Employee
     </button>
-    <!-- The Edit and Remove Employee Buttons are Placed in Each Employee's Tile -->
-    <button id="editEmployeeButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#employeeModal">
-        View/Edit Employee
-    </button>
-    <button id="removeEmployeeButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#removeEmployeeModal">
-        Remove Employee
-    </button>
-
     
     <!-------------------->
     <!-- Modals Section -->
@@ -256,44 +248,6 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Remove an Employee Modal -->
-    <div class="modal fade" id="removeEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="removeEmployeeModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                <h5 class="modal-title" id="removeEmployeeModalLabel">Remove Employee's Information</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-
-                <!-- Modal Body -->
-                <div class="modal-body">
-                    <form class="needs-validation" novalidate>
-                        <!-- Selected Employee Input -->
-                        <div class="form-block">
-                            <label class="my-1 mr-2" for="selectedEmployee">Employee</label>
-                            <select class="custom-select my-1 mr-sm-2" id="selectedEmployee" required>
-                                <option selected>Choose...</option>
-                            </select>
-                        </div>
-                        <br>
-
-                        <!-- Submit Button -->
-                        <button id="removeEmployeeSubmit" class="btn btn-primary" type="submit">Submit</button>
-                    </form>
-                </div>
-                
-                <!-- Modal Footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                    </div>
             </div>
         </div>
     </div>
