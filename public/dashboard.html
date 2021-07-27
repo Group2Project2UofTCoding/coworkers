@@ -15,14 +15,18 @@
 </head>
 <body>
 
+    <div class="container">
+        <div id="employeeTiles" class="row"></div>
+    </div>
+
     <!-- Buttons to Trigger Modals -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#employeeModal">
+    <button id="addEmployeeButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#employeeModal">
         Add Employee
     </button>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#employeeModal">
+    <button id="editEmployeeButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#employeeModal">
         Edit Employee
     </button>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteEmployeeModal">
+    <button id="removeEmployeeButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#removeEmployeeModal">
         Remove Employee
     </button>
 
@@ -50,24 +54,24 @@
                         <div class="form-row">
                             <!-- First Name Input -->
                             <div class="col-md-4 mb-3">
-                                <label for="validationCustom01">First Name</label>
-                                <input type="text" class="form-control" id="validationCustom01" placeholder="First Name" required>
+                                <label for="employeeFirstName">First Name</label>
+                                <input type="text" class="form-control" id="employeeFirstName" placeholder="First Name" required>
                             </div>
 
                             <!-- Last Name Input -->
                             <div class="col-md-4 mb-3">
-                                <label for="validationCustom02">Last Name</label>
-                                <input type="text" class="form-control" id="validationCustom02" placeholder="Last Name" required>
+                                <label for="employeeLastName">Last Name</label>
+                                <input type="text" class="form-control" id="employeeLastName" placeholder="Last Name" required>
                             </div>
 
                             <!-- Username Input -->
                             <div class="col-md-4 mb-3">
-                            <label for="validationCustomUsername">Username</label>
+                            <label for="employeeUsername">Username</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroupPrepend">@</span>
                                 </div>
-                                <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+                                <input type="text" class="form-control" id="employeeUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
                                 <div class="invalid-feedback">
                                 Please choose a username.
                                 </div>
@@ -79,46 +83,46 @@
                         <div class="form-row">
                             <!-- Email Input -->
                             <div class="form-group col-md-6">
-                                <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
+                                <label for="employeeEmail">Email</label>
+                                <input type="email" class="form-control" id="employeeEmail" placeholder="Email" required>
                             </div>
 
                             <!-- Password Input -->
                             <div class="form-group col-md-6">
-                                <label for="inputPassword4">Password</label>
-                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password" required>
+                                <label for="employeePassword">Password</label>
+                                <input type="password" class="form-control" id="employeePassword" placeholder="Password" required>
                             </div>
                         </div>
 
                         <!-- Phone Number Input -->
                         <div class="form-group">
-                            <label for="inputEmail4">Phone Number</label>
-                            <input type="tel" class="form-control" id="inputPhone" placeholder="Phone Number" required>
+                            <label for="employeePhoneNumber">Phone Number</label>
+                            <input type="tel" class="form-control" id="employeePhoneNumber" placeholder="Phone Number" required>
                         </div>
 
                         <!-- First Address Line Input -->
                         <div class="form-group">
-                            <label for="inputAddress">Address</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+                            <label for="employeeAddress1">Address Line 1</label>
+                            <input type="text" class="form-control" id="employeeAddress1" placeholder="1234 Main St" required>
                         </div>
 
                         <!-- Second Address Line Input -->
                         <div class="form-group">
-                            <label for="inputAddress2">Address 2</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                            <label for="employeeAddress2">Address Line 2</label>
+                            <input type="text" class="form-control" id="employeeAddress2" placeholder="Apartment, studio, or floor">
                         </div>
 
                         <div class="form-row">
                             <!-- City Input -->
                             <div class="form-group col-md-6">
-                            <label for="inputCity">City</label>
-                            <input type="text" class="form-control" id="inputCity" placeholder="City" required>
+                            <label for="employeeCity">City</label>
+                            <input type="text" class="form-control" id="employeeCity" placeholder="City" required>
                             </div>
                             
                             <!-- State Input -->
                             <div class="form-group col-md-4">
-                            <label for="inputState">Province</label>
-                            <select id="inputState" class="form-control" required>
+                            <label for="employeeProvince">Province</label>
+                            <select id="employeeProvince" class="form-control" required>
                                 <!-- <option selected>Choose...</option> -->
                                 <option value="Ontario" selected>Ontario</option>
                                 <option value="Quebec">Quebec</option>
@@ -135,17 +139,23 @@
 
                             <!-- Zip Input -->
                             <div class="form-group col-md-2">
-                            <label for="inputZip">Zip</label>
-                            <input type="text" class="form-control" id="inputZip" required>
+                            <label for="employeeZIP">ZIP Code</label>
+                            <input type="text" class="form-control" id="employeeZIP" placeholder="ZIP Code" required>
                             </div>
                         </div>
 
                         <!-- The Rest of the Inputs -->
                         <div class="form-group">
+                            <!-- SIN Input -->
+                            <div class="form-group">
+                                <label for="employeeSIN">Social Insurance Number</label>
+                                <input type="tel" class="form-control" id="employeeSIN" placeholder="SIN" required>
+                            </div>
+
                             <!-- Role Input -->
                             <div class="form-block">
-                                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Role</label>
-                                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" required>
+                                <label class="my-1 mr-2" for="employeeRole">Role</label>
+                                <select class="custom-select my-1 mr-sm-2" id="employeeRole" required>
                                     <!-- <option selected>Choose...</option> -->
                                     <option value="Product Manager">Product Manager</option>
                                     <option value="Product Designer">Product Designer</option>
@@ -156,8 +166,8 @@
 
                             <!-- Level Input -->
                             <div class="form-block">
-                                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Level</label>
-                                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" required>
+                                <label class="my-1 mr-2" for="employeeLevel">Level</label>
+                                <select class="custom-select my-1 mr-sm-2" id="employeeLevel" required>
                                     <!-- <option selected>Choose...</option> -->
                                     <option value="Junior">Junior</option>
                                     <option value="Senior">Senior</option>
@@ -170,8 +180,8 @@
 
                             <!-- Department Input -->
                             <div class="form-block">
-                                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Department</label>
-                                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" required>
+                                <label class="my-1 mr-2" for="employeeDepartment">Department</label>
+                                <select class="custom-select my-1 mr-sm-2" id="employeeDepartment" required>
                                     <!-- <option value="" selected>Choose...</option> -->
                                     <option value="Product">Production</option>
                                     <option value="Research and Development">Research and Development</option>
@@ -181,23 +191,32 @@
                                     <option value="Accounting">Accounting and Finance</option>
                                 </select>
                             </div>
+                            <br>
+
+                            <!-- Salary Readonly Plain Text -->
+                            <div class="form-group">
+                                <label for="employeeSalary">Salary</label>
+                                <div class="col-sm-10">
+                                  <input type="text" readonly class="form-control-plaintext" id="employeeSalary" value="$250, 000.00">
+                                </div>
+                              </div>
 
                             <!-- Emergency Contact's Name Input -->
                             <div class="form-group">
-                                <label for="inputEmail4">Emergency Contact's Name</label>
-                                <input type="tel" class="form-control" id="inputPhone" placeholder="First and Last Name" required>
+                                <label for="employeeEmergencyContactName">Emergency Contact's Name</label>
+                                <input type="tel" class="form-control" id="employeeEmergencyContactPhoneNumber" placeholder="First and Last Name" required>
                             </div>
 
                             <!-- Emergency Contact's Phone Number Input -->
                             <div class="form-group">
-                                <label for="inputEmail4">Phone Number</label>
-                                <input type="tel" class="form-control" id="inputPhone" placeholder="Phone Number" required>
+                                <label for="employeeEmergencyContactPhoneNumber">Phone Number</label>
+                                <input type="tel" class="form-control" id="employeeEmergencyContactPhoneNumber" placeholder="Phone Number" required>
                             </div>
 
                             <!-- Certification Input -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                <label class="form-check-label" for="invalidCheck">
+                                <input class="form-check-input" type="checkbox" value="" id="employeeCertification" required>
+                                <label class="form-check-label" for="employeeCertification">
                                 I certify that the above information is accurate
                                 </label>
                                 <div class="invalid-feedback">
@@ -205,7 +224,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-primary" type="submit">Submit form</button>
+                        <button id="addEditEmployeeSubmit" class="btn btn-primary" type="submit">Submit</button>
                     </form>
                     
                     <script>
@@ -229,22 +248,23 @@
                     })();
                     </script>
                 </div>
+
                 <!-- Modal Footer -->
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Delete an Employee Modal -->
-    <div class="modal fade" id="deleteEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="deleteEmployeeModalLabel" aria-hidden="true">
+    <!-- Remove an Employee Modal -->
+    <div class="modal fade" id="removeEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="removeEmployeeModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <!-- Modal Header -->
                 <div class="modal-header">
-                <h5 class="modal-title" id="deleteEmployeeModalLabel">Remove Employee's Information</h5>
+                <h5 class="modal-title" id="removeEmployeeModalLabel">Remove Employee's Information</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -253,19 +273,24 @@
                 <!-- Modal Body -->
                 <div class="modal-body">
                     <form class="needs-validation" novalidate>
-                        <!-- Employee Input -->
+                        <!-- Selected Employee Input -->
                         <div class="form-block">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Employee</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" required>
+                            <label class="my-1 mr-2" for="selectedEmployee">Employee</label>
+                            <select class="custom-select my-1 mr-sm-2" id="selectedEmployee" required>
                                 <option selected>Choose...</option>
                             </select>
                         </div>
-                </div>
+                        <br>
 
+                        <!-- Submit Button -->
+                        <button id="removeEmployeeSubmit" class="btn btn-primary" type="submit">Submit</button>
+                    </form>
+                </div>
+                
                 <!-- Modal Footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                     </div>
             </div>
         </div>

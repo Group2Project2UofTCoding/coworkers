@@ -6,30 +6,33 @@
 const employeeTiles = document.getElementById("");
 
 // Buttons
-const addEmployeeButton = document.getElementById("");
-const editEmployeeButton = document.getElementById("");
-const deleteEmployeeButton = document.getElementById("");
-
-// Employee Modal
-const employeeForm = document.getElementById("");
+const addEmployeeButton = document.getElementById("addEmployeeButton");
+const editEmployeeButton = document.getElementById("editEmployeeButton");
+const deleteEmployeeButton = document.getElementById("removeEmployeeButton");
 
 // Add/Edit Employee's Modal Inputs
-const employeeName = document.getElementById("");
-const employeeRole = document.getElementById("");
-const employeeLevel = document.getElementById("");
-const employeeDepartment = document.getElementById("");
-const employeeSalary = document.getElementById("");
-const employeeAddress = document.getElementById("");
-const employeeEmail = document.getElementById("");
-const employeePhone = document.getElementById("");
-const employeeSIN = document.getElementById("");
-const employeeEmergencyContact = document.getElementById("");
-const employeeEmergencyContactNumber = document.getElementById("");
-const employeeSubmit = document.getElementById("");
+const employeeFirstName = document.getElementById("employeeFirstName");
+const employeeLastName = document.getElementById("employeeLastName");
+const employeeUsername = document.getElementById("employeeUsername");
+const employeeEmail = document.getElementById("employeeEmail");
+const employeePassword = document.getElementById("employeePassword");
+const employeePhoneNumber = document.getElementById("employeePhoneNumber");
+const employeeAddress1 = document.getElementById("employeeAddress1");
+const employeeAddress2 = document.getElementById("employeeAddress2");
+const employeeCity = document.getElementById("employeeCity");
+const employeeRole = document.getElementById("employeeRole");
+const employeeLevel = document.getElementById("employeeLevel");
+const employeeDepartment = document.getElementById("employeeDepartment");
+const employeeSalary = document.getElementById("employeeSalary");
+const employeeSIN = document.getElementById("employeeSIN");
+const employeeEmergencyContactName = document.getElementById("employeeEmergencyContactName");
+const employeeEmergencyContactPhoneNumber = document.getElementById("employeeEmergencyContactPhone");
+const employeeCertification = document.getElementById("employeeCertification");
+const employeeSubmit = document.getElementById("addEditEmployeeSubmit");
 
 // Delete Employee's Modal Inputs
-const selectEmployee = document.getElementById("");
-const deleteSubmit = document.getElementById("");
+const selectedEmployee = document.getElementById("selectedEmployee");
+const deleteEmployeeSubmit = document.getElementById("removeEmployeeSubmit");
 
 // __________
 // Non-DOM Element Variables
