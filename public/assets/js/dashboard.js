@@ -9,7 +9,6 @@ const employeeTiles = document.getElementById("employeeTiles");
 const addEmployeeButton = document.getElementById("addEmployeeButton");
 const editEmployeeButton = document.getElementsByClassName("editEmployeeButton");
 const removeEmployeeButton = document.getElementsByClassName("removeEmployeeButton");
-document.get
 
 // Forms
 const addEditEmployeeForm = document.getElementById("addEditEmployeeModal");
