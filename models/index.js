@@ -17,7 +17,7 @@ Role.hasMany(Employee, {
   foreignKey: 'role_id'
 });
 
-Employee.belongsTo(Role, {
+Employee.belongsTo(Department, {
   foreignKey: 'role_id'
 });
 

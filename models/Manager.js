@@ -24,7 +24,11 @@ Manager.init(
         },
         username: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            references: {
+                model: 'employee',
+                key: 'username'
+            }
         },
         email: {
             type: DataTypes.STRING,
@@ -46,9 +50,9 @@ Manager.init(
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                // minimum characters
-                len: [8]
+            references: {
+                model: 'employee',
+                key: 'password'
             }
         },
     },
