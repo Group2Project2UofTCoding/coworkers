@@ -2,7 +2,7 @@
 // DOM Element Variables
 // __________
 
-// Tile Section
+// Employees' Tiles Section
 const employeeTiles = document.getElementById("");
 
 // Buttons
@@ -38,6 +38,18 @@ const deleteSubmit = document.getElementById("");
 // __________
 // Functions
 // __________
+
+// Handle Viewing an Employee's Information
+function handleViewEmployeeModal(event) {
+    // Prevent default event behaviours
+    event.preventDefault();
+
+    var employeeID = event.target.value;
+    
+
+
+
+}
 
 // Handle Modal Form Data
 function handleEmployeeModalSubmit(event) {
