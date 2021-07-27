@@ -30,7 +30,7 @@ const employeeDepartment = document.getElementById("employeeDepartment");
 const employeeSalary = document.getElementById("employeeSalary");
 const employeeSIN = document.getElementById("employeeSIN");
 const employeeEmergencyContactName = document.getElementById("employeeEmergencyContactName");
-const employeeEmergencyContactPhoneNumber = document.getElementById("employeeEmergencyContactPhone");
+const employeeEmergencyContactPhoneNumber = document.getElementById("employeeEmergencyContactPhoneNumber");
 const employeeCertification = document.getElementById("employeeCertification");
 const employeeSubmit = document.getElementById("addEditEmployeeSubmit");
 
