@@ -3,10 +3,10 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
 class Manager extends Model {
-     // setup the method to check the password
+    // setup the method to check the password
     checkPassword(loginPassword) {
-    return bcrypt.compareSync(loginPassword, this.password);
-  }
+        return bcrypt.compareSync(loginPassword, this.password);
+    }
 }
 
 
@@ -17,18 +17,29 @@ Manager.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true
+            references: {
+                model: 'employee',
+                key: 'id'
+            }
         },
-        manager_name: {
+        username: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true
+            references: {
+                model: 'employee',
+                key: 'id'
+            }
+        },
+        department_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'department',
+                key: 'id'
             }
         },
         // password column
@@ -36,23 +47,24 @@ Manager.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-            // minimum characters
+                // minimum characters
                 len: [8]
             }
         },
     },
-    {   hooks: {
-        // Using the hook to hash the password
-        async beforeCreate(userData) {
-            userData.password = await bcrypt.hash(userData.password, 10);
-            return userData;
+    {
+        hooks: {
+            // Using the hook to hash the password
+            async beforeCreate(userData) {
+                userData.password = await bcrypt.hash(userData.password, 10);
+                return userData;
+            },
+            // Using the hook to hash the password
+            async beforeUpdate(userData) {
+                userData.password = await bcrypt.hash(userData.password, 10);
+                return userData;
+            }
         },
-        // Using the hook to hash the password
-        async beforeUpdate(userData) {
-            userData.password = await bcrypt.hash(userData.password, 10);
-            return userData;
-        }
-    },
         sequelize,
         timestamps: false,
         freezeTableName: true,
