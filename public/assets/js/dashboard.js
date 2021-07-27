@@ -109,7 +109,7 @@ function handleEmployeeModalView(event) {
   const employeeID = event.target.value;
 
   // Find the employee's information object in the employeesObject
-  const employeeObject = employeesObject.employeeID;
+  const employeeObject = employeesObject[employeeID];
 
   // Display information in the modal upon submit
   employeeFirstName.value = employeeObject.firstName;
@@ -159,8 +159,10 @@ function handleEmployeeModalSubmit(event) {
   const employeeObject = { firstName, lastName, username, email, password, phoneNumber, addressLine1, addressLine2, city, role, level, department, salary, sin, contactName, contactNumber, certification };
   
   // Create or find a unique ID for an employee in the employeesObject
-  const employeeID = Object.keys(employeesObject).length;
-  employeesObject.employeeID = employeeObject;
+  const employeeID = String(Object.keys(employeesObject).length);
+  console.log(employeeID);
+
+  employeesObject[employeeID] = employeeObject;
 
   console.log(employeeObject, employeesObject);
   
@@ -194,7 +196,7 @@ function handleEmployeeRemoveSubmit(event) {
   const employeeID = event.target.value;
 
   // Find the employee's information object in the employeesObject and delete it
-  delete employeesObject.employeeID;
+  delete employeesObject[employeeID];
 
   // POST updated employeesObject to the database
   fetch('api/employees', {
