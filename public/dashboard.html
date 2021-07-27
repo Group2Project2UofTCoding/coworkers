@@ -15,6 +15,7 @@
 </head>
 <body>
 
+    <!-- Employees' Tiles Container -->
     <div class="container">
         <div id="employeeTiles" class="row"></div>
     </div>
@@ -23,8 +24,9 @@
     <button id="addEmployeeButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#employeeModal">
         Add Employee
     </button>
+    <!-- The Edit and Remove Employee Buttons are Placed in Each Employee's Tile -->
     <button id="editEmployeeButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#employeeModal">
-        Edit Employee
+        View/Edit Employee
     </button>
     <button id="removeEmployeeButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#removeEmployeeModal">
         Remove Employee
@@ -36,7 +38,7 @@
     <!-------------------->
     
     <!-- Add/Edit Employee Modal -->
-    <div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="employeeModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addEditEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="employeeModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <!-- Modal Header -->
