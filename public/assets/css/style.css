@@ -1,9 +1,13 @@
+body {
+    background-color: lightcyan;
+}
+
 #logo{
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10%;
-    width: 50%;
+    width: 25%;
 }
 
 #signUpForm {
