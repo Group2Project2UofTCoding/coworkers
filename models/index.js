@@ -24,18 +24,16 @@ Department.hasMany(Role, {
   foreignKey: 'department_id'
 });
 
-Manager.hasMany(Employee, {
-    foreignKey: 'manager_id'
-});
-
-Employee.belongsTo(Role, {
-    foreignKey: 'role_id',
-    constraints: false
+Role.belongsTo(Department, {
+  foreignKey: 'department_id'
 });
 
 Role.hasMany(Employee, {
-    foreignKey: 'role_id',
-    constraints: false
+  foreignKey: 'role_id'
+});
+
+Employee.belongsTo(Role, {
+  foreignKey: 'role_id'
 });
 
 

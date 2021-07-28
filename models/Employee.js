@@ -1,8 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt');
 
-class Employee extends Model { }
+class Employee extends Model {}
 
 Employee.init(
     {
@@ -11,14 +10,6 @@ Employee.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
-        },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true
-            }
         },
         first_name: {
             type: DataTypes.STRING,
@@ -54,17 +45,9 @@ Employee.init(
         },
         manager_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: Employee,
-                key: 'id'
-            }
-        },
-        department_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'department',
                 key: 'id'
             }
         },
@@ -72,7 +55,7 @@ Employee.init(
             type: DataTypes.DATEONLY,
             allowNull: true
         },
-        photo_url: {
+        photo: {
             type: DataTypes.STRING,
             allowNull: true
         }
