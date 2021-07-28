@@ -13,11 +13,13 @@ Manager.hasMany(Employee, {
 });
 
 Employee.belongsTo(Role, {
-    foreignKey: 'role_id'
+    foreignKey: 'role_id',
+    constraints: false
 });
 
 Role.hasMany(Employee, {
-    foreignKey: 'role_id'
+    foreignKey: 'role_id',
+    constraints: false
 });
 
 Employee.belongsTo(Department, {

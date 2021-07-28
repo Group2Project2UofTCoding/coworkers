@@ -56,21 +56,21 @@ Employee.init(
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        level: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            references: {
-                model: 'role',
-                key: 'level'
-            }
-        },
+        // level: {
+        //     type: DataTypes.STRING,
+        //     allowNull: true,
+        //     references: {
+        //         model: 'role',
+        //         key: 'level'
+        //     }
+        // },
         role_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            // references: {
-            //     model: 'role',
-            //     key: 'id'
-            // }
+            references: {
+                model: 'role',
+                key: 'id'
+            }
         },
         manager_id: {
             type: DataTypes.INTEGER,

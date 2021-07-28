@@ -13,10 +13,10 @@ class Manager extends Model {
 Manager.init(
     {
         id: {
-            autoIncrement: true,
             type: DataTypes.INTEGER,
             allowNull: false,
-            primaryKey: true
+            primaryKey: true,
+            autoIncrement: true
         },
         email: {
             type: DataTypes.STRING,
