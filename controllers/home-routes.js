@@ -1,5 +1,16 @@
 const router = require('express').Router();
 
+// home route
+
+router.get('/',(req,res) => {
+  if(req.session.loggedIn) {
+    res.redirect('/dasboard');
+    return;
+  }
+
+  res.render('login');
+})
+
 // Login route
 router.get('/login', (req, res) => {
   if(req.session.loggedIn) {
@@ -18,7 +29,7 @@ router.get('/signup', (req, res) => {
   }
 
   // login or signup page
-  req.render('signup');
+  res.render('signup');
 });
 
 module.exports = router;
