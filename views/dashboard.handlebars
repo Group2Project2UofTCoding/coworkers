@@ -42,14 +42,14 @@
     <div>{{data.[1].[0].id}}</div> --}}
 
     {{!-- <p>{{data.[0]}}</p> --}}
-    {{> hero-cards}}
+    {{> hero-cards data}}
 
     {{> add-employee data}}
 
     <div id="employeeContainer" class="container rounded border border-primary">
     <h2>Direct Reports</h2><br>
         <div id="employeeContainerRow" class="row">
-            {{#each data.[0] as |employee|}}
+            {{#each data.[1] as |employee|}}
             {{> employee-cards employee}}
             {{/each}}
         </div>
