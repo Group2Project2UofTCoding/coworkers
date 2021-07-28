@@ -266,7 +266,6 @@ function searchForEmployee(searchedEmployee) {
     }        
   }
 
-  console.log(searchedEmployeesObject);
   // If employee(s) is/are found, print them to the page
   if (searchedEmployeesObject) {
     generateEmployeeTiles(searchedEmployeesObject);
