@@ -1,0 +1,57 @@
+{{!-- <div class="col-lg-4 col-md-12">
+  <div class="card mb-3">
+    <div class="d-flex">
+      <img class="mt-4 mb-2 mx-auto rounded-circle" src="./assets/images/ali-morshedlou-WMD64tMfc4k-unsplash.jpg" alt="John Doe's Photo" width="150" height="150">
+    </div>
+    <!-- Employee's Photo -->
+    
+    
+    <!-- Employee's Information -->
+    <div class="card-body ml-4">
+        <h4 class="card-title">{{first_name}} {{last_name}}</h4>
+        <p class="card-text mb-0">{{role.role_name}}</p>
+        <p class="card-text mb-0">{{email}}</p>
+        <p class="card-text mb-0">{{phone_number}}</p>
+        <p class="card-text mb-0">{{address}}</p>
+        
+    </div>
+    
+    <!-- View/Edit Employee Button -->
+    <button type="click" class="btn btn-primary editEmployeeButton w-75 mb-1 mx-auto" data-toggle="modal" data-target="#addEditEmployeeModal" value="0">View/Edit Employee</button>
+
+    <!-- Remove Employee Button -->
+    <button type="click" class="btn btn-primary removeEmployeeButton w-75 mb-3 mx-auto" value="0">Remove Employee</button>
+
+    <!-- Employee Card Footer -->
+    <div class="card-footer">
+        <small class="text-muted">Last updated on page load</small>
+    </div>
+  </div>
+</div> --}}
+
+<div class="col-lg-3 col-md-12">
+                <div class="card">
+                    <!-- Employee's Photo -->
+                    <img class="card-img-top" src="{{photo}}" alt="{{first_name}}'s photo">
+                    
+                    <!-- Employee's Information -->
+                    <div class="card-body">
+                         <h4 class="card-title">{{first_name}} {{last_name}}</h4>
+                          <p class="card-text mb-0">{{role.role_name}}</p>
+                          <p class="card-text mb-0">{{email}}</p>
+                          <p class="card-text mb-0">{{phone_number}}</p>
+                          <p class="card-text mb-0">{{address}}</p>
+                    </div>
+                    
+                    <!-- View/Edit Employee Button -->
+                    <button type="click" class="btn btn-primary editEmployeeButton" data-toggle="modal" data-target="#addEditEmployeeModal" value="0">View/Edit Employee</button>
+
+                    <!-- Remove Employee Button -->
+                    <button type="click" class="btn btn-primary removeEmployeeButton" value="0">Remove Employee</button>
+
+                    <!-- Employee Card Footer -->
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated on page load</small>
+                    </div>
+                </div>
+            </div>

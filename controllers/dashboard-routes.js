@@ -43,6 +43,7 @@ router.get('/', (req, res) => {
       return data
     })
     .then(data => {
+      console.log(data);
       // if we need more info other than just employees we could do it here
       res.render('dashboard', {data, loggedIn: req.session.loggedIn});
     });
