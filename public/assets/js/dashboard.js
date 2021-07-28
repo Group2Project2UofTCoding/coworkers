@@ -261,12 +261,13 @@ function searchForEmployee(searchedEmployee, searchedEmployeesObject) {
     if (lowercaseSearch == (value.firstName).toLowerCase()){
       searchedEmployeesObject[key] = employeesObject[key]
     }
+
+    // If employee(s) is/are found, print them to the page
     if (searchedEmployeesObject) {
-      // If employee(s) is/are found, print them to the page
-      generateEmployeeTiles(searchedEmployeesObject);
+            generateEmployeeTiles(searchedEmployeesObject);
     }
-    else {
-      // Else, employee was not found
+    // Else, employee was not found
+    else {      
       window.alert(`We cannot find ${search.value}!`)
     }        
   }
@@ -332,7 +333,7 @@ searchButton.addEventListener("click", function(){
   const searchedEmployee = search.value;
 
   // If the search field is blank, reset the Direct Reports displayed
-  if (searchedEmployee =="") {
+  if (searchedEmployee == "") {
     generateEmployeeTiles(employeesObject);
     return;
   }
