@@ -26,7 +26,6 @@ async function handleEmployeeModalSubmit(event) {
   const address = [addressLine1, addressLine2, city, postalCode].join(", ");
 
   // Create an employee's information object
-  // const employeeObject = { firstName, lastName, username, email, password, phoneNumber, addressLine1, addressLine2, city, role, level, department, salary, sin, contactName, contactNumber, certification };
   const employeeObject = { first_name, last_name, email, phone_number, address, sin, role_id, date_of_hire, photo };
   
     // POST updated employeesObject to the database
