@@ -14,7 +14,7 @@ Department.init(
         department_name: {
             type: DataTypes.STRING,
             allowNull: false
-        },
+        }
     },
     {
         sequelize,

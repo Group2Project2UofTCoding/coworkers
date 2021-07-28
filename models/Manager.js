@@ -9,7 +9,6 @@ class Manager extends Model {
     }
 }
 
-
 // If a manager needs to be an employee that means we coud link the manager id with employee ID so we can use the employee information 
 Manager.init(
     {
@@ -17,44 +16,22 @@ Manager.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            references: {
-                model: 'employee',
-                key: 'id'
-            }
-        },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'employee',
-                key: 'username'
-            }
+            autoIncrement: true
         },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
-            references: {
-                model: 'employee',
-                key: 'id'
-            }
         },
-        department_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'department',
-                key: 'id'
-            }
-        },
-        // password column
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-            references: {
-                model: 'employee',
-                key: 'password'
+            validate: {
+                len: [5]
             }
         },
+        manager_name: {
+            type: DataTypes.STRING,
+        }
     },
     {
         hooks: {

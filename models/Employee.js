@@ -11,17 +11,6 @@ Employee.init(
             primaryKey: true,
             autoIncrement: true
         },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                len: [5]
-            }
-        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -66,28 +55,12 @@ Employee.init(
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        role: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'role',
-                key: 'role_name'
-            }
-        },
         level: {
             type: DataTypes.STRING,
             allowNull: true,
             references: {
                 model: 'role',
                 key: 'level'
-            }
-        },
-        department_id: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'department',
-                key: 'id'
             }
         },
         role_id: {
@@ -100,15 +73,23 @@ Employee.init(
         },
         manager_id: {
             type: DataTypes.INTEGER,
-            allowNull: true,
+            allowNull: false,
             references: {
                 model: 'manager',
                 key: 'id'
             }
         },
+        department_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'department',
+                key: 'id'
+            }
+        },
         date_of_hire: {
             type: DataTypes.DATEONLY,
-            allowNull: false
+            allowNull: true
         },
         photo_url: {
             type: DataTypes.STRING,
