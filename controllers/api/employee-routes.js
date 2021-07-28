@@ -5,8 +5,8 @@ const { Employee, Department, Manager, Role } = require('../../models');
 router.get('/', (req, res) => {
   Employee.findAll({
     include: [
-      // 'employees',
-      // 'manager',
+      'employees',
+      'manager',
       {
         model: Role,
         attributes: ['role_name', 'salary'],
