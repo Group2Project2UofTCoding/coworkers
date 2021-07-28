@@ -2,17 +2,17 @@
 
 <form class="signup-form" id="signInForm">
   {{!-- {{Manager's Name}} --}}
-  <div class="form-group">
+  {{!-- <div class="form-group">
     <label for="manager-name">Name</label>
     <input type="text" class="form-control" id="manager-name" aria-describedby="nameHelp" placeholder="Enter name" required>
     <small id="nameHelp" class="form-text text-muted">Please enter your name</small>
-  </div>
+  </div> --}}
   {{!-- {{Manager's Department}} --}}
-  <div class="form-group">
+  {{!-- <div class="form-group">
     <label for="manager-dept">Department</label>
     <input type="text" class="form-control" id="manager-dept" aria-describedby="deptHelp" placeholder="Enter department" required>
     <small id="deptHelp" class="form-text text-muted">Please enter your department</small>
-  </div>
+  </div> --}}
   {{!-- <!-- Email input --> --}}
   <div class="form-group">
     <label for="email-signup">Email</label>
@@ -24,6 +24,12 @@
     <label for="password-signup">Password</label>
     <input type="password" class="form-control" id="password-signup" placeholder="Password" required>
     <small id="passwordHelp" class="form-text text-muted">Minimum 8 characters</small>
+  </div>
+    {{!-- {{Manager's ID}} --}}
+  <div class="form-group">
+    <label for="manager-dept">Employee ID</label>
+    <input type="text" class="form-control" id="manager-id" placeholder="Enter the ID" required>
+    <small id="man-ID" class="form-text text-muted">Please enter the employee ID given to you</small>
   </div>
     {{!-- <!-- Submit form data --> --}}
   <div class="d-grid gap-2 mx-auto">

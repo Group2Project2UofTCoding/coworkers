@@ -6,21 +6,20 @@
 async function signupFormHandler(event) {
   event.preventDefault();
 
-  const manager_name = document.querySelector('#manager-name').value.trim();
-  const dept = document.querySelector('#manager-dept').value.trim();
+//   const manager_name = document.querySelector('#manager-name').value.trim();
+  const managerId = document.querySelector('#manager-id').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
   // console.log("signupFormhandler")
 
-  if(manager_name && email && password) {
+  if(managerId && email && password) {
       const response = await fetch('/api/manager', {
           method: 'post',
           body: JSON.stringify({
-              manager_name,
-              // dept,
-              email,
-              password
+            managerId,
+            email,
+            password
           }),
           headers:{'Content-Type':'application/json'}
       });

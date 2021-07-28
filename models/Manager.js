@@ -14,25 +14,16 @@ Manager.init(
     {
         id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
             primaryKey: true,
-            autoIncrement: true
-        },
-        employee_id: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            references: {
-                model: 'employee',
-                key: 'id'
-            }
-        },
-        manager_name: {
-            type: DataTypes.STRING,
             allowNull: false,
         },
         email: {
             type: DataTypes.STRING,
+            unique: true,
             allowNull: false,
+            validate: {
+                isEmail: true
+            }
         },
         password: {
             type: DataTypes.STRING,
@@ -40,10 +31,7 @@ Manager.init(
             validate: {
                 len: [5]
             }
-        },
-        // manager_name: {
-        //     type: DataTypes.STRING,
-        // }
+        }
     },
     {
         hooks: {

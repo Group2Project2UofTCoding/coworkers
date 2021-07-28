@@ -23,9 +23,19 @@ router.get('/', withAuth,(req, res) => {
     ]
   })
   .then(dbEmployeeData => {
-    const employees = dbEmployeeData.map(emp => emp.get({plain:true}));
+    // get all the employees
+    const allEmployees = dbEmployeeData.map(emp => emp.get({plain:true}));
+    // check the manager id
+    const managerId = el => el.id === parseInt(req.session.manager_id);
+    // find the index of the manager
+    const manager_index = allEmployees.findIndex(managerId);
+    // splice the manager seperately
+    const manager = allEmployees.splice(manager_index, 1);
+    // filter the employees belong to this manager
+    const filteredEmployees = allEmployees.filter(el => el.manager_id === parseInt(req.session.manager_id));
     const data = [];
-    data.push(employees);
+    data.push(manager);
+    data.push(filteredEmployees);
     Role.findAll({
       include: [
         {
