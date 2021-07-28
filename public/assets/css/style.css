@@ -7,11 +7,14 @@ body {
     margin-right: 5%;
     margin-top: 1%;
     margin-bottom: 1%;
-}
+    padding: 1%;
+    background-color: lightgoldenrodyellow;
 }
 
 #employeeContainer {
-    background-color: lightgreen;
+    margin-bottom: 2%;
+    padding: 1%;
+    background-color: lightgoldenrodyellow;
 }
 
 .card {
