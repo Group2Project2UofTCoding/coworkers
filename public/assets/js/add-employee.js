@@ -14,10 +14,16 @@ async function handleEmployeeModalSubmit(event) {
   const addressLine2 = document.getElementById("employeeAddress2").value;
   const city = document.getElementById("employeeCity").value;
   const postalCode = document.getElementById("employeeZIP").value;
+<<<<<<< HEAD
+  const role_id = 2;
+  const date_of_hire = "2021-07-24";
+  const photo = "/images/employees/1";
+=======
   const role_id = document.getElementById("employeeRole").value;
   console.log(role_id);
   const date_of_hire = document.getElementById("hireDate").value;
   const photo = document.getElementById("photoUrl").value;
+>>>>>>> develop
   const sin = document.getElementById("employeeSIN").value;
   const certification = employeeCertification.value;
 

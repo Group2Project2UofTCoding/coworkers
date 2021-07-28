@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
   Employee.findAll({
     include: [
       'employees',
-      'manager',
+      'report_to',
       {
         model: Role,
         attributes: ['role_name', 'salary'],

@@ -11,14 +11,20 @@ Employee.hasMany(Employee, {
 
 Employee.belongsTo(Employee, {
   foreignKey: 'manager_id',
-  as: 'manager',
+  as: 'report_to',
   constraints: false
 });
 
-// Manager.hasMany(Employee, {
-//   foreignKey: 'employee_id',
-//   constraints: false
-// });
+Manager.hasMany(Employee, {
+  as: 'manager_info',
+  foreignKey: 'id',
+  constraints:false
+});
+
+Employee.belongsTo(Manager, {
+  foreignKey: 'id',
+  constraints:false
+});
 
 Department.hasMany(Role, {
   foreignKey: 'department_id'
