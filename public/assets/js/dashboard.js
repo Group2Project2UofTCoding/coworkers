@@ -253,9 +253,12 @@ function handleEmployeeRemoveSubmit(targetEvent) {
 
 //Search for and display employee(s)
 function searchForEmployee(searchedEmployee, searchedEmployeesObject) {
+  // Lowercase searched employee
+  const lowercaseSearch = searchedEmployee.toLowerCase();
+  
   // Loop through employeesObject to find employee(s)
   for (const [key, value] of Object.entries(employeesObject)) {
-    if (searchedEmployee == value.firstName){
+    if (lowercaseSearch == (value.firstName).toLowerCase()){
       searchedEmployeesObject[key] = employeesObject[key]
     }
     if (searchedEmployeesObject) {
