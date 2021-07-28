@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Department extends Model {}
+class Department extends Model { }
 
 Department.init(
     {
@@ -14,7 +14,7 @@ Department.init(
         department_name: {
             type: DataTypes.STRING,
             allowNull: false
-        },
+        }
     },
     {
         sequelize,

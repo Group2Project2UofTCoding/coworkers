@@ -7,27 +7,23 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Role,
-        attributes: ['role_name'],
+        attributes: ['role_name', 'salary'],
         include: [
-          {
-            model: Department,
-            attributes: ['department_name']
-          }
         ]
       },
       {
         model: Manager,
-        attributes: ['manager_name']
+        attributes: ['email']
       }
     ]
   })
-  .then(dbEmployeeData => {
-    res.json(dbEmployeeData);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  })
+    .then(dbEmployeeData => {
+      res.json(dbEmployeeData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    })
 });
 
 // Get one employee
@@ -49,17 +45,17 @@ router.get('/:id', (req, res) => {
       },
       {
         model: Manager,
-        attributes: ['manager_name']
+        attributes: ['email']
       }
     ]
   })
-  .then(dbEmployeeData => {
-    res.json(dbEmployeeData);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  })
+    .then(dbEmployeeData => {
+      res.json(dbEmployeeData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    })
 });
 
 
@@ -84,12 +80,12 @@ router.post("/", (req, res) => {
 router.put("/:id", (req, res) => {
   Employee.update(
     {
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
-    role_id: req.body.role_id,
-    manager_id: req.body.manager_id,
-    date_of_hire: req.body.date_of_hire,
-    photo: req.body.photo
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      role_id: req.body.role_id,
+      manager_id: req.body.manager_id,
+      date_of_hire: req.body.date_of_hire,
+      photo: req.body.photo
     },
     {
       where: {

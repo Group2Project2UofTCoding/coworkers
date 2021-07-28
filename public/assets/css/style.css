@@ -1,0 +1,19 @@
+body {
+    background-color: lightcyan;
+}
+
+#logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 25%;
+}
+
+#signInForm {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    width: 50%;
+  }

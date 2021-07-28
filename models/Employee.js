@@ -12,6 +12,7 @@ Employee.init(
             primaryKey: true,
             autoIncrement: true
         },
+<<<<<<< HEAD
         username: {
             type: DataTypes.STRING,
             allowNull: true
@@ -23,6 +24,8 @@ Employee.init(
                 len: [5]
             }
         },
+=======
+>>>>>>> develop
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -67,6 +70,7 @@ Employee.init(
             type: DataTypes.INTEGER,
             allowNull: false
         },
+<<<<<<< HEAD
         role: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -75,6 +79,8 @@ Employee.init(
                 key: 'role_name'
             }
         },
+=======
+>>>>>>> develop
         level: {
             type: DataTypes.STRING,
             allowNull: true,
@@ -83,6 +89,7 @@ Employee.init(
                 key: 'level'
             }
         },
+<<<<<<< HEAD
         department_id: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -91,6 +98,8 @@ Employee.init(
                 key: 'id'
             }
         },
+=======
+>>>>>>> develop
         role_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -101,15 +110,23 @@ Employee.init(
         },
         manager_id: {
             type: DataTypes.INTEGER,
-            allowNull: true,
+            allowNull: false,
             references: {
                 model: 'manager',
                 key: 'id'
             }
         },
+        department_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'department',
+                key: 'id'
+            }
+        },
         date_of_hire: {
             type: DataTypes.DATEONLY,
-            allowNull: false
+            allowNull: true
         },
         photo_url: {
             type: DataTypes.STRING,
