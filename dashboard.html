@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Coworkers Dashboard</title>
 </head>
 <body>
-    <!-- <div class="wrapper"> -->
         <!-- navbar -->
         <nav class="navbar navbar-light">
             <div class="container-fluid">
             <a class="navbar-brand">
-                <img src="./assets/Logo_in_PNG.png" alt="coworkers logo" width="190" height="50">
+                <img src="./assets/images/Logo_in_PNG.png" alt="coworkers logo" width="190" height="50">
             </a>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -22,177 +22,349 @@
             </form>
             </div>
         </nav>
-        
-        <div class="right">
-            <div class="boxes">
-                <div class="firstBox">
-                    <ul>
-                        <li class="box box1">
-                            <p>Company Information</p>
-                        </li>
-                        <li class="box box2">
-                            <p>Department Information</p>
-                        </li>
-                        <li class="box box3">
-                            <p>Team Information</p>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li class="box box1">
-                            <p>Employee Information</p>
-                        </li>
-                        <li class="box ">
-                            <p>Other Information</p>
-                        </li>
-                        <li class="box ">
-                            <p>Information</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
 
-        <section class="manager-profile">
-            <!-- manager section -->
-            <div class="manager">
-                <div class="card mb-3 manager-card">
-                    <div class="row g-0">
-                    <div class="col-md-3">
-                        <img src="./assets/gold-background.jpeg" class="img-fluid rounded-start manager-pic"" alt="...">
-                    </div>
-                    <div class="col">
-                        <div class="card-body">
-                        <h5 class="card-title">John Doe</h5>
-                        <p class="card-text">Manager</p>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro exercitationem cupiditate quas nam veritatis dolores, quae laborum eum mollitia optio autem quibusdam et culpa voluptates reiciendis a laudantium impedit perferendis!</p>
+        <div class="card mb-3 parent">
+            <div class="row g-0">
+                <div class="col-md-2">
+                    <section class="parent-left side-dashboard">
+                        <!-- sidebar -->
+                        <div class="left">
+                            <div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white">
+                                <ul class="nav nav-pills flex-column mb-auto">
+                                <li>
+                                    <a href="#dashboard" class="nav-link text-white">
+                                        <i class="bi bi-speedometer2">
+                                            Dashboard
+                                        </i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#charts" class="nav-link text-white">
+                                        <i class="bi bi-graph-up">
+                                            Charts
+                                        </i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link text-white">
+                                        <i class="bi bi-person-fill">
+                                            Manager
+                                        </i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link text-white">
+                                        <i class="bi bi-people-fill">
+                                            Employees
+                                        </i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link text-white">
+                                        <i class="bi bi-person-plus-fill">
+                                            Add Employee
+                                        </i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link text-white">
+                                        <i class="bi bi-person-lines-fill">
+                                            Edit Employee
+                                        </i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link text-white">
+                                        <i class="bi bi-person-x-fill">
+                                            Remove Employee
+                                        </i>
+                                    </a>
+                                </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    </div>
+                    </section>
                 </div>
-            </div>
-        </section>
 
-        <section class="employee-profile">
-            <!-- employee section -->
-            <div class="employees">
-                <div class="card mb-3 employee-card"">
-                    <div class="row g-0">
-                    <div class="col-md-3">
-                        <img src="./assets/pattern background.jpeg" class="img-fluid rounded-start employee-pic" alt="...">
-                    </div>
-                    <div class="col">
-                        <div class="card-body">
-                        <h5 class="card-title">John Doe</h5>
-                        <p class="card-text">Front end Developer</p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="card mb-3 employee-card">
-                    <div class="row g-0">
-                    <div class="col-md-3">
-                        <img src="./assets/pexels-felix-mittermeier-956999.jpg" class="img-fluid rounded-start employee-pic" alt="...">
-                    </div>
-                    <div class="col">
-                        <div class="card-body">
-                        <h5 class="card-title">John Doe</h5>
-                        <p class="card-text">Front end Developer</p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="card mb-3 employee-card">
-                    <div class="row g-0">
-                    <div class="col-md-3">
-                        <img src="./assets/pattern background.jpeg" class="img-fluid rounded-start employee-pic" alt="...">
-                    </div>
-                    <div class="col">
-                        <div class="card-body">
-                        <h5 class="card-title">John Doe</h5>
-                        <p class="card-text">Front end Developer</p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- <div class="row row-cols-1 row-cols-md-3 g-4 offset-md-3">
-            <div class="col">
-            <div class="card">
-                <div class="card-body">
-                <h5 class="card-title text-center">Card title</h5>
-                </div>
-            </div>
-            </div>
-            <div class="col">
-            <div class="card">
-                <div class="card-body">
-                <h5 class="card-title text-center">Card title</h5>
-                </div>
-            </div>
-            </div>
-            <div class="col">
-            <div class="card">
-                <div class="card-body">
-                <h5 class="card-title text-center">Card title</h5>
-                </div>
-            </div>
-            </div>
-        
-        </div> -->
-
-        <section class="side-dashboard">
-            <!-- sidebar -->
-            <div class="left">
-                <div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white">
-                    <ul class="nav nav-pills flex-column mb-auto">
-                    <li>
-                        <a href="#" class="nav-link text-white">
-                        <svg class="bi me-2"><use href="#dashboard"></use></svg>
-                        Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-white">
-                        <svg class="bi me-2"></svg><use href="#charts"></use></svg>
-                        Charts
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-white">
-                        <svg class="bi me-2"><use href="#manager"></use></svg>
-                        Manager
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-white">
-                        <svg class="bi me-2"><use href="#employees"></use></svg>
-                        Employees
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white" aria-current="page">
-                        <svg class="bi me-2"><use href="#employees"></use></svg>
-                        Add Employee
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white" aria-current="page">
-                        <svg class="bi me-2"><use href="#employees"></use></svg>
-                        Edit Employee
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white" aria-current="page">
-                        <svg class="bi me-2"><use href="#employees"></use></svg>
-                        Remove
-                        </a>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                <div class="parent-right col-md-10">
+                    <!-- Dashboard Boxes -->
+                    <div class="first-section">
+                        <section class="dashboard-boxes">
+                            <div class="row row-cols-1 row-cols-md-3 g-4 boxes">
+                                <div class="dashboard col">
+                                    <div class="card mb-3 border-0">
+                                        <div class="row g-0 dashboard-parent company">
+                                            <div class="col-md-3">
+                                                <img src="./assets/images/building.svg" class="img-fluid rounded-start employee-pic" alt="yellow architectural structure">
+                                            </div>                                        
+                                            <div class="col">
+                                                <div class="card-body dashboard-body text-center">
+                                                    <a href="employee-information">
+                                                        Company Information
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
     
+                                <div class="dashboard col">
+                                    <div class="card mb-3 border-0 ">
+                                        <div class="row g-0 dashboard-parent employee">
+                                            <div class="col-md-3">
+                                                <img src="./assets/images/person-badge.svg" class="img-fluid rounded-start employee-pic" alt="yellow architectural structure">
+                                            </div>
+                                            <div class="col">
+                                                <div class="card-body dashboard-body text-center">
+                                                    <a href="employee-information">
+                                                        Employee Information
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="dashboard col">
+                                    <div class="card mb-3 border-0">
+                                        <div class="row g-0 dashboard-parent team">
+                                            <div class="col-md-3">
+                                                <img src="./assets/images/people.svg" class="img-fluid rounded-start employee-pic" alt="yellow architectural structure">
+                                            </div>
+                                            <div class="col">
+                                                <div class="card-body dashboard-body text-center">
+                                                    <a href="#team-information">
+                                                        Team Information
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="dashboard col">
+                                    <div class="card mb-3 border-0">
+                                        <div class="row g-0 dashboard-parent department">
+                                            <div class="col-md-3">
+                                                <img src="./assets/images/info-square.svg" class="img-fluid rounded-start employee-pic" alt="yellow architectural structure">
+                                            </div>
+                                            <div class="col">
+                                                <div class="card-body dashboard-body text-center">
+                                                    <a href="department-information">
+                                                        Department Information
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="dashboard col">
+                                    <div class="card mb-3 border-0">
+                                        <div class="row g-0 dashboard-parent projects">
+                                            <div class="col-md-3">
+                                                <img src="./assets/images/kanban.svg" class="img-fluid rounded-start employee-pic" alt="yellow architectural structure">
+                                            </div>
+                                            <div class="col">
+                                                <div class="card-body dashboard-body text-center">
+                                                    <a href="projects">
+                                                        Projects Dashboard
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard col">
+                                    <div class="card mb-3 border-0">
+                                        <div class="row g-0 dashboard-parent tasks">
+                                            <div class="col-md-3">
+                                                <img src="./assets/images/list-task.svg" class="img-fluid rounded-start employee-pic" alt="yellow architectural structure">
+                                            </div>
+                                            <div class="col">
+                                                <div class="card-body dashboard-body text-center">
+                                                    <a href="tasks">
+                                                        Tasks Dashboard
+                                                    </a>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </section>
+
+                        <section class="salary-chart">
+                            <div class="chart">
+                                <img src="./assets/images/sample-chart.png" alt="chart">
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="join">
+                        <div class="all-profiles">
+                            <section class="manager-profile">
+                                <!-- manager section -->
+                                <div class="manager">
+                                    <div class="card mb-3 manager-card">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="./assets/images/gold-background.jpeg" class="img-fluid rounded-start manager-pic"" alt="...">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">John Doe</h5>
+                                                    <p class="card-text">Manager</p>
+                                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro exercitationem cupiditate quas nam veritatis dolores, quae laborum eum mollitia optio autem quibusdam et culpa voluptates reiciendis a laudantium impedit perferendis!</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+    
+                            <section class="employee-profile container-fluid">
+                                <!-- employee section -->
+                                <div class="row row-cols-1 row-cols-md-3 g-4">
+                                    <div class="employees col">
+                                        <div class="card mb-3 employee-card employee1">
+                                            <div class="row g-0">
+                                                <div class="col-md-3">
+                                                    <img src="./assets/images/yellow background.jpeg" class="img-fluid rounded-start employee-pic" alt="yellow architectural structure">
+                                                </div>
+                                                <div class="col">
+                                                    <div class="card-body">
+                                                    <h5 class="card-title">John Doe</h5>
+                                                    <p class="card-text">Front end Developer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col">
+                                        <div class="card mb-3 employee-card employee2">
+                                            <div class="row g-0">
+                                                <div class="col-md-3">
+                                                    <img src="./assets/images/sky.jpg" class="img-fluid rounded-start employee-pic" alt="night sky">
+                                                </div>
+                                                <div class="col">
+                                                    <div class="card-body">
+                                                    <h5 class="card-title">John Doe</h5>
+                                                    <p class="card-text">Web Developer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col">
+                                        <div class="card mb-3 employee-card employee3">
+                                            <div class="row g-0">
+                                                <div class="col-md-3">
+                                                    <img src="./assets/images/purple background.jpeg" class="img-fluid rounded-start employee-pic" alt="tech board">
+                                                </div>
+                                                <div class="col">
+                                                    <div class="card-body">
+                                                    <h5 class="card-title">John Doe</h5>
+                                                    <p class="card-text">Web Designer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col">
+                                        <div class="card mb-3 employee-card employee1">
+                                            <div class="row g-0">
+                                                <div class="col-md-3">
+                                                    <img src="./assets/images/pattern background.jpeg" class="img-fluid rounded-start employee-pic" alt="mandela pattern">
+                                                </div>
+                                                <div class="col">
+                                                    <div class="card-body">
+                                                    <h5 class="card-title">John Doe</h5>
+                                                    <p class="card-text">Senior Developer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col">
+                                        <div class="card mb-3 employee-card employee2">
+                                            <div class="row g-0">
+                                                <div class="col-md-3">
+                                                    <img src="./assets/images/glitters.jpeg" class="img-fluid rounded-start employee-pic" alt="pink diamonds">
+                                                </div>
+                                                <div class="col">
+                                                    <div class="card-body">
+                                                    <h5 class="card-title">John Doe</h5>
+                                                    <p class="card-text">Back end Developer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card mb-3 employee-card employee3">
+                                            <div class="row g-0">
+                                                <div class="col-md-3">
+                                                    <img src="./assets/images/gold-background.jpeg" class="img-fluid rounded-start employee-pic" alt="gold glitters">
+                                                </div>
+                                                <div class="col">
+                                                    <div class="card-body">
+                                                    <h5 class="card-title">John Doe</h5>
+                                                    <p class="card-text">Full-stack Developer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="tab">
+                            <!-- recent activity -->
+                            <section class="recent-activity">
+                                <div class="recent-board">
+                                    <div class="d-flex flex-column flex-shrink-0 p-3">
+                                        <h5>
+                                            Recent Activity
+                                        </h5>
+                                        <hr>
+                                        <ul class="nav nav-pills flex-column mb-auto">
+                                            <li>
+                                                <p1>Lorem, ipsum dolor.</p1>
+                                                <p class="card-text"><small class="text-muted">John Doe | 3 mins ago</small></p>
+                                            </li>
+                                                <hr>
+                                            <li>
+                                                <p1>Lorem ipsum dolor sit.</p1>
+                                                <p class="card-text"><small class="text-muted">Jim Doe | 30 mins ago</small></p>
+                                            </li>
+                                                <hr>
+                                            <li>
+                                                <p1>Lorem, ipsum.</p1>
+                                                <p class="card-text"><small class="text-muted">Jane Doe | 1 hour ago</small></p>
+                                            </li>
+                                                <hr>
+                                            <li>
+                                                <p1>Lorem, ipsum dolor..</p1>
+                                                <p class="card-text"><small class="text-muted">Joey Doe | 2 hours ago</small></p>
+                                            </li>
+                                                <hr>
+                                            <li>
+                                                <p1>Lorem ipsum dolor sit..</p1>
+                                                <p class="card-text"><small class="text-muted">Jana Doe | 3 hour ago</small></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>  
 
 </body>
 </html>

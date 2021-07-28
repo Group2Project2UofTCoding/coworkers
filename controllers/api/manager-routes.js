@@ -7,11 +7,13 @@ router.get('/', (req,res) => {
     attributes: {
       exclude: ['password'],
     },
-    // include: [
-    //   {
-    //     model: Employee
-    //   }
-    // ]
+    include: [
+      {
+        model: Employee,
+        as: 'manager_info',
+        include: ['employees']
+      }
+    ]
   })
   .then(dbManagerData => res.json(dbManagerData))
   .catch(err => {

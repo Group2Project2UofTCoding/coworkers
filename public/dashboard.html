@@ -13,241 +13,281 @@
     <!-- Linking the style sheet -->
     <link rel="stylesheet" href="./assets/css/style.css"/>
 </head>
+
 <body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <title>Coworkers Dashboard</title>
-</head>
-<body>
-    <!-- navbar -->
-    <nav class="navbar navbar-light">
-        <div class="container-fluid">
-        <a class="navbar-brand">
-            <img src="./assets/images/Logo_in_PNG.png" alt="coworkers logo" width="190" height="50">
-        </a>
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">Search</button>
-        </form>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Employee Management System</a>
+        <button class="navbar-toggler" type="click" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <!-- Buttons to Trigger Employee Information Modal -->
+            <button id="addEmployeeButton" type="click" class="btn btn-primary" data-toggle="modal" data-target="#addEditEmployeeModal">
+                Add Employee
+            </button>
+            </li>
+
+            <!-- Other Options Dropdown Menu -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Other Options
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Account Information</a>
+                <a class="dropdown-item" href="#">Give Feedback</a>
+                <a class="dropdown-item" href="#">Settings & Privacy</a>
+                <a class="dropdown-item" href="#">Help & Support</a>
+                <a class="dropdown-item" href="#">Display & Accessibility</a>
+                <div class="dropdown-divider"></div>
+                <a id="logout" type="click" class="dropdown-item" href="./redundant-index.html">Logout</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
         </div>
     </nav>
-        
-    <div class="right">
-        <div class="boxes">
-            <div class="firstBox">
-                <ul>
-                    <li class="box box1">
-                        <p>Company Information</p>
-                    </li>
-                    <li class="box box2">
-                        <p>Department Information</p>
-                    </li>
-                    <li class="box box3">
-                        <p>Team Information</p>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="box box1">
-                        <p>Employee Information</p>
-                    </li>
-                    <li class="box ">
-                        <p>Other Information</p>
-                    </li>
-                    <li class="box ">
-                        <p>Information</p>
-                    </li>
-                </ul>
-            </div>
+
+    <!-- Hero Section -->
+    <div id="tabs">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <!-- Manager's Information Tab -->
+            <li class="nav-item">
+            <a class="nav-link active" id="manager-tab" data-toggle="tab" href="#manager" role="tab" aria-controls="manager" aria-selected="true">Manager Information</a>
+            </li>
+
+            <!-- Team's Information Tab -->
+            <li class="nav-item">
+            <a class="nav-link" id="team-tab" data-toggle="tab" href="#team" role="tab" aria-controls="team" aria-selected="false">Team Information</a>
+            </li>
+
+            <!-- Department's Information Tab -->
+            <li class="nav-item">
+            <a class="nav-link" id="department-tab" data-toggle="tab" href="#department" role="tab" aria-controls="department" aria-selected="false">Department Information</a>
+            </li>
+
+            <!-- Organization's Information Tab -->
+            <li class="nav-item">
+                <a class="nav-link" id="organization-tab" data-toggle="tab" href="#organization" role="tab" aria-controls="department" aria-selected="false">Organization Information</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <!-- Employee's Tab Content -->
+            <div class="tab-pane fade show active" id="manager" role="tabpanel" aria-labelledby="manager-tab">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat et dolor hic quae dolores dignissimos quisquam autem deleniti, minima suscipit, rem delectus sequi sit! Laboriosam reiciendis corporis ad praesentium harum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae reiciendis obcaecati in atque doloremque, sapiente culpa placeat maxime vero inventore porro velit nemo laborum. Delectus, velit quaerat? A, debitis beatae?</div>
+
+            <!-- Team's Tab Content -->
+            <div class="tab-pane fade" id="team" role="tabpanel" aria-labelledby="team-tab">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque reprehenderit quod fuga hic deleniti sit necessitatibus voluptatum vitae minus, ipsum tempore, reiciendis iure vel? Quae at suscipit aperiam ut dignissimos! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam mollitia enim, est esse culpa, fuga corporis sed nesciunt expedita voluptates autem tenetur eos, aliquam quae vero porro nulla delectus obcaecati?</div>
+
+            <!-- Department's Tab Content -->
+            <div class="tab-pane fade" id="department" role="tabpanel" aria-labelledby="department-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam magni cupiditate nulla facere consectetur aspernatur ratione, vel tenetur quis similique, animi voluptatem nostrum eveniet doloribus! Animi facilis velit molestiae veniam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia corporis recusandae magnam iure ratione possimus repellat quibusdam sequi, esse ex non, similique reprehenderit, quaerat dignissimos omnis. Veritatis, iusto minima? Similique.</div>
+
+            <!-- Organization's Tab Content -->
+            <div class="tab-pane fade" id="organization" role="tabpanel" aria-labelledby="organization-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quia earum facere eligendi eaque non, veritatis exercitationem! Officiis error cum dolor pariatur nostrum distinctio odit iure quod eveniet perspiciatis! Omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi architecto quos accusantium exercitationem nobis iste. Officia perspiciatis debitis cum ut illum facilis repellat iure sapiente a. Necessitatibus porro ratione fugiat?</div>
         </div>
     </div>
 
-    <section class="manager-profile">
-        <!-- manager section -->
-        <div class="manager">
-            <div class="card mb-3 manager-card">
-                <div class="row g-0">
-                <div class="col-md-3">
-                    <img src="./assets/gold-background.jpeg" class="img-fluid rounded-start manager-pic"" alt="gold glitters">
-                </div>
-                <div class="col">
-                    <div class="card-body">
-                    <h5 class="card-title">John Doe</h5>
-                    <p class="card-text">Manager</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro exercitationem cupiditate quas nam veritatis dolores, quae laborum eum mollitia optio autem quibusdam et culpa voluptates reiciendis a laudantium impedit perferendis!</p>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="employee-profile container-fluid">
-            <!-- employee section -->
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="employees col">
-                    <div class="card mb-3 employee-card employee1">
-                        <div class="row g-0">
-                            <div class="col-md-3">
-                                <img src="./assets/images/yellow background.jpeg" class="img-fluid rounded-start employee-pic" alt="yellow architectural structure">
-                            </div>
-                            <div class="col">
-                                <div class="card-body">
-                                <h5 class="card-title">John Doe</h5>
-                                <p class="card-text">Front end Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card mb-3 employee-card employee2">
-                        <div class="row g-0">
-                            <div class="col-md-3">
-                                <img src="./assets/images/sky.jpg" class="img-fluid rounded-start employee-pic" alt="night sky">
-                            </div>
-                            <div class="col">
-                                <div class="card-body">
-                                <h5 class="card-title">John Doe</h5>
-                                <p class="card-text">Web Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card mb-3 employee-card employee3">
-                        <div class="row g-0">
-                            <div class="col-md-3">
-                                <img src="./assets/images/purple background.jpeg" class="img-fluid rounded-start employee-pic" alt="purple tech board">
-                            </div>
-                            <div class="col">
-                                <div class="card-body">
-                                <h5 class="card-title">John Doe</h5>
-                                <p class="card-text">Web Designer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card mb-3 employee-card employee1">
-                        <div class="row g-0">
-                            <div class="col-md-3">
-                                <img src="./assets/images/pattern background.jpeg" class="img-fluid rounded-start employee-pic" alt="mandela pattern">
-                            </div>
-                            <div class="col">
-                                <div class="card-body">
-                                <h5 class="card-title">John Doe</h5>
-                                <p class="card-text">Senior Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card mb-3 employee-card employee2">
-                        <div class="row g-0">
-                            <div class="col-md-3">
-                                <img src="./assets/images/glitters.jpeg" class="img-fluid rounded-start employee-pic" alt="pink diamonds">
-                            </div>
-                            <div class="col">
-                                <div class="card-body">
-                                <h5 class="card-title">John Doe</h5>
-                                <p class="card-text">Back end Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card mb-3 employee-card employee3">
-                        <div class="row g-0">
-                            <div class="col-md-3">
-                                <img src="./assets/images/gold-background.jpeg" class="img-fluid rounded-start employee-pic" alt="gold glitters">
-                            </div>
-                            <div class="col">
-                                <div class="card-body">
-                                <h5 class="card-title">John Doe</h5>
-                                <p class="card-text">Full-stack Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    <section class="side-dashboard">
-        <!-- sidebar -->
-        <div class="left">
-            <div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white">
-                <ul class="nav nav-pills flex-column mb-auto">
-                    <li>
-                        <a href="#" class="nav-link text-white">
-                        <svg class="bi me-2"><use href="#dashboard"></use></svg>
-                        Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-white">
-                        <svg class="bi me-2"></svg><use href="#charts"></use></svg>
-                        Charts
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-white">
-                        <svg class="bi me-2"><use href="#manager"></use></svg>
-                        Manager
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-white">
-                        <svg class="bi me-2"><use href="#employees"></use></svg>
-                        Employees
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white" aria-current="page">
-                        <svg class="bi me-2"><use href="#employees"></use></svg>
-                        Add Employee
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white" aria-current="page">
-                        <svg class="bi me-2"><use href="#employees"></use></svg>
-                        Edit Employee
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white" aria-current="page">
-                        <svg class="bi me-2"><use href="#employees"></use></svg>
-                        Remove
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    
     <!-- Employees' Tiles Container -->
-    <div class="container">
-        <div id="employeeTiles" class="card-deck"></div>
-    </div>
+    <div id="employeeContainer" class="container">
+        <div id="employeeContainerRow" class="row">
+            <div class="col-lg-3 col-md-12">
+                <div class="card">
+                    <!-- Employee's Photo -->
+                    <img class="card-img-top" src="./assets/images/ali-morshedlou-WMD64tMfc4k-unsplash.jpg" alt="John Doe's Photo">
+                    
+                    <!-- Employee's Information -->
+                    <div class="card-body">
+                        <h5 class="card-title">John Doe</h5>
+                        <p class="card-text">Junior Product Manager, Production Department</p>
+                    </div>
+                    
+                    <!-- View/Edit Employee Button -->
+                    <button type="click" class="btn btn-primary editEmployeeButton" data-toggle="modal" data-target="#addEditEmployeeModal" value="0">View/Edit Employee</button>
 
-    <!-- Buttons to Trigger Modals -->
-    <button id="addEmployeeButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addEditEmployeeModal">
-        Add Employee
-    </button>
+                    <!-- Remove Employee Button -->
+                    <button type="click" class="btn btn-primary removeEmployeeButton" value="0">Remove Employee</button>
+
+                    <!-- Employee Card Footer -->
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated on page load</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-12">
+                <div class="card">
+                    <!-- Employee's Photo -->
+                    <img class="card-img-top" src="./assets/images/allgo-an-app-for-plus-size-people-xLT62mVrDa0-unsplash.jpg" alt="Sally Smith's Photo">
+                    
+                    <!-- Employee's Information -->
+                    <div class="card-body">
+                        <h5 class="card-title">Sally Smith</h5>
+                        <p class="card-text">Junior Product Designer, Production Department</p>
+                    </div>
+                    
+                    <!-- View/Edit Employee Button -->
+                    <button type="click" class="btn btn-primary editEmployeeButton" data-toggle="modal" data-target="#addEditEmployeeModal" value="1">View/Edit Employee</button>
+
+                    <!-- Remove Employee Button -->
+                    <button type="click" class="btn btn-primary removeEmployeeButton" value="1">Remove Employee</button>
+
+                    <!-- Employee Card Footer -->
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated on page load</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-12">
+                <div class="card">
+                    <!-- Employee's Photo -->
+                    <img class="card-img-top" src="./assets/images/graphic-mu-rmf7srNljXM-unsplash.jpg" alt="Tom Riddle's Photo">
+                    
+                    <!-- Employee's Information -->
+                    <div class="card-body">
+                        <h5 class="card-title">Tom Riddle</h5>
+                        <p class="card-text">Junior Product Designer, Production Department</p>
+                    </div>
+                    
+                    <!-- View/Edit Employee Button -->
+                    <button type="click" class="btn btn-primary editEmployeeButton" data-toggle="modal" data-target="#addEditEmployeeModal" value="2">View/Edit Employee</button>
+
+                    <!-- Remove Employee Button -->
+                    <button type="click" class="btn btn-primary removeEmployeeButton" value="2">Remove Employee</button>
+
+                    <!-- Employee Card Footer -->
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated on page load</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-12">
+                <div class="card">
+                    <!-- Employee's Photo -->
+                    <img class="card-img-top" src="./assets/images/zahir-namane-hwc7eIQiTCE-unsplash.jpg" alt="James Wong's Photo">
+                    
+                    <!-- Employee's Information -->
+                    <div class="card-body">
+                        <h5 class="card-title">James Wong</h5>
+                        <p class="card-text">Junior Soft Engineer, Production Department</p>
+                    </div>
+                    
+                    <!-- View/Edit Employee Button -->
+                    <button type="click" class="btn btn-primary editEmployeeButton" data-toggle="modal" data-target="#addEditEmployeeModal" value="3">View/Edit Employee</button>
+
+                    <!-- Remove Employee Button -->
+                    <button type="click" class="btn btn-primary removeEmployeeButton" value="3">Remove Employee</button>
+
+                    <!-- Employee Card Footer -->
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated on page load</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-12">
+                <div class="card">
+                    <!-- Employee's Photo -->
+                    <img class="card-img-top" src="./assets/images/janko-ferlic-G-jo31ESuRE-unsplash.jpg" alt="Edward Smith's Photo">
+                    
+                    <!-- Employee's Information -->
+                    <div class="card-body">
+                        <h5 class="card-title">Edward Smith</h5>
+                        <p class="card-text">Junior Software Engineer, Production Department</p>
+                    </div>
+                    
+                    <!-- View/Edit Employee Button -->
+                    <button type="click" class="btn btn-primary editEmployeeButton" data-toggle="modal" data-target="#addEditEmployeeModal" value="4">View/Edit Employee</button>
+
+                    <!-- Remove Employee Button -->
+                    <button type="click" class="btn btn-primary removeEmployeeButton" value="4">Remove Employee</button>
+
+                    <!-- Employee Card Footer -->
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated on page load</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-12">
+                <div class="card">
+                    <!-- Employee's Photo -->
+                    <img class="card-img-top" src="./assets/images/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash.jpg" alt="Angela Riddle's Photo">
+                    
+                    <!-- Employee's Information -->
+                    <div class="card-body">
+                        <h5 class="card-title">Angela Riddle</h5>
+                        <p class="card-text">Junior Data Scientist, Production Department</p>
+                    </div>
+                    
+                    <!-- View/Edit Employee Button -->
+                    <button type="click" class="btn btn-primary editEmployeeButton" data-toggle="modal" data-target="#addEditEmployeeModal" value="5">View/Edit Employee</button>
+
+                    <!-- Remove Employee Button -->
+                    <button type="click" class="btn btn-primary removeEmployeeButton" value="5">Remove Employee</button>
+
+                    <!-- Employee Card Footer -->
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated on page load</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-12">
+                <div class="card">
+                    <!-- Employee's Photo -->
+                    <img class="card-img-top" src="./assets/images/linkedin-sales-solutions-pAtA8xe_iVM-unsplash.jpg" alt="Tom Bradley's Photo">
+                    
+                    <!-- Employee's Information -->
+                    <div class="card-body">
+                        <h5 class="card-title">Tom Bradley</h5>
+                        <p class="card-text">Junior Data Scientist, Production Department</p>
+                    </div>
+                    
+                    <!-- View/Edit Employee Button -->
+                    <button type="click" class="btn btn-primary editEmployeeButton" data-toggle="modal" data-target="#addEditEmployeeModal" value="6">View/Edit Employee</button>
+
+                    <!-- Remove Employee Button -->
+                    <button type="click" class="btn btn-primary removeEmployeeButton" value="6">Remove Employee</button>
+
+                    <!-- Employee Card Footer -->
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated on page load</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-12">
+                <div class="card">
+                    <!-- Employee's Photo -->
+                    <img class="card-img-top" src="./assets/images/uvais-ur-rehman-p9Dh4EAhcfg-unsplash.jpg" alt="Justin Bieber's Photo">
+                    
+                    <!-- Employee's Information -->
+                    <div class="card-body">
+                        <h5 class="card-title">Justin Bieber</h5>
+                        <p class="card-text">Junior Data Scientist, Production Department</p>
+                    </div>
+                    
+                    <!-- View/Edit Employee Button -->
+                    <button type="click" class="btn btn-primary editEmployeeButton" data-toggle="modal" data-target="#addEditEmployeeModal" value="7">View/Edit Employee</button>
+
+                    <!-- Remove Employee Button -->
+                    <button type="click" class="btn btn-primary removeEmployeeButton" value="7">Remove Employee</button>
+
+                    <!-- Employee Card Footer -->
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated on page load</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
     
     <!-------------------->
     <!-- Modals Section -->
@@ -260,7 +300,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                 <h5 class="modal-title" id="employeeModalLabel">Employee Information</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="click" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
@@ -337,7 +377,7 @@
                             <input type="text" class="form-control" id="employeeCity" placeholder="Enter City" required>
                             </div>
                             
-                            <!-- State Input -->
+                            <!-- Province Input -->
                             <div class="form-group col-md-4">
                             <label for="employeeProvince">Province</label>
                             <select id="employeeProvince" class="form-control" required>
@@ -401,7 +441,7 @@
                                 <label class="my-1 mr-2" for="employeeDepartment">Department</label>
                                 <select class="custom-select my-1 mr-sm-2" id="employeeDepartment" required>
                                     <!-- <option value="" selected>Choose...</option> -->
-                                    <option value="Product">Production</option>
+                                    <option value="Production">Production</option>
                                     <option value="Research and Development">Research and Development</option>
                                     <option value="Purchasing">Purchasing</option>
                                     <option value="Marketing">Marketing</option>
@@ -469,8 +509,8 @@
 
                 <!-- Modal Footer -->
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                <button type="click" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="click" class="btn btn-primary">Save changes</button> -->
                 </div>
             </div>
         </div>
@@ -484,6 +524,6 @@
     <!-- Loading the Luxon script -->
     <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0/build/global/luxon.min.js"></script>
     <!-- Loading the application's script -->
-    <!-- <script src="./assets/js/dashboard.js"></script> -->
+    <script src="./assets/js/dashboard.js"></script>
 </body>
 </html>

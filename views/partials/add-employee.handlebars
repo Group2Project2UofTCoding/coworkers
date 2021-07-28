@@ -21,13 +21,13 @@
                       {{!-- <!-- First Form Row --> --}}
                       <div class="form-row">
                           {{!-- <!-- First Name Input --> --}}
-                          <div class="col-md-4 mb-3">
+                          <div class="col-md-6 mb-3">
                               <label for="employeeFirstName">First Name</label>
                               <input type="text" class="form-control" id="employeeFirstName" placeholder="Enter First Name" required>
                           </div>
 
                           {{!-- <!-- Last Name Input --> --}}
-                          <div class="col-md-4 mb-3">
+                          <div class="col-md-6 mb-3">
                               <label for="employeeLastName">Last Name</label>
                               <input type="text" class="form-control" id="employeeLastName" placeholder="Enter Last Name" required>
                           </div>
@@ -50,7 +50,7 @@
                       {{!-- <!-- Second Form Row --> --}}
                       <div class="form-row">
                           <!-- Email Input -->
-                          <div class="form-group col-md-6">
+                          <div class="form-group col-md-12">
                               <label for="employeeEmail">Email</label>
                               <input type="email" class="form-control" id="employeeEmail" placeholder="Enter Email" required>
                           </div>
@@ -82,13 +82,13 @@
 
                       <div class="form-row">
                           {{!-- <!-- City Input --> --}}
-                          <div class="form-group col-md-6">
+                          <div class="form-group col-md-12">
                           <label for="employeeCity">City</label>
                           <input type="text" class="form-control" id="employeeCity" placeholder="Enter City" required>
                           </div>
                           
                           {{!-- <!-- State Input --> --}}
-                          <div class="form-group col-md-4">
+                          <div class="form-group col-md-6">
                           <label for="employeeProvince">Province</label>
                           <select id="employeeProvince" class="form-control" required>
                               {{!-- <!-- <option selected>Choose...</option> --> --}}
@@ -106,7 +106,7 @@
                           </div>
 
                           {{!-- <!-- Zip Input --> --}}
-                          <div class="form-group col-md-2">
+                          <div class="form-group col-md-6">
                           <label for="employeeZIP">ZIP Code</label>
                           <input type="text" class="form-control" id="employeeZIP" placeholder="Enter ZIP Code" required>
                           </div>
@@ -124,22 +124,25 @@
                           <div class="form-block">
                               <label class="my-1 mr-2" for="employeeRole">Role</label>
                               <select class="custom-select my-1 mr-sm-2" id="employeeRole" required>
+                                  {{#each [1] as |roles|}}
+                                  <option value="{{roles.id}}">{{roles.role_name}}</option>
+                                  {{/each}}
                                   {{!-- <!-- <option selected>Choose...</option> --> --}}
-                                  <option value="Product Manager">Product Manager</option>
+                                  {{!-- <option value="Product Manager">Product Manager</option>
                                   <option value="Product Designer">Product Designer</option>
                                   <option value="Software Engineer" selected>Software Engineer</option>
-                                  <option value="Data Scientist">Data Scientist</option>
+                                  <option value="Data Scientist">Data Scientist</option> --}}
                               </select>
                           </div>
 
                           <div class="form-group">
                               <label for="hireDate">Hire Date</label>
-                              <input type="text" class="form-control" id="hire-date" placeholder="eg: 2021-07-27" required>
+                              <input type="text" class="form-control" id="hireDate" placeholder="eg: 2021-07-27" required>
                           </div>
 
                           <div class="form-group">
-                              <label for="photo">Phpto URL</label>
-                              <input type="text" class="form-control" id="hire-date" placeholder="eg: https://picsum.photos/200">
+                              <label for="photo">Photo URL</label>
+                              <input type="text" class="form-control" id="photoUrl" placeholder="eg: https://picsum.photos/200">
                           </div>
 
 

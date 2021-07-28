@@ -43,10 +43,8 @@ router.get('/', (req, res) => {
       return data
     })
     .then(data => {
-      console.log(data);
-      // const employees = dbEmployeeData.map(emp => emp.get({plain:true}));
       // if we need more info other than just employees we could do it here
-      res.render('dashboard', data);
+      res.render('dashboard', {data, loggedIn: req.session.loggedIn});
     });
   })
 });
@@ -76,5 +74,10 @@ router.get('/edit/:id', (req, res) => {
     res.render('dashboard', employee);
   })
 });  
+
+// route for the dashboard page
+router.get('/', (req, res) => {
+  res.render('dashboard');
+});
 
 module.exports = router;
