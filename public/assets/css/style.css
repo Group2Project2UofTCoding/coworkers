@@ -2,6 +2,26 @@ body {
     background-color: lightcyan;
 }
 
+#tabs {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+}
+
+#employeeContainer {
+    background-color: lightgreen;
+}
+
+.card {
+    margin: 1%;
+}
+
+.editEmployeeButton, .removeEmployeeButton {
+    margin: 5px;
+}
+
 #logo{
     display: block;
     margin-left: auto;
@@ -16,4 +36,4 @@ body {
     margin-right: auto;
     margin-bottom: 10%;
     width: 50%;
-  }
+}

@@ -1,14 +1,16 @@
+// Note for Back-End Developers: The only object that is being sent to or recieved from API endpoints is the employeesObject
+// Manipulation of this object is handled soley within this file
+// API endpoints are all that need to be changed
+
 // __________
 // DOM Element Variables
 // __________
 
-// Employees' tiles section
-const employeeTiles = document.getElementById("employeeTiles");
+// Employees' container section
+const employeeContainerRow = document.getElementById("employeeContainerRow");
 
 // Buttons
 const addEmployeeButton = document.getElementById("addEmployeeButton");
-const editEmployeeButton = document.getElementsByClassName("editEmployeeButton");
-const removeEmployeeButton = document.getElementsByClassName("removeEmployeeButton");
 
 // Forms
 const addEditEmployeeForm = document.getElementById("addEditEmployeeModal");
@@ -24,25 +26,30 @@ const employeePhoneNumber = document.getElementById("employeePhoneNumber");
 const employeeAddress1 = document.getElementById("employeeAddress1");
 const employeeAddress2 = document.getElementById("employeeAddress2");
 const employeeCity = document.getElementById("employeeCity");
+const employeeProvince = document.getElementById("employeeProvince");
+const employeeZIP = document.getElementById("employeeZIP");
+const employeeSIN = document.getElementById("employeeSIN");
 const employeeRole = document.getElementById("employeeRole");
 const employeeLevel = document.getElementById("employeeLevel");
 const employeeDepartment = document.getElementById("employeeDepartment");
 const employeeSalary = document.getElementById("employeeSalary");
-const employeeSIN = document.getElementById("employeeSIN");
 const employeeEmergencyContactName = document.getElementById("employeeEmergencyContactName");
 const employeeEmergencyContactPhoneNumber = document.getElementById("employeeEmergencyContactPhoneNumber");
 const employeeCertification = document.getElementById("employeeCertification");
 const employeeSubmit = document.getElementById("addEditEmployeeSubmit");
 
-// Delete employee's modal inputs
-const selectedEmployee = document.getElementById("selectedEmployee");
-const deleteEmployeeSubmit = document.getElementById("removeEmployeeSubmit");
+// Logout dropdown option
+const logout = document.getElementById("logout");
 
 // __________
 // Non-DOM Element Variables
 // __________
 
-var employeesObject = {};
+// Test employee object
+const employeeObject1 = { "firstName": 'John', "lastName": "Doe", "username": "JohnDoe", "email": "john.doe@gmail.com", "password": "password", "phoneNumber": "45634534534", "addressLine1": "1234 Main Street", "addressLine2": "Apartment Suite # 10", "city": "Toronto", "province": "Ontario", "zip": "K5F-2F5", "sin": "123456789", "role": "Software Engineer", "level": "Junior", "department": "Production", "salary": "$250,000.00", "contactName": "Sally", "contactNumber": "Smith", "certification": "certification" };
+
+// Employees object
+var employeesObject = {"0": employeeObject1};
 var employeesArray = [];
 
 // __________
@@ -51,6 +58,8 @@ var employeesArray = [];
 
 // Retrieve all employees' information
 function fetchEmployeesInformation() {
+
+  // Making a GET request for employeesObject from the database
   fetch("api/employees")
     .then(response => {
       if (!response.ok) {
@@ -59,54 +68,54 @@ function fetchEmployeesInformation() {
       return response.json();
     })
     .then(employees => {
-      console.log(employees);
-
       employeesObject = employees;
+
+      // Update the dashboard
       generateEmployeeTiles(employees);
     });
 }
 
 // Populate the dashboard with current employees' information
 function generateEmployeeTiles(employees) {
-  // Note that the employeesObject contains an employee's ID as the key and the information object as the value
+  // Note that the employees object contains an employee's ID as the key and the information object as the value
 
-  console.log(employees);
+  // Reset employeesArray
+  employeesArray = [];
 
   // Creating HTML code for each employee in the employeesObject
   for (const [key, value] of Object.entries(employees)) {
-    console.log(`${key}: ${value}`);
-
     // Add HTML for an employee's tile to the employeesArray
     employeesArray.push(
-      `<div class="card">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">${value.firstName} ${value.lastName}</h5>
-          <p class="card-text">${value.level} ${value.role}, ${value.department} Department</p>
+      `
+      <div class="col-lg-3 col-md-12">
+        <div class="card">
+          <img class="card-img-top" src="https://via.placeholder.com/150" alt="${value.firstName} ${value.lastName}'s Photo">
+
+          <div class="card-body">
+            <h5 class="card-title">${value.firstName} ${value.lastName}</h5>
+            <p class="card-text">${value.level} ${value.role}, ${value.department} Department</p>
+          </div>
+          
+          <button type="click" class="btn btn-primary editEmployeeButton" data-toggle="modal" data-target="#addEditEmployeeModal" value="${key}">View/Edit Employee</button>
+
+          <button type="click" class="btn btn-primary removeEmployeeButton" value="${key}">Remove Employee</button>
+
+          <div class="card-footer">
+            <small class="text-muted">Last updated on page load</small>
+          </div>
         </div>
-        <button type="button" class="btn btn-primary editEmployeeButton" data-toggle="modal" data-target="#employeeModal" value="${key}">
-          View/Edit Employee
-        </button>
-        <button type="button" class="btn btn-primary removeEmployeeButton" data-toggle="modal" data-target="#removeEmployeeModal" value="${key}">
-          Remove Employee
-        </button>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>`);
+      </div>
+      `);
 
     // Adding the HTML for the each employee's tile to the employee tile section in the dashboard
-    employeeTiles.innerHTML = employeesArray.join('');
+    employeeContainerRow.innerHTML = employeesArray.join('');
   }
 }
 
 // Handle viewing an employee's information
-function handleEmployeeModalView(event) {
-  // Prevent default event behaviours
-  event.preventDefault();
-
+function handleEmployeeModalView(targetEvent) {
   // Retrieve and store the employee's ID which is stored in the value property of the button in the card
-  const employeeID = event.target.value;
+  const employeeID = targetEvent.value;
 
   // Find the employee's information object in the employeesObject
   const employeeObject = employeesObject[employeeID];
@@ -121,21 +130,20 @@ function handleEmployeeModalView(event) {
   employeeAddress1.value = employeeObject.addressLine1;
   employeeAddress2.value = employeeObject.addressLine2;
   employeeCity.value = employeeObject.city;
+  employeeProvince.value = employeeObject.province;
+  employeeZIP.value = employeeObject.zip;
+  employeeSIN.value = employeeObject.sin;
   employeeRole.value = employeeObject.role;
   employeeLevel.value = employeeObject.level;
   employeeDepartment.value = employeeObject.department;
   employeeSalary.value = employeeObject.salary;
-  employeeSIN.value = employeeObject.sin;
   employeeEmergencyContactName.value = employeeObject.contactName;
   employeeEmergencyContactPhoneNumber.value = employeeObject.contactNumber;
   employeeCertification.value = employeeObject.certification;
 }
 
 // Handle modal form data on submit
-function handleEmployeeModalSubmit(event) {
-  // Prevent default event behaviours
-  event.preventDefault();
-
+function handleEmployeeModalSubmit(targetEvent) {
   // Store information from the modal upon submit
   const firstName = employeeFirstName.value;
   const lastName = employeeLastName.value;
@@ -146,26 +154,40 @@ function handleEmployeeModalSubmit(event) {
   const addressLine1 = employeeAddress1.value;
   const addressLine2 = employeeAddress2.value;
   const city = employeeCity.value;
+  const province = employeeProvince.value;
+  const zip = employeeZIP.value;
+  const sin = employeeSIN.value;
   const role = employeeRole.value;
   const level = employeeLevel.value;
   const department = employeeDepartment.value;
   const salary = employeeSalary.value;
-  const sin = employeeSIN.value;
   const contactName = employeeEmergencyContactName.value;
   const contactNumber = employeeEmergencyContactPhoneNumber.value;
   const certification = employeeCertification.value;
 
   // Create an employee's information object
-  const employeeObject = { firstName, lastName, username, email, password, phoneNumber, addressLine1, addressLine2, city, role, level, department, salary, sin, contactName, contactNumber, certification };
+  const employeeObject = { "firstName": firstName, "lastName": lastName, "username": username, "email": email, "password": password, "phoneNumber": phoneNumber, "addressLine1": addressLine1, "addressLine2": addressLine2, "city": city, "province": province, "zip": zip, "sin": sin, "role": role, "level": level, "department": department, "salary": salary, "contactName": contactName, "contactNumber": contactNumber, "certification": certification };
   
-  // Create or find a unique ID for an employee in the employeesObject
-  const employeeID = String(Object.keys(employeesObject).length);
-  console.log(employeeID);
+  // Check to see if the employee already exists inside the employeesObject; if so, then update that employee's information
+  for (const [key, value] of Object.entries(employeesObject)) {
+    if (value.sin == sin){
+      employeesObject[key] = employeeObject;
 
+      // Update the dashboard
+      generateEmployeeTiles(employeesObject);
+      return;
+    }
+  }
+
+  // Otherwise, create a unique ID for an employee in the employeesObject
+  const employeeID = String(Object.keys(employeesObject).length);
+
+  // Add the new employee to the employeesObject
   employeesObject[employeeID] = employeeObject;
 
-  console.log(employeeObject, employeesObject);
-  
+  // Update the dashboard
+  generateEmployeeTiles(employeesObject);
+
   // POST updated employeesObject to the database
   fetch('api/employees', {
       method: 'POST',
@@ -188,52 +210,96 @@ function handleEmployeeModalSubmit(event) {
 }
 
 // Handle removing an employee's information
-function handleEmployeeRemoveSubmit(event) {
-  // Prevent default event behaviours
-  event.preventDefault();
-
+function handleEmployeeRemoveSubmit(targetEvent) {
   // Retrieve and store the employee's ID which is stored in the value property of the button in the card
-  const employeeID = event.target.value;
+  const employeeID = targetEvent.value;
 
-  // Find the employee's information object in the employeesObject and delete it
-  delete employeesObject[employeeID];
+  if (window.confirm("Are you sure that you want to remove this employee?")) {
+    // Find the employee's information object in the employeesObject and delete it
+    delete employeesObject[employeeID];
+    generateEmployeeTiles(employeesObject);
 
-  // POST updated employeesObject to the database
-  fetch('api/employees', {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(employeesObject)
-  })
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      }
-      alert('Error: ' + response.statusText);
+    // POST updated employeesObject to the database
+    fetch('api/employees', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(employeesObject)
     })
-    .then(postResponse => {
-      console.log(postResponse);
-      alert('Thank you for removing employee(s)');
-    });
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        alert('Error: ' + response.statusText);
+      })
+      .then(postResponse => {
+        console.log(postResponse);
+        alert('Thank you for removing employee(s)');
+      });
+  }  
 }
 
 // __________
 // Event Handlers
 // __________
 
+addEmployeeButton.addEventListener("click", function(){
+  employeeFirstName.value = "";
+  employeeLastName.value = "";
+  employeeUsername.value = "";
+  employeeEmail.value = "";
+  employeePassword.value = "";
+  employeePhoneNumber.value = "";
+  employeeAddress1.value = "";
+  employeeAddress2.value = "";
+  employeeCity.value = "";
+  employeeProvince.value = "";
+  employeeZIP.value = "";
+  employeeSIN.value = "";
+  employeeRole.value = "";
+  employeeLevel.value = "";
+  employeeDepartment.value = "";
+  employeeSalary.value = "";
+  employeeEmergencyContactName.value = "";
+  employeeEmergencyContactPhoneNumber.value = "";
+  employeeCertification.value = "";
+});
+
 // Event listener for adding a new employee in the Employee Information modal form
-addEditEmployeeForm.addEventListener("submit", handleEmployeeModalSubmit);
+addEditEmployeeForm.addEventListener("submit", function(event) {
+  // Prevent default event behaviours
+  event.preventDefault();
 
-// Event listener for viewing an employee's information in a modal
-editEmployeeButton.addEventListener("click", handleEmployeeModalView);
+  const targetEvent = event;
+  
+  // Submit the modal's information
+  handleEmployeeModalSubmit(targetEvent);
+});
 
-// Event listener for removing an employee button in an employee's tile
-removeEmployeeButton.addEventListener("click", handleEmployeeRemoveSubmit);
+// Event listener for viewing or removing an employee's information in a modal
+employeeContainer.addEventListener("click", function(event) {
+  // Prevent default event behaviours
+  event.preventDefault();
+
+  const targetEvent = event.target;
+  
+  // Determine if the user wants to edit/view or remove and employee's information
+  if (targetEvent.className == "btn btn-primary editEmployeeButton") {
+    handleEmployeeModalView(targetEvent);
+  }
+  if (targetEvent.className == "btn btn-primary removeEmployeeButton") {
+    handleEmployeeRemoveSubmit(targetEvent);
+  }
+});
+
+// Does not do anything at the moment
+logout.addEventListener("click", function(){});
 
 // __________
 // Script
 // __________
 
+// GET employeesObject from the database upon page load
 fetchEmployeesInformation();
