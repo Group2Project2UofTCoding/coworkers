@@ -1,7 +1,27 @@
+/* Body styling for all pages*/
 body {
     background-color: lightcyan;
 }
 
+/* Login page logo styling */
+#logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 25%;
+}
+
+/* Login page form styling */
+#signInForm {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    width: 50%;
+}
+
+/* Tabs styling on dashboard page */
 #tabs {
     margin-left: 5%;
     margin-right: 5%;
@@ -11,32 +31,19 @@ body {
     background-color: lightgoldenrodyellow;
 }
 
+/* Direct Reports container styling on dashboard page */
 #employeeContainer {
     margin-bottom: 2%;
     padding: 1%;
     background-color: lightgoldenrodyellow;
 }
 
+/* Direct Report card styling on dashboard page */
 .card {
     margin: 1%;
 }
 
+/* View/Edit Employee and Remove Employee button styling */
 .editEmployeeButton, .removeEmployeeButton {
     margin: 5px;
-}
-
-#logo{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10%;
-    width: 25%;
-}
-
-#signInForm {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10%;
-    width: 50%;
 }
