@@ -4,8 +4,24 @@ const Role = require('./Role');
 const Manager = require('./Manager');
 
 // Create associations
-Employee.belongsTo(Manager, {
-    foreignKey: 'manager_id'
+Employee.hasMany(Employee, {
+  foreignKey: 'manager_id',
+  as: 'employees',
+});
+
+Employee.belongsTo(Employee, {
+  foreignKey: 'manager_id',
+  as: 'manager',
+  constraints: false
+});
+
+// Manager.hasMany(Employee, {
+//   foreignKey: 'employee_id',
+//   constraints: false
+// });
+
+Department.hasMany(Role, {
+  foreignKey: 'department_id'
 });
 
 Manager.hasMany(Employee, {
@@ -22,12 +38,5 @@ Role.hasMany(Employee, {
     constraints: false
 });
 
-Employee.belongsTo(Department, {
-    foreignKey: 'department_id'
-});
-
-Department.hasMany(Employee, {
-    foreignKey: 'department_id'
-});
 
 module.exports = { Employee, Department, Role, Manager };

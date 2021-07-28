@@ -18,6 +18,18 @@ Manager.init(
             primaryKey: true,
             autoIncrement: true
         },
+        employee_id: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: 'employee',
+                key: 'id'
+            }
+        },
+        manager_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,

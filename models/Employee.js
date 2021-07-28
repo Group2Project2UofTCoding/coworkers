@@ -28,6 +28,7 @@ Employee.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+<<<<<<< HEAD
         phone_number: {
             type: DataTypes.INTEGER,
             allowNull: false
@@ -64,6 +65,24 @@ Employee.init(
         //         key: 'level'
         //     }
         // },
+=======
+        email: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                isEmail: true
+            }
+        },
+        phone_number: {
+            type: DataTypes.STRING(12)
+        },
+        address: {
+            type: DataTypes.STRING
+        },
+        sin: {
+            type: DataTypes.STRING(12)
+        },
+>>>>>>> feature/sebastian/0007/routes
         role_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -76,7 +95,7 @@ Employee.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'manager',
+                model: Employee,
                 key: 'id'
             }
         },
