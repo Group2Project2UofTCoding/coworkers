@@ -8,8 +8,10 @@ router.get('/', (req, res) => {
       {
         model: Role,
         attributes: ['role_name', 'salary'],
-        include: [
-        ]
+      },
+      {
+        model: Department,
+        attributes: ['department_name']
       },
       {
         model: Manager,
