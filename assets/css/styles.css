@@ -41,6 +41,11 @@ body {
     margin: 2% 0 2% 5%;
 }
 
+.dashboard-body:hover, .employee-card:hover {
+    background-color: #48A986;
+    z-index: 999;
+}
+
 .boxes {
     padding-right: 7%;
 }
