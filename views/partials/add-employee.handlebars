@@ -1,0 +1,192 @@
+{{!--     
+  <!-------------------->
+  <!-- Modals Section -->
+  <!-------------------->
+   --}}
+  {{!-- <!-- Add/Edit Employee Modal --> --}}
+  <div class="modal fade" id="addEditEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="employeeModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              {{!-- <!-- Modal Header --> --}}
+              <div class="modal-header">
+              <h5 class="modal-title" id="employeeModalLabel">Employee Information</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+
+              {{!-- <!-- Modal Body --> --}}
+              <div class="modal-body">
+                  <form class="needs-validation" novalidate>
+                      {{!-- <!-- First Form Row --> --}}
+                      <div class="form-row">
+                          {{!-- <!-- First Name Input --> --}}
+                          <div class="col-md-6 mb-3">
+                              <label for="employeeFirstName">First Name</label>
+                              <input type="text" class="form-control" id="employeeFirstName" placeholder="Enter First Name" required>
+                          </div>
+
+                          {{!-- <!-- Last Name Input --> --}}
+                          <div class="col-md-6 mb-3">
+                              <label for="employeeLastName">Last Name</label>
+                              <input type="text" class="form-control" id="employeeLastName" placeholder="Enter Last Name" required>
+                          </div>
+
+                          {{!-- <!-- Username Input --> --}}
+                          {{!-- <div class="col-md-4 mb-3">
+                          <label for="employeeUsername">Username</label>
+                          <div class="input-group">
+                              <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroupPrepend">@</span>
+                              </div>
+                              <input type="text" class="form-control" id="employeeUsername" placeholder="Enter Username" aria-describedby="inputGroupPrepend" required>
+                              <div class="invalid-feedback">
+                              Please choose a username.
+                              </div>
+                          </div>
+                          </div> --}}
+                      </div>
+
+                      {{!-- <!-- Second Form Row --> --}}
+                      <div class="form-row">
+                          <!-- Email Input -->
+                          <div class="form-group col-md-12">
+                              <label for="employeeEmail">Email</label>
+                              <input type="email" class="form-control" id="employeeEmail" placeholder="Enter Email" required>
+                          </div>
+
+                          {{!-- <!-- Password Input --> --}}
+                          {{!-- <div class="form-group col-md-6">
+                              <label for="employeePassword">Password</label>
+                              <input type="password" class="form-control" id="employeePassword" placeholder="Enter Password" required>
+                          </div> --}}
+                      </div>
+
+                      {{!-- <!-- Phone Number Input --> --}}
+                      <div class="form-group">
+                          <label for="employeePhoneNumber">Phone Number</label>
+                          <input type="tel" class="form-control" id="employeePhoneNumber" placeholder="Enter Phone Number" required>
+                      </div>
+
+                      {{!-- <!-- First Address Line Input --> --}}
+                      <div class="form-group">
+                          <label for="employeeAddress1">Address Line 1</label>
+                          <input type="text" class="form-control" id="employeeAddress1" placeholder="Enter Street Number and Name" required>
+                      </div>
+
+                      {{!-- <!-- Second Address Line Input --> --}}
+                      <div class="form-group">
+                          <label for="employeeAddress2">Address Line 2</label>
+                          <input type="text" class="form-control" id="employeeAddress2" placeholder="Enter Apartment, Studio, or Floor Number">
+                      </div>
+
+                      <div class="form-row">
+                          {{!-- <!-- City Input --> --}}
+                          <div class="form-group col-md-12">
+                          <label for="employeeCity">City</label>
+                          <input type="text" class="form-control" id="employeeCity" placeholder="Enter City" required>
+                          </div>
+                          
+                          {{!-- <!-- State Input --> --}}
+                          <div class="form-group col-md-6">
+                          <label for="employeeProvince">Province</label>
+                          <select id="employeeProvince" class="form-control" required>
+                              {{!-- <!-- <option selected>Choose...</option> --> --}}
+                              <option value="Ontario" selected>Ontario</option>
+                              <option value="Quebec">Quebec</option>
+                              <option value="Nova Scotia">Nova Scotia</option>
+                              <option value="New Brunswick">New Brunswick</option>
+                              <option value="Manitoba">Manitoba</option>
+                              <option value="British Columbia">British Columbia</option>
+                              <option value="Prince Edward Island">Prince Edward Island</option>
+                              <option value="Saskatchewan">Saskatchewan</option>
+                              <option value="Alberta">Alberta</option>
+                              <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                          </select>
+                          </div>
+
+                          {{!-- <!-- Zip Input --> --}}
+                          <div class="form-group col-md-6">
+                          <label for="employeeZIP">ZIP Code</label>
+                          <input type="text" class="form-control" id="employeeZIP" placeholder="Enter ZIP Code" required>
+                          </div>
+                      </div>
+
+                      {{!-- <!-- The Rest of the Inputs --> --}}
+                      <div class="form-group">
+                          <!-- SIN Input -->
+                          <div class="form-group">
+                              <label for="employeeSIN">Social Insurance Number</label>
+                              <input type="tel" class="form-control" id="employeeSIN" placeholder="Enter SIN" required>
+                          </div>
+
+                          {{!-- <!-- Role Input --> --}}
+                          <div class="form-block">
+                              <label class="my-1 mr-2" for="employeeRole">Role</label>
+                              <select class="custom-select my-1 mr-sm-2" id="employeeRole" required>
+                                  {{#each [1] as |roles|}}
+                                  <option value="{{roles.id}}">{{roles.role_name}}</option>
+                                  {{/each}}
+                                  {{!-- <!-- <option selected>Choose...</option> --> --}}
+                                  {{!-- <option value="Product Manager">Product Manager</option>
+                                  <option value="Product Designer">Product Designer</option>
+                                  <option value="Software Engineer" selected>Software Engineer</option>
+                                  <option value="Data Scientist">Data Scientist</option> --}}
+                              </select>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="hireDate">Hire Date</label>
+                              <input type="text" class="form-control" id="hireDate" placeholder="eg: 2021-07-27" required>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="photo">Photo URL</label>
+                              <input type="text" class="form-control" id="photoUrl" placeholder="eg: https://picsum.photos/200">
+                          </div>
+
+
+                          {{!-- <!-- Certification Input --> --}}
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="employeeCertification" required>
+                              <label class="form-check-label" for="employeeCertification">
+                              I certify that the above information is accurate
+                              </label>
+                              <div class="invalid-feedback">
+                              You must agree before submitting.
+                              </div>
+                          </div>
+                      </div>
+                      <button id="addEditEmployeeSubmit" class="btn btn-primary" type="submit">Submit</button>
+                  </form>
+                  
+                  <script>
+                  {{!-- // Example starter JavaScript for disabling form submissions if there are invalid fields --}}
+                  (function() {
+                      'use strict';
+                      window.addEventListener('load', function() {
+                      {{!-- // Fetch all the forms we want to apply custom Bootstrap validation styles to --}}
+                      var forms = document.getElementsByClassName('needs-validation');
+                      // Loop over them and prevent submission
+                      var validation = Array.prototype.filter.call(forms, function(form) {
+                          form.addEventListener('submit', function(event) {
+                          if (form.checkValidity() === false) {
+                              event.preventDefault();
+                              event.stopPropagation();
+                          }
+                          form.classList.add('was-validated');
+                          }, false);
+                      });
+                      }, false);
+                  })();
+                  </script>
+              </div>
+
+              <!-- Modal Footer -->
+              <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
+          </div>
+      </div>
+  </div> 

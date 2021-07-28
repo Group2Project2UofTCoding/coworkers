@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Employee extends Model { }
+class Employee extends Model {}
 
 Employee.init(
     {
@@ -11,25 +11,6 @@ Employee.init(
             primaryKey: true,
             autoIncrement: true
         },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                len: [5]
-            }
-        },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true
-            }
-        },
         first_name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -38,57 +19,21 @@ Employee.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        phone_number: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        address_1: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        address_2: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        city: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        province: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        postal_code: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        sin: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        role: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'role',
-                key: 'role_name'
-            }
-        },
-        level: {
+        email: {
             type: DataTypes.STRING,
             allowNull: true,
-            references: {
-                model: 'role',
-                key: 'level'
+            validate: {
+                isEmail: true
             }
         },
-        department_id: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'department',
-                key: 'id'
-            }
+        phone_number: {
+            type: DataTypes.STRING(12)
+        },
+        address: {
+            type: DataTypes.STRING
+        },
+        sin: {
+            type: DataTypes.STRING(12)
         },
         role_id: {
             type: DataTypes.INTEGER,
@@ -102,15 +47,15 @@ Employee.init(
             type: DataTypes.INTEGER,
             allowNull: true,
             references: {
-                model: 'manager',
+                model: Employee,
                 key: 'id'
             }
         },
         date_of_hire: {
             type: DataTypes.DATEONLY,
-            allowNull: false
+            allowNull: true
         },
-        photo_url: {
+        photo: {
             type: DataTypes.STRING,
             allowNull: true
         }
