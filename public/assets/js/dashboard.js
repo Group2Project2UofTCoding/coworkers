@@ -41,11 +41,15 @@ const employeeSubmit = document.getElementById("addEditEmployeeSubmit");
 // Logout dropdown option
 const logout = document.getElementById("logout");
 
+// Search bar
+const search = document.getElementById("search");
+const searchButton = document.getElementById("searchButton");
+
 // __________
 // Non-DOM Element Variables
 // __________
 
-// Test employee objects
+// Example employee objects
 const employeeObject1 = { "firstName": "John", "lastName": "Doe", "username": "JohnDoe", "email": "john.doe@gmail.com", "password": "password", "phoneNumber": "45634534534", "addressLine1": "1234 Main Street", "addressLine2": "Apartment Suite # 10", "city": "Toronto", "province": "Ontario", "zip": "K5F-2F5", "sin": "123456789", "role": "Product Manager", "level": "Junior", "department": "Production", "salary": "$250,000.00", "contactName": "Sally Smith", "contactNumber": "45634534534", "certification": "certification" };
 const employeeObject2 = { "firstName": "Sally", "lastName": "Smith", "username": "SallySmith", "email": "sally.smith@gmail.com", "password": "password", "phoneNumber": "45634534534", "addressLine1": "1234 Main Street", "addressLine2": "Apartment Suite # 10", "city": "Toronto", "province": "Ontario", "zip": "K5F-2F5", "sin": "12345678", "role": "Product Designer", "level": "Junior", "department": "Production", "salary": "$250,000.00", "contactName": "John Doe", "contactNumber": "45634534534", "certification": "certification" };
 const employeeObject3 = { "firstName": "Tom", "lastName": "Riddle", "username": "TomRiddle", "email": "tom.riddle@gmail.com", "password": "password", "phoneNumber": "45634534534", "addressLine1": "1234 Main Street", "addressLine2": "Apartment Suite # 10", "city": "Toronto", "province": "Ontario", "zip": "K5F-2F5", "sin": "1234567", "role": "Product Designer", "level": "Junior", "department": "Production", "salary": "$250,000.00", "contactName": "Sally Smith", "contactNumber": "45634534534", "certification": "certification" };
@@ -65,7 +69,6 @@ var employeesArray = [];
 
 // Retrieve all employees' information
 function fetchEmployeesInformation() {
-
   // Making a GET request for employeesObject from the database
   fetch("api/employees")
     .then(response => {
@@ -248,6 +251,24 @@ function handleEmployeeRemoveSubmit(targetEvent) {
   }  
 }
 
+//Search for and display employee(s)
+function searchForEmployee(searchedEmployee, searchedEmployeesObject) {
+  // Loop through employeesObject to find employee(s)
+  for (const [key, value] of Object.entries(employeesObject)) {
+    if (searchedEmployee == value.firstName){
+      searchedEmployeesObject[key] = employeesObject[key]
+    }
+    if (searchedEmployeesObject) {
+      // If employee(s) is/are found, print them to the page
+      generateEmployeeTiles(searchedEmployeesObject);
+    }
+    else {
+      // Else, employee was not found
+      window.alert(`We cannot find ${search.value}!`)
+    }        
+  }
+}
+
 // __________
 // Event Handlers
 // __________
@@ -292,13 +313,29 @@ employeeContainer.addEventListener("click", function(event) {
 
   const targetEvent = event.target;
   
-  // Determine if the user wants to edit/view or remove and employee's information
+  // Event listener for determining if the user wants to edit/view or remove and employee's information
   if (targetEvent.className == "btn btn-primary editEmployeeButton") {
     handleEmployeeModalView(targetEvent);
   }
   if (targetEvent.className == "btn btn-primary removeEmployeeButton") {
     handleEmployeeRemoveSubmit(targetEvent);
   }
+});
+
+// Event listener for search
+searchButton.addEventListener("click", function(){
+  // Intializing search-related constants
+  const searchedEmployeesObject = {};
+  const searchedEmployee = search.value;
+
+  // If the search field is blank, reset the Direct Reports displayed
+  if (searchedEmployee =="") {
+    generateEmployeeTiles(employeesObject);
+    return;
+  }
+
+  // Otherwise, search for an employee
+  searchedEmployeesObject = searchForEmployee(searchedEmployee, searchedEmployeesObject);
 });
 
 // Does not do anything at the moment
