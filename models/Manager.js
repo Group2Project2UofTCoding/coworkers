@@ -41,9 +41,9 @@ Manager.init(
                 len: [5]
             }
         },
-        manager_name: {
-            type: DataTypes.STRING,
-        }
+        // manager_name: {
+        //     type: DataTypes.STRING,
+        // }
     },
     {
         hooks: {
