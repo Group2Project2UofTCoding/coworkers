@@ -41,11 +41,15 @@ const employeeSubmit = document.getElementById("addEditEmployeeSubmit");
 // Logout dropdown option
 const logout = document.getElementById("logout");
 
+// Search bar
+const search = document.getElementById("search");
+const searchButton = document.getElementById("searchButton");
+
 // __________
 // Non-DOM Element Variables
 // __________
 
-// Test employee objects
+// Initializing example employee objects
 const employeeObject1 = { "firstName": "John", "lastName": "Doe", "username": "JohnDoe", "email": "john.doe@gmail.com", "password": "password", "phoneNumber": "45634534534", "addressLine1": "1234 Main Street", "addressLine2": "Apartment Suite # 10", "city": "Toronto", "province": "Ontario", "zip": "K5F-2F5", "sin": "123456789", "role": "Product Manager", "level": "Junior", "department": "Production", "salary": "$250,000.00", "contactName": "Sally Smith", "contactNumber": "45634534534", "certification": "certification" };
 const employeeObject2 = { "firstName": "Sally", "lastName": "Smith", "username": "SallySmith", "email": "sally.smith@gmail.com", "password": "password", "phoneNumber": "45634534534", "addressLine1": "1234 Main Street", "addressLine2": "Apartment Suite # 10", "city": "Toronto", "province": "Ontario", "zip": "K5F-2F5", "sin": "12345678", "role": "Product Designer", "level": "Junior", "department": "Production", "salary": "$250,000.00", "contactName": "John Doe", "contactNumber": "45634534534", "certification": "certification" };
 const employeeObject3 = { "firstName": "Tom", "lastName": "Riddle", "username": "TomRiddle", "email": "tom.riddle@gmail.com", "password": "password", "phoneNumber": "45634534534", "addressLine1": "1234 Main Street", "addressLine2": "Apartment Suite # 10", "city": "Toronto", "province": "Ontario", "zip": "K5F-2F5", "sin": "1234567", "role": "Product Designer", "level": "Junior", "department": "Production", "salary": "$250,000.00", "contactName": "Sally Smith", "contactNumber": "45634534534", "certification": "certification" };
@@ -55,7 +59,7 @@ const employeeObject6 = { "firstName": "Angela", "lastName": "Riddle", "username
 const employeeObject7 = { "firstName": "Tom", "lastName": "Bradley", "username": "TomBradley", "email": "tom.bradley@gmail.com", "password": "password", "phoneNumber": "45634534534", "addressLine1": "1234 Main Street", "addressLine2": "Apartment Suite # 10", "city": "Toronto", "province": "Ontario", "zip": "K5F-2F5", "sin": "123", "role": "Data Scientist", "level": "Junior", "department": "Production", "salary": "$250,000.00", "contactName": "Sally Smith", "contactNumber": "45634534534", "certification": "certification" };
 const employeeObject8 = { "firstName": "Justin", "lastName": "Bieber", "username": "JustinBieber", "email": "justin.bieber@gmail.com", "password": "password", "phoneNumber": "45634534534", "addressLine1": "1234 Main Street", "addressLine2": "Apartment Suite # 10", "city": "Toronto", "province": "Ontario", "zip": "K5F-2F5", "sin": "12", "role": "Data Scientist", "level": "Junior", "department": "Production", "salary": "$250,000.00", "contactName": "John Doe", "contactNumber": "45634534534", "certification": "certification" };
 
-// Employees object
+// Initializing employees object and array
 var employeesObject = {"0": employeeObject1, "1": employeeObject2, "2": employeeObject3, "3": employeeObject4, "4": employeeObject5, "5": employeeObject6, "6": employeeObject7, "7": employeeObject8, };
 var employeesArray = [];
 
@@ -65,7 +69,6 @@ var employeesArray = [];
 
 // Retrieve all employees' information
 function fetchEmployeesInformation() {
-
   // Making a GET request for employeesObject from the database
   fetch("api/employees")
     .then(response => {
@@ -221,7 +224,7 @@ function handleEmployeeRemoveSubmit(targetEvent) {
   // Retrieve and store the employee's ID which is stored in the value property of the button in the card
   const employeeID = targetEvent.value;
 
-  if (window.confirm("Are you sure that you want to remove this employee?")) {
+  if (window.confirm(`Are you sure that you want to remove ${(employeesObject[employeeID]).firstName} ${(employeesObject[employeeID]).lastName}?`)) {
     // Find the employee's information object in the employeesObject and delete it
     delete employeesObject[employeeID];
     generateEmployeeTiles(employeesObject);
@@ -246,6 +249,31 @@ function handleEmployeeRemoveSubmit(targetEvent) {
         alert('Thank you for removing employee(s)');
       });
   }  
+}
+
+//Search for and display employee(s)
+function searchForEmployee(searchedEmployee) {
+  // Intializing search-related constant
+  const searchedEmployeesObject = {};
+  
+  // Lowercase searched employee
+  const lowercaseSearch = searchedEmployee.toLowerCase();
+  
+  // Loop through employeesObject to find employee(s)
+  for (const [key, value] of Object.entries(employeesObject)) {
+    if (lowercaseSearch == (value.firstName).toLowerCase()){
+      searchedEmployeesObject[key] = employeesObject[key]
+    }        
+  }
+
+  // If employee(s) is/are found, print them to the page
+  if (searchedEmployeesObject) {
+    generateEmployeeTiles(searchedEmployeesObject);
+  }
+  // Else, employee was not found
+  else {      
+  window.alert(`We cannot find ${search.value}!`)
+  }
 }
 
 // __________
@@ -292,13 +320,28 @@ employeeContainer.addEventListener("click", function(event) {
 
   const targetEvent = event.target;
   
-  // Determine if the user wants to edit/view or remove and employee's information
+  // Event listener for determining if the user wants to edit/view or remove and employee's information
   if (targetEvent.className == "btn btn-primary editEmployeeButton") {
     handleEmployeeModalView(targetEvent);
   }
   if (targetEvent.className == "btn btn-primary removeEmployeeButton") {
     handleEmployeeRemoveSubmit(targetEvent);
   }
+});
+
+// Event listener for search
+searchButton.addEventListener("click", function(){
+  // Intializing search-related constant
+  const searchedEmployee = search.value;
+
+  // If the search field is blank, reset the Direct Reports displayed
+  if (searchedEmployee == "") {
+    generateEmployeeTiles(employeesObject);
+    return;
+  }
+
+  // Otherwise, search for an employee
+  searchedEmployeesObject = searchForEmployee(searchedEmployee);
 });
 
 // Does not do anything at the moment
