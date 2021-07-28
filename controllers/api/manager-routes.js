@@ -28,11 +28,11 @@ router.get('/:id', (req,res) => {
       id: req.params.id
     },  
     attributes: {exclude: ['password']},
-    include: [
-      {
-        model: Employee
-      }
-    ]
+    // include: [
+    //   {
+    //     model: Employee
+    //   }
+    // ]
   })
   .then(dbManagerData => res.json(dbManagerData))
   .catch(err => {
