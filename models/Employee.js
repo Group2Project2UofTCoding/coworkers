@@ -28,44 +28,6 @@ Employee.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-<<<<<<< HEAD
-        phone_number: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        address_1: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        address_2: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        city: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        province: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        postal_code: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        sin: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        // level: {
-        //     type: DataTypes.STRING,
-        //     allowNull: true,
-        //     references: {
-        //         model: 'role',
-        //         key: 'level'
-        //     }
-        // },
-=======
         email: {
             type: DataTypes.STRING,
             allowNull: true,
@@ -82,7 +44,6 @@ Employee.init(
         sin: {
             type: DataTypes.STRING(12)
         },
->>>>>>> feature/sebastian/0007/routes
         role_id: {
             type: DataTypes.INTEGER,
             allowNull: false,

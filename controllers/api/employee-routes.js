@@ -10,23 +10,12 @@ router.get('/', (req, res) => {
       {
         model: Role,
         attributes: ['role_name', 'salary'],
-<<<<<<< HEAD
-      },
-      {
-        model: Department,
-        attributes: ['department_name']
-      },
-      {
-        model: Manager,
-        attributes: ['email']
-=======
         include: [
           {
             model: Department,
             attributes: ['department_name']
           }
         ]
->>>>>>> feature/sebastian/0007/routes
       }
     ]
   })
@@ -99,13 +88,10 @@ router.put("/:id", (req, res) => {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       role_id: req.body.role_id,
-<<<<<<< HEAD
-=======
       email: req.body.email,
       phone_number: req.body.phone_number,
       address: req.body.address,
       sin: req.body.sin,
->>>>>>> feature/sebastian/0007/routes
       manager_id: req.body.manager_id,
       date_of_hire: req.body.date_of_hire,
       photo: req.body.photo
