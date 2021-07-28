@@ -7,11 +7,11 @@ router.get('/', (req,res) => {
     attributes: {
       exclude: ['password'],
     },
-    include: [
-      {
-        model: Employee
-      }
-    ]
+    // include: [
+    //   {
+    //     model: Employee
+    //   }
+    // ]
   })
   .then(dbManagerData => res.json(dbManagerData))
   .catch(err => {
@@ -139,7 +139,7 @@ router.post('/login', (req, res) => {
       req.session.email = dbManagerData.email;
       req.session.loggedIn = true;
       // send response
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
+      res.json({ user: dbManagerData, message: 'You are now logged in!' });
     });
   })
   .catch(err => {
