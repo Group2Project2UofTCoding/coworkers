@@ -46,7 +46,7 @@ router.get('/:id', (req,res) => {
 // Update a Manager
 router.put('/:id', (req, res) => {
   Manager.update({
-    manager_name: req.body.manager_name,
+    id: req.body.managerId,
     email: req.body.email,
     password: req.body.password,
   }, 
@@ -93,7 +93,7 @@ router.delete('/:id', (req, res) => {
 router.post('/', (req, res) => {
   Manager.create({
     // employee_id: req.body.employee_id,
-    manager_name: req.body.manager_name,
+    id: req.body.managerId,
     email: req.body.email,
     password: req.body.password
   })

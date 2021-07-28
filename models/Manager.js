@@ -16,7 +16,6 @@ Manager.init(
             type: DataTypes.INTEGER,
             primaryKey: true,
             allowNull: false,
-            autoIncrement: true
         },
         email: {
             type: DataTypes.STRING,
@@ -32,14 +31,7 @@ Manager.init(
             validate: {
                 len: [5]
             }
-<<<<<<< HEAD
         }
-=======
-        },
-        // manager_name: {
-        //     type: DataTypes.STRING,
-        // }
->>>>>>> 598e041927654c6eae018d4e50d37e078380428e
     },
     {
         hooks: {
