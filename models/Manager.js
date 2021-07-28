@@ -12,14 +12,11 @@ class Manager extends Model {
 // If a manager needs to be an employee that means we coud link the manager id with employee ID so we can use the employee information 
 Manager.init(
     {
-        employee_id: {
+        id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            references: {
-                model: 'employee',
-                key: 'id'
-            }
+            autoIncrement: true
         },
         email: {
             type: DataTypes.STRING,
