@@ -10,7 +10,7 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <!-- Buttons to Trigger Employee Information Modal -->
-            <button id="addEmployeeButton" type="click" class="btn btn-primary" data-toggle="modal" data-target="#addEditEmployeeModal">
+            <button id="addEmployeeButton" type="click" class="btn btn-primary" data-toggle="modal" data-target="#addEmployeeModal">
                 Add Employee
             </button>
             </li>
@@ -45,6 +45,7 @@
     {{> hero-cards data}}
 
     {{> add-employee data}}
+    {{> edit-employee data}}
 
     <div id="employeeContainer" class="container rounded border border-primary">
     <h2>Direct Reports</h2><br>
@@ -57,3 +58,5 @@
 
     <script src="/assets/js/add-employee.js"></script>
     <script src="/assets/js/logout.js"></script>
+    <script src="/assets/js/edit-employee.js"></script>
+    <script src="/assets/js/delete-employee.js"></script>

@@ -30,7 +30,7 @@
 </div> --}}
 
 <div class="col-lg-3 col-md-12">
-                <div class="card">
+                <div class="card" emp-id="{{id}}">
                     <!-- Employee's Photo -->
                     <img class="card-img-top" src="{{photo}}" alt="{{first_name}}'s photo">
                     
@@ -44,10 +44,10 @@
                     </div>
                     
                     <!-- View/Edit Employee Button -->
-                    <button type="click" class="btn btn-primary editEmployeeButton" data-toggle="modal" data-target="#addEditEmployeeModal" value="0">View/Edit Employee</button>
+                    <button type="click" class="btn btn-primary editEmployeeButton" data-toggle="modal" data-target="#editEmployeeModal" value="{{id}}">View/Edit Employee</button>
 
                     <!-- Remove Employee Button -->
-                    <button type="click" class="btn btn-primary removeEmployeeButton" value="0">Remove Employee</button>
+                    <button type="click" class="btn btn-primary removeEmployeeButton" value="{{id}}">Remove Employee</button>
 
                     <!-- Employee Card Footer -->
                     <div class="card-footer">

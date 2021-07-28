@@ -1,4 +1,4 @@
-const addEditEmployeeForm = document.getElementById("addEditEmployeeModal");
+const addEditEmployeeForm = document.getElementById("addEmployeeModal");
 
 // Handle modal form data on submit
 async function handleEmployeeModalSubmit(event) {
@@ -16,10 +16,16 @@ async function handleEmployeeModalSubmit(event) {
   const postalCode = document.getElementById("employeeZIP").value;
   const role_id = document.getElementById("employeeRole").value;
   const date_of_hire = document.getElementById("hireDate").value;
-  const photo = document.getElementById("photoUrl").value;
   const sin = document.getElementById("employeeSIN").value;
   const certification = employeeCertification.value;
 
+  let photo = document.getElementById("photoUrl").value;
+
+  if(!photo){
+    photo = '/assets/images/avatar.png'
+  }
+
+  console.log(photo);
 
   // Get the address values and combines into one string
   const address = [addressLine1, addressLine2, city, postalCode].join(", ");
@@ -44,7 +50,11 @@ async function handleEmployeeModalSubmit(event) {
     })
     .then(postResponse => {
       console.log(postResponse);
-      alert('Thank you for adding/updating employee(s)');
+      alert('The employee has been successfully added!');
+      document.location.reload();
+    })
+    .catch(err => {
+      console.log(err);
     });
 }
 

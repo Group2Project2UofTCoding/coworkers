@@ -65,12 +65,12 @@ router.post("/", (req, res) => {
   Employee.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
-    role_id: req.body.role_id,
     email: req.body.email,
     phone_number: req.body.phone_number,
     address: req.body.address,
     sin: req.body.sin,
-    manager_id: req.body.manager_id,
+    role_id: req.body.role_id,
+    manager_id: req.session.manager_id,
     date_of_hire: req.body.date_of_hire,
     photo: req.body.photo
   })
@@ -92,7 +92,7 @@ router.put("/:id", (req, res) => {
       phone_number: req.body.phone_number,
       address: req.body.address,
       sin: req.body.sin,
-      manager_id: req.body.manager_id,
+      manager_id: req.session.manager_id,
       date_of_hire: req.body.date_of_hire,
       photo: req.body.photo
     },

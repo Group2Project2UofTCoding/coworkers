@@ -4,12 +4,12 @@
   <!-------------------->
    --}}
   {{!-- <!-- Add/Edit Employee Modal --> --}}
-  <div class="modal fade" id="addEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="employeeModalLabel" aria-hidden="true">
+  <div class="modal fade" id="editEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="employeeModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               {{!-- <!-- Modal Header --> --}}
               <div class="modal-header">
-              <h5 class="modal-title" id="employeeModalLabel">Employee Information</h5>
+              <h5 class="modal-title" id="editEmployeeModalLabel">Employee Information</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
               </button>
@@ -17,19 +17,19 @@
 
               {{!-- <!-- Modal Body --> --}}
               <div class="modal-body">
-                  <form class="needs-validation" novalidate>
+                  <form id="emloyeeEditForm" class="needs-validation" novalidate>
                       {{!-- <!-- First Form Row --> --}}
                       <div class="form-row">
                           {{!-- <!-- First Name Input --> --}}
                           <div class="col-md-6 mb-3">
-                              <label for="employeeFirstName">First Name</label>
-                              <input type="text" class="form-control" id="employeeFirstName" placeholder="Enter First Name" required>
+                              <label for="editEmployeeFirstName">First Name</label>
+                              <input type="text" class="form-control" id="editEmployeeFirstName" placeholder="Enter First Name" required>
                           </div>
 
                           {{!-- <!-- Last Name Input --> --}}
                           <div class="col-md-6 mb-3">
-                              <label for="employeeLastName">Last Name</label>
-                              <input type="text" class="form-control" id="employeeLastName" placeholder="Enter Last Name" required>
+                              <label for="editEmployeeLastName">Last Name</label>
+                              <input type="text" class="form-control" id="editEmployeeLastName" placeholder="Enter Last Name" required>
                           </div>
 
                           {{!-- <!-- Username Input --> --}}
@@ -51,8 +51,8 @@
                       <div class="form-row">
                           <!-- Email Input -->
                           <div class="form-group col-md-12">
-                              <label for="employeeEmail">Email</label>
-                              <input type="email" class="form-control" id="employeeEmail" placeholder="Enter Email" required>
+                              <label for="editEmployeeEmail">Email</label>
+                              <input type="email" class="form-control" id="editEmployeeEmail" placeholder="Enter Email" required>
                           </div>
 
                           {{!-- <!-- Password Input --> --}}
@@ -64,33 +64,33 @@
 
                       {{!-- <!-- Phone Number Input --> --}}
                       <div class="form-group">
-                          <label for="employeePhoneNumber">Phone Number</label>
-                          <input type="tel" class="form-control" id="employeePhoneNumber" placeholder="Enter Phone Number" required>
+                          <label for="editEmployeePhoneNumber">Phone Number</label>
+                          <input type="tel" class="form-control" id="editEmployeePhoneNumber" placeholder="Enter Phone Number" required>
                       </div>
 
                       {{!-- <!-- First Address Line Input --> --}}
                       <div class="form-group">
-                          <label for="employeeAddress1">Address Line 1</label>
-                          <input type="text" class="form-control" id="employeeAddress1" placeholder="Enter Street Number and Name" required>
+                          <label for="editEmployeeAddress1">Address Line 1</label>
+                          <input type="text" class="form-control" id="editEmployeeAddress1" placeholder="Enter Street Number and Name" required>
                       </div>
 
                       {{!-- <!-- Second Address Line Input --> --}}
                       <div class="form-group">
-                          <label for="employeeAddress2">Address Line 2</label>
-                          <input type="text" class="form-control" id="employeeAddress2" placeholder="Enter Apartment, Studio, or Floor Number">
+                          <label for="editEmployeeAddress2">Address Line 2</label>
+                          <input type="text" class="form-control" id="editEmployeeAddress2" placeholder="Enter Apartment, Studio, or Floor Number">
                       </div>
 
                       <div class="form-row">
                           {{!-- <!-- City Input --> --}}
                           <div class="form-group col-md-12">
-                          <label for="employeeCity">City</label>
-                          <input type="text" class="form-control" id="employeeCity" placeholder="Enter City" required>
+                          <label for="editEmployeeCity">City</label>
+                          <input type="text" class="form-control" id="editEmployeeCity" placeholder="Enter City" required>
                           </div>
                           
                           {{!-- <!-- State Input --> --}}
                           <div class="form-group col-md-6">
-                          <label for="employeeProvince">Province</label>
-                          <select id="employeeProvince" class="form-control" required>
+                          <label for="editEmployeeProvince">Province</label>
+                          <select id="editEmployeeProvince" class="form-control" required>
                               {{!-- <!-- <option selected>Choose...</option> --> --}}
                               <option value="Ontario" selected>Ontario</option>
                               <option value="Quebec">Quebec</option>
@@ -107,8 +107,8 @@
 
                           {{!-- <!-- Zip Input --> --}}
                           <div class="form-group col-md-6">
-                          <label for="employeeZIP">ZIP Code</label>
-                          <input type="text" class="form-control" id="employeeZIP" placeholder="Enter ZIP Code" required>
+                          <label for="editEmployeeZIP">ZIP Code</label>
+                          <input type="text" class="form-control" id="editEmployeeZIP" placeholder="Enter ZIP Code" required>
                           </div>
                       </div>
 
@@ -116,14 +116,14 @@
                       <div class="form-group">
                           <!-- SIN Input -->
                           <div class="form-group">
-                              <label for="employeeSIN">Social Insurance Number</label>
-                              <input type="tel" class="form-control" id="employeeSIN" placeholder="Enter SIN" required>
+                              <label for="editEmployeeSIN">Social Insurance Number</label>
+                              <input type="tel" class="form-control" id="editEmployeeSIN" placeholder="Enter SIN" required>
                           </div>
 
                           {{!-- <!-- Role Input --> --}}
                           <div class="form-block">
-                              <label class="my-1 mr-2" for="employeeRole">Role</label>
-                              <select class="custom-select my-1 mr-sm-2" id="employeeRole" required>
+                              <label class="my-1 mr-2" for="editEmployeeRole">Role</label>
+                              <select class="custom-select my-1 mr-sm-2" id="editEmployeeRole" required>
                                   {{#each [2] as |roles|}}
                                   <option value="{{roles.id}}">{{roles.role_name}}</option>
                                   {{/each}}
@@ -136,13 +136,13 @@
                           </div>
 
                           <div class="form-group">
-                              <label for="hireDate">Hire Date</label>
-                              <input type="text" class="form-control" id="hireDate" placeholder="eg: 2021-07-27" required>
+                              <label for="editHireDate">Hire Date</label>
+                              <input type="text" class="form-control" id="editHireDate" placeholder="eg: 2021-07-27" required>
                           </div>
 
                           <div class="form-group">
-                              <label for="photo">Photo URL</label>
-                              <input type="text" class="form-control" id="photoUrl" placeholder="eg: https://picsum.photos/200">
+                              <label for="editPhoto">Photo URL</label>
+                              <input type="text" class="form-control" id="editPhoto" placeholder="eg: https://picsum.photos/200">
                           </div>
 
 
@@ -157,7 +157,7 @@
                               </div>
                           </div>
                       </div>
-                      <button id="addEmployeeSubmit" class="btn btn-primary" type="submit">Submit</button>
+                      <button id="editEmployeeSubmit" class="btn btn-primary" type="submit">Submit</button>
                   </form>
                   
                   {{!-- // Example starter JavaScript for disabling form submissions if there are invalid fields --}}
@@ -190,10 +190,3 @@
           </div>
       </div>
   </div> 
-
-<div id="alert-success" class="alert alert-success alert-dismissible fade show w-75 mx-auto d-none" role="alert">
-  <strong>The employee has been successfully added!</strong>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
