@@ -7,11 +7,11 @@ router.get('/', (req,res) => {
     attributes: {
       exclude: ['password'],
     },
-    include: [
-      {
-        model: Employee
-      }
-    ]
+    // include: [
+    //   {
+    //     model: Employee
+    //   }
+    // ]
   })
   .then(dbManagerData => res.json(dbManagerData))
   .catch(err => {
@@ -28,11 +28,11 @@ router.get('/:id', (req,res) => {
       id: req.params.id
     },  
     attributes: {exclude: ['password']},
-    include: [
-      {
-        model: Employee
-      }
-    ]
+    // include: [
+    //   {
+    //     model: Employee
+    //   }
+    // ]
   })
   .then(dbManagerData => res.json(dbManagerData))
   .catch(err => {
@@ -90,6 +90,7 @@ router.delete('/:id', (req, res) => {
 // add a manager
 router.post('/', (req, res) => {
   Manager.create({
+    employee_id: req.body.employee_id,
     manager_name: req.body.manager_name,
     email: req.body.email,
     password: req.body.password
@@ -138,7 +139,7 @@ router.post('/login', (req, res) => {
       req.session.email = dbManagerData.email;
       req.session.loggedIn = true;
       // send response
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
+      res.json({ user: dbManagerData, message: 'You are now logged in!' });
     });
   })
   .catch(err => {

@@ -15,16 +15,39 @@ router.get('/', (req, res) => {
           }
         ]
       },
-      {
-        model: Manager,
-        attributes: ['manager_name']
-      }
+      // {
+      //   model: Manager,
+      //   attributes: ['manager_name']
+      // }
     ]
   })
   .then(dbEmployeeData => {
     const employees = dbEmployeeData.map(emp => emp.get({plain:true}));
-    // if we need more info other than just employees we could do it here
-    res.render('dashboard', employees);
+    const data = [];
+    data.push(employees);
+    Role.findAll({
+      include: [
+        {
+          model: Department,
+          attributes: ['department_name']
+        },
+        {
+          model: Employee,
+          attributes: ['id','first_name','last_name']
+        }
+      ]
+    })
+    .then(dbRoleData => {
+      const roles = dbRoleData.map(role => role.get({plain:true}));
+      data.push(roles);
+      return data
+    })
+    .then(data => {
+      console.log(data);
+      // const employees = dbEmployeeData.map(emp => emp.get({plain:true}));
+      // if we need more info other than just employees we could do it here
+      res.render('dashboard', data);
+    });
   })
 });
 
