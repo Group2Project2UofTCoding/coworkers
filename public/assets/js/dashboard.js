@@ -260,16 +260,16 @@ function searchForEmployee(searchedEmployee, searchedEmployeesObject) {
   for (const [key, value] of Object.entries(employeesObject)) {
     if (lowercaseSearch == (value.firstName).toLowerCase()){
       searchedEmployeesObject[key] = employeesObject[key]
-    }
-
-    // If employee(s) is/are found, print them to the page
-    if (searchedEmployeesObject) {
-            generateEmployeeTiles(searchedEmployeesObject);
-    }
-    // Else, employee was not found
-    else {      
-      window.alert(`We cannot find ${search.value}!`)
     }        
+  }
+
+  // If employee(s) is/are found, print them to the page
+  if (searchedEmployeesObject) {
+    generateEmployeeTiles(searchedEmployeesObject);
+  }
+  // Else, employee was not found
+  else {      
+  window.alert(`We cannot find ${search.value}!`)
   }
 }
 
