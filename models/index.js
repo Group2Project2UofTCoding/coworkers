@@ -12,7 +12,8 @@ Employee.hasMany(Employee, {
 
 Employee.belongsTo(Employee, {
   foreignKey: 'manager_id',
-  as: 'manager'
+  as: 'manager',
+  constraints: false
 });
 
 // Manager.hasMany(Employee, {

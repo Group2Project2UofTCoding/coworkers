@@ -19,6 +19,22 @@ Employee.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                isEmail: true
+            }
+        },
+        phone_number: {
+            type: DataTypes.STRING(12)
+        },
+        address: {
+            type: DataTypes.STRING
+        },
+        sin: {
+            type: DataTypes.STRING(12)
+        },
         role_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -37,11 +53,11 @@ Employee.init(
         },
         date_of_hire: {
             type: DataTypes.DATEONLY,
-            allowNull: false
+            allowNull: true
         },
         photo: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         }
     },
     {

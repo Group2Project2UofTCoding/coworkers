@@ -5,8 +5,8 @@ const { Employee, Department, Manager, Role } = require('../../models');
 router.get('/', (req, res) => {
   Employee.findAll({
     include: [
-      'employees',
-      'manager',
+      // 'employees',
+      // 'manager',
       {
         model: Role,
         attributes: ['role_name', 'salary'],
@@ -61,10 +61,15 @@ router.get('/:id', (req, res) => {
 
 // Post an employee
 router.post("/", (req, res) => {
+  console.log('this is the result', req.body);
   Employee.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     role_id: req.body.role_id,
+    email: req.body.email,
+    phone_number: req.body.phone_number,
+    address: req.body.address,
+    sin: req.body.sin,
     manager_id: req.body.manager_id,
     date_of_hire: req.body.date_of_hire,
     photo: req.body.photo
@@ -80,12 +85,16 @@ router.post("/", (req, res) => {
 router.put("/:id", (req, res) => {
   Employee.update(
     {
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
-    role_id: req.body.role_id,
-    manager_id: req.body.manager_id,
-    date_of_hire: req.body.date_of_hire,
-    photo: req.body.photo
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      role_id: req.body.role_id,
+      email: req.body.email,
+      phone_number: req.body.phone_number,
+      address: req.body.address,
+      sin: req.body.sin,
+      manager_id: req.body.manager_id,
+      date_of_hire: req.body.date_of_hire,
+      photo: req.body.photo
     },
     {
       where: {
