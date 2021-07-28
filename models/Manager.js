@@ -2,16 +2,12 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
-<<<<<<< HEAD
-class Manager extends Model { }
-=======
 class Manager extends Model {
     // setup the method to check the password
     checkPassword(loginPassword) {
         return bcrypt.compareSync(loginPassword, this.password);
     }
 }
->>>>>>> develop
 
 // If a manager needs to be an employee that means we coud link the manager id with employee ID so we can use the employee information 
 Manager.init(
@@ -25,20 +21,6 @@ Manager.init(
                 key: 'id'
             }
         },
-<<<<<<< HEAD
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'employee',
-                key: 'password'
-            }
-        },
-=======
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -53,7 +35,6 @@ Manager.init(
         manager_name: {
             type: DataTypes.STRING,
         }
->>>>>>> develop
     },
     {
         hooks: {
