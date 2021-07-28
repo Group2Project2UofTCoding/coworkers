@@ -6,11 +6,6 @@ body {
     box-sizing: border-box;
 }
 
-.navbar {
-    width: 100%;
-    height: 12vh;
-}
-
 .sidebar {
     width: 220px;
     height: 100vh;
@@ -56,21 +51,6 @@ ul {
     height: 100px;
 } 
 
-/* .box1 {
-    margin-left: 15rem;
-}  */
-
-/* .col {
-    position: relative;
-    margin-left: auto;
-}
-
-.card {
-    position: absolute;
-    width: 170px;
-    height: 100px;
-} */
-
 .manager-pic {
     width: 100%;
     height: 100%;
@@ -85,26 +65,10 @@ ul {
     margin-right: 1%;
 }
 
-.employee-profile {
-    display: flex;
-    display: inline;
-}
-
 .employee-pic {
-    justify-content: flex-end;
     width: 100%;
     height: 100%;
 }
-
-.employee-card {
-    max-width: 30%;
-    display: flex;
-    margin-left: auto;
-    margin-right: 41%;
-    width: 30%;
-}
-
-
 
 svg {
     width: 16px; 
