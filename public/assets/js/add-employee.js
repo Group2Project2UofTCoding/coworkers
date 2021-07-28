@@ -14,7 +14,7 @@ async function handleEmployeeModalSubmit(event) {
   const addressLine2 = document.getElementById("employeeAddress2").value;
   const city = document.getElementById("employeeCity").value;
   const postalCode = document.getElementById("employeeZIP").value;
-  const role_id = 1;
+  const role_id = 2;
   const date_of_hire = "2021-07-24";
   const photo = "/images/employees/1";
   const sin = document.getElementById("employeeSIN").value;
