@@ -14,9 +14,16 @@ async function handleEmployeeModalSubmit(event) {
   const addressLine2 = document.getElementById("employeeAddress2").value;
   const city = document.getElementById("employeeCity").value;
   const postalCode = document.getElementById("employeeZIP").value;
+<<<<<<< HEAD
   const role_id = 2;
   const date_of_hire = "2021-07-24";
   const photo = "/images/employees/1";
+=======
+  const role_id = document.getElementById("employeeRole").value;
+  console.log(role_id);
+  const date_of_hire = document.getElementById("hireDate").value;
+  const photo = document.getElementById("photoUrl").value;
+>>>>>>> develop
   const sin = document.getElementById("employeeSIN").value;
   const certification = employeeCertification.value;
 
@@ -25,30 +32,27 @@ async function handleEmployeeModalSubmit(event) {
   const address = [addressLine1, addressLine2, city, postalCode].join(", ");
 
   // Create an employee's information object
-  // const employeeObject = { firstName, lastName, username, email, password, phoneNumber, addressLine1, addressLine2, city, role, level, department, salary, sin, contactName, contactNumber, certification };
   const employeeObject = { first_name, last_name, email, phone_number, address, sin, role_id, date_of_hire, photo };
-
-  console.log(employeeObject);
   
-  // POST updated employeesObject to the database
+    // POST updated employeesObject to the database
   await fetch('api/employee', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(employeeObject)
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(employeeObject)
+  })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      alert('Error: ' + response.statusText);
     })
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        alert('Error: ' + response.statusText);
-      })
-      .then(postResponse => {
-        console.log(postResponse);
-        alert('Thank you for adding/updating employee(s)');
-      });
+    .then(postResponse => {
+      console.log(postResponse);
+      alert('Thank you for adding/updating employee(s)');
+    });
 }
 
 addEditEmployeeForm.addEventListener("submit", handleEmployeeModalSubmit);
