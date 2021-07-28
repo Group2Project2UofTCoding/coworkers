@@ -1,0 +1,185 @@
+body {
+    background: #1A2C37;
+    font: 1rem/1.5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 250px;
+    transition: background-color .5s;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: fixed;
+}
+
+.navbar, .sidebar {
+    background-color: #1A2C37;
+    border: black 1px solid;
+}
+
+.nav-link:hover {
+    background-color: #48A986;
+}
+
+.parent {
+    background: #F1F9F8;
+}
+
+/* DASHBOARD STYLES */
+.first-section {
+    display: flex;
+    width: 100%;
+}
+.dashboard {
+    border: none;
+}
+
+.dashboard-boxes {
+    width: 60%;
+    margin: 2% 0 2% 5%;
+}
+
+.dashboard-body:hover, .employee-card:hover {
+    background-color: #48A986;
+    z-index: 999;
+}
+
+.boxes {
+    padding-right: 7%;
+}
+
+.dashboard-body {
+    height: 6rem;
+}
+
+.dashboard-body a {
+    text-decoration: none;
+    color: black;
+}
+
+.dashboard-parent, .manager-card, .employee-card, .recent-board {
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px 1px grey;
+}
+
+.company img {
+    background-color: #E56F6B;
+}
+
+.employee img {
+    background-color: #F49E4C;
+}
+
+.team img {
+    background-color: #48A9A6;
+}
+
+.department img {
+    background-color: #FDC54C;
+}
+
+.projects img {
+    background-color: #7A28CB;
+}
+
+.tasks img {
+    background-color: #E83151;
+}
+
+/* CHART */
+.chart img {
+    margin-top: 3%;
+    width: 90%;
+    height: 70%;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px 1px grey;
+}
+
+/* general */
+.join {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.all-profiles {
+    width: 75%;
+    margin-right: 6%;
+}
+
+svg {
+    width: 16px; 
+    height: 16px;
+}
+
+/* MANAGER SECTION */
+.manager {
+    width: 100%;
+}
+
+.manager-pic {
+    width: 100%;
+    height: 100%;
+}
+
+.manager-card {
+    padding: 1%;
+    width: 100%;
+    margin: 0 0 0% 5%;
+}
+
+.manager-profile {
+    width: 100%;
+}
+
+/* EMPLOYEE SECTION */
+.employee-profile {
+    width: 100%;
+    margin-left: 5%;
+    margin-top: 3%;
+
+}
+
+ .employee-pic {
+    width: 100%;
+    height: 100%;
+}
+
+.employee-profile p {
+    font-size: 0.75rem;
+}
+
+
+/* RECENT ACTIVITY SECTION */
+.recent-board {
+    width: 100%;
+    border: 1px solid none;
+    background-color: white;
+    border-radius: 15px;
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1300px) {
+    .join {
+        flex-direction: column;
+    }
+    .all-profiles, .recent-board {
+        margin: 0 auto;
+        width: 85%;
+    }
+    .recent-board {
+        margin-right: 3%;
+    }
+    .first-section {
+        display: inline-block;
+    }
+    .dashboard-boxes {
+        margin: 0 15%;
+        width: 85%;
+    }
+    .chart {
+        margin: 0 0 5% 15%;
+    }
+}
