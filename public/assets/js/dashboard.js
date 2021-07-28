@@ -224,7 +224,7 @@ function handleEmployeeRemoveSubmit(targetEvent) {
   // Retrieve and store the employee's ID which is stored in the value property of the button in the card
   const employeeID = targetEvent.value;
 
-  if (window.confirm("Are you sure that you want to remove this employee?")) {
+  if (window.confirm(`Are you sure that you want to remove ${(employeesObject[employeeID]).firstName} ${(employeesObject[employeeID]).lastName}?`)) {
     // Find the employee's information object in the employeesObject and delete it
     delete employeesObject[employeeID];
     generateEmployeeTiles(employeesObject);
