@@ -88,6 +88,14 @@ body {
     border-color: #48A9A6;
 }
 
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    background-color: #477998;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgb(23 148 177 / 50%);
+}
+
 .btn-primary:hover {
     background-color: #477998;
 }
@@ -149,6 +157,10 @@ a {
 
     .logout-button {
         width: 30%;
+    }
+
+    .card-img-top{
+        max-height: fit-content;
     }
 }
 

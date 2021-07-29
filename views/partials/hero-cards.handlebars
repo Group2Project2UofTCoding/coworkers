@@ -1,55 +1,115 @@
 <!-- Hero Section -->
-<div id="tabs" class="container rounded border un-box-shadow bg-white p-5 my-5">
+<div id="tabs" class="container rounded border un-box-shadow bg-white pt-5 my-5">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <!-- Manager's Information Tab -->
         <li class="nav-item">
-        <a class="nav-link active" id="manager-tab" data-toggle="tab" href="#manager" role="tab" aria-controls="manager" aria-selected="true">Manager Information</a>
+        <a class="nav-link active text-center" id="manager-tab" data-toggle="tab" href="#manager" role="tab" aria-controls="manager" aria-selected="true">Manager Information</a>
         </li>
 
         <!-- Team's Information Tab -->
         <li class="nav-item">
-        <a class="nav-link" id="team-tab" data-toggle="tab" href="#team" role="tab" aria-controls="team" aria-selected="false">Team Information</a>
+        <a class="nav-link text-center" id="team-tab" data-toggle="tab" href="#team" role="tab" aria-controls="team" aria-selected="false">Team Information</a>
         </li>
 
         <!-- Department's Information Tab -->
         <li class="nav-item">
-        <a class="nav-link" id="department-tab" data-toggle="tab" href="#department" role="tab" aria-controls="department" aria-selected="false">Department Information</a>
+        <a class="nav-link text-center" id="department-tab" data-toggle="tab" href="#department" role="tab" aria-controls="department" aria-selected="false">Department Information</a>
         </li>
 
         <!-- Organization's Information Tab -->
         <li class="nav-item">
-            <a class="nav-link" id="organization-tab" data-toggle="tab" href="#organization" role="tab" aria-controls="department" aria-selected="false">Organization Information</a>
+            <a class="nav-link text-center" id="organization-tab" data-toggle="tab" href="#organization" role="tab" aria-controls="department" aria-selected="false">Organization Information</a>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
       <!-- Employee's Tab Content -->
       <div class="tab-pane fade show active py-4" id="manager" role="tabpanel" aria-labelledby="manager-tab">
         <div class="d-flex flex-wrap">
-          <div class="image col-lg-4 col-md-12 col-sm-12 d-flex align-items-center">
-            <div class="">
-              <img class="card-img" src="/assets/images/avatar.png" alt="" style="width: 300px;">
+          <div class="image col-lg-4 col-md-12 col-sm-12 d-flex m-auto">
+            <div class="d-flex align-items-center m-auto">
+              <img class="card-img" src="/assets/images/manager.JPG" alt="" style="width: 300px;">
             </div>
           </div>  
-        <div class="m-3 col-lg-7 col-md-12 col-sm-12">
-          <h2 class=""><i class="fas fa-user-tie"></i> &nbsp<strong>{{[0].[0].first_name}} {{[0].[0].last_name}}</strong></h2>
-          <p class="info-text mb-0"><i class="fas fa-user-tag"></i> &nbsp {{[0].[0].role.role_name}}</p>
-          <p class="info-text mb-0"><i class="fas fa-envelope"></i> &nbsp {{[0].[0].email}}</p>
-          <p class="info-text mb-0"><i class="fas fa-phone"></i> &nbsp {{[0].[0].phone_number}}</p>
-          <p class="info-text mb-0"><i class="fas fa-map-marker-alt"></i> &nbsp {{[0].[0].address}}</p>
-          <div class="info-content">
-              <p><i class="fas fa-list"></i> &nbsp Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque reprehenderit quod fuga hic deleniti sit necessitatibus voluptatum vitae minus, ipsum tempore, reiciendis iure vel? Quae at suscipit aperiam ut dignissimos! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam mollitia enim, est esse culpa, fuga corporis sed nesciun</p>
+          <div class="m-3 col-lg-7 col-md-12 col-sm-12">
+            <h2 class=""><i class="fas fa-user-tie"></i> &nbsp<strong>{{[0].[0].first_name}} {{[0].[0].last_name}}</strong></h2>
+            <p class="info-text mb-0 ml-2"><i class="fas fa-user-tag"></i> &nbsp {{[0].[0].role.role_name}}</p>
+            <p class="info-text mb-0 ml-2"><i class="fas fa-envelope"></i> &nbsp {{[0].[0].email}}</p>
+            <p class="info-text mb-0 ml-2"><i class="fas fa-phone"></i> &nbsp {{[0].[0].phone_number}}</p>
+            <div class="info-content mt-2">
+               <h4><i class="fas fa-calendar-alt"></i> Upcomming events</h4>
+                <li class="info-text mb-0">Tomorrow at 1 PM : <strong>Team Meeting</strong></li>
+                <li class="info-text mb-0">Tomorrow at 3 PM : <strong>Meeting with Microsoft</strong></li>
+                <li class="info-text mb-0">Monday at 10 AM : <strong>Meeting with CFO</strong></li>
+                <li class="info-text mb-0">Monday at 4 PM : <strong>Fitness Meeting</strong></li>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
         <!-- Team's Tab Content -->
-        <div class="tab-pane fade" id="team" role="tabpanel" aria-labelledby="team-tab">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque reprehenderit quod fuga hic deleniti sit necessitatibus voluptatum vitae minus, ipsum tempore, reiciendis iure vel? Quae at suscipit aperiam ut dignissimos! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam mollitia enim, est esse culpa, fuga corporis sed nesciunt expedita voluptates autem tenetur eos, aliquam quae vero porro nulla delectus obcaecati?</div>
+        <div class="tab-pane fade py-4" id="team" role="tabpanel" aria-labelledby="team-tab">
+          <div class="d-flex flex-wrap">
+            <div class="image col-lg-4 col-md-12 col-sm-12 d-flex m-auto">
+              <div class="d-flex align-items-center m-auto">
+                <img class="card-img" src="/assets/images/team.JPG" alt="" style="width: 300px;">
+              </div>
+            </div>  
+            <div class="m-3 col-lg-7 col-md-12 col-sm-12">
+              <h2 class=""><i class="fas fa-users"></i> &nbsp<strong>{{[0].[0].role.department.department_name}} Team</strong></h2>
+              <div class="info-content">
+                  <p><i class="fas fa-list"></i> &nbsp A team is defined as a group of people who perform interdependent tasks to work toward accomplishing a common mission or specific objective</p>
+              </div>
+              <h4><i class="fas fa-calendar-alt"></i> Upcomming events</h4>
+                <li class="info-text mb-0">2021-08-05 : <strong>Team Meeting</strong></li>
+                <li class="info-text mb-0">2021-08-10 : <strong>POP Quiz</strong></li>
+                <li class="info-text mb-0">2021-08-15 : <strong>Free Pizza Day</strong></li>
+                <li class="info-text mb-0">2021-08-20 : <strong>Free Beer Day</strong></li>
+            </div>
+          </div>
+        </div>
 
         <!-- Department's Tab Content -->
-        <div class="tab-pane fade" id="department" role="tabpanel" aria-labelledby="department-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam magni cupiditate nulla facere consectetur aspernatur ratione, vel tenetur quis similique, animi voluptatem nostrum eveniet doloribus! Animi facilis velit molestiae veniam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia corporis recusandae magnam iure ratione possimus repellat quibusdam sequi, esse ex non, similique reprehenderit, quaerat dignissimos omnis. Veritatis, iusto minima? Similique.</div>
+        <div class="tab-pane fade py-4" id="department" role="tabpanel" aria-labelledby="department-tab">
+          <div class="d-flex flex-wrap">
+            <div class="image col-lg-4 col-md-12 col-sm-12 d-flex m-auto">
+              <div class="d-flex align-items-center m-auto">
+                <img class="card-img" src="/assets/images/department.JPG" alt="" style="width: 300px;">
+              </div>
+            </div>  
+            <div class="m-3 col-lg-7 col-md-12 col-sm-12">
+              <h2 class=""><i class="fas fa-toolbox"></i> &nbsp<strong>{{[0].[0].role.department.department_name}} Department</strong></h2>
+              <div class="info-content">
+                  <p><i class="fas fa-list"></i> &nbsp In an overall sense, the IT Department is responsible for providing the infrastructure for automation. It implements the governance for the use of network and operating systems, and it assists the operational units by providing them the functionality they need.</p>
+              </div>
+              <h4><i class="fas fa-tasks"></i> Ongoing Projects</h4>
+                <li class="info-text mb-0">Web Application : <strong>Completed</strong> | Due: 2021-08-15</li> 
+                <li class="info-text mb-0">Intranet : <strong>In Progress</strong> | Due: 2021-12-15</li> 
+                <li class="info-text mb-0">Mobile Application : <strong>In Progress</strong> | Due: 2022-03-15</li> 
+                <li class="info-text mb-0">Hardware Upgrades : <strong>Initial Stage</strong> | Due: 2022-12-15</li>
+            </div>
+          </div>
+        </div>
 
         <!-- Organization's Tab Content -->
-        <div class="tab-pane fade" id="organization" role="tabpanel" aria-labelledby="organization-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quia earum facere eligendi eaque non, veritatis exercitationem! Officiis error cum dolor pariatur nostrum distinctio odit iure quod eveniet perspiciatis! Omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi architecto quos accusantium exercitationem nobis iste. Officia perspiciatis debitis cum ut illum facilis repellat iure sapiente a. Necessitatibus porro ratione fugiat?</div>
+        <div class="tab-pane fade py-4" id="organization" role="tabpanel" aria-labelledby="organization-tab">
+          <div class="d-flex flex-wrap">
+            <div class="image col-lg-4 col-md-12 col-sm-12 d-flex m-auto">
+              <div class="d-flex align-items-center m-auto">
+                <img class="card-img" src="/assets/images/company.JPG" alt="" style="width: 300px;">
+              </div>
+            </div>  
+            <div class="m-3 col-lg-7 col-md-12 col-sm-12">
+              <h2 class=""><i class="fas fa-building"></i> &nbsp<strong>XYZ Coworkers Company</strong></h2>
+              <div class="info-content">
+                  <p><i class="fas fa-list"></i> &nbsp XYZ Coworkers Company is an American multinational technology company which produces computer software, consumer electronics, personal computers, and related services.</p>
+              </div>
+              <h4><i class="fas fa-search-location"></i> Our Branches</h4>
+                <li class="info-text mb-0">160 Broadway, New York, NY 10038, United States | <i class="fas fa-phone"></i> <strong>905-123-456</strong></li> 
+                <li class="info-text mb-0">64 Parkway, London NW1 7AH, United Kingdom | <i class="fas fa-phone"></i> <strong>112-123-456</strong></li> 
+                <li class="info-text mb-0">1527 Main St, Vancouver, BC V6A 2W5 | <i class="fas fa-phone"></i> <strong>604-123-892</strong></li> 
+                <li class="info-text mb-0">1st Floor, 22C, Chandigarh, 160022, India | <i class="fas fa-phone"></i> <strong>91-1234-892</strong></li> 
+            </div>
+          </div>
+        </div>
     </div>
 </div>
