@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Employee, Department, Manager, Role } = require('../models');
 const withAuth = require('../utils/auth');
+const { Op } = require("sequelize");
 
 // router to render all details
 router.get('/', withAuth,(req, res) => {
@@ -56,9 +57,46 @@ router.get('/', withAuth,(req, res) => {
     .then(data => {
       // if we need more info other than just employees we could do it here
       res.render('dashboard', {data, loggedIn: req.session.loggedIn});
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
   })
 });
+
+// search for an employee
+router.get('/search/:term', (req, res) => {
+  console.log(req.params.term);
+  Employee.findAll({
+    where: {
+      first_name: {
+        [Op.substring]: req.params.term
+      } 
+    },
+    include: [
+      {
+        model: Role,
+        attributes: ['role_name', 'salary'],
+        include: [
+          {
+            model: Department,
+            attributes: ['department_name']
+          }
+        ]
+      }
+    ]
+  })
+  .then(dbEmployeeData => {
+    const searchEmployees = dbEmployeeData.map(emp => emp.get({plain:true}));
+    console.log(searchEmployees);
+    res.render('dashboard', {searchEmployees});
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
 
 // Edit an employee
 router.get('/edit/:id', (req, res) => {
@@ -84,7 +122,11 @@ router.get('/edit/:id', (req, res) => {
     const employee = dbEmployeeData.get({plain:true});
     res.render('dashboard', employee);
   })
-});  
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  }) 
+})
 
 // route for the dashboard page
 router.get('/', (req, res) => {

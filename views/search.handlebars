@@ -1,0 +1,8 @@
+<div id="SearchedEmployeeContainer" class="container rounded border un-box-shadow bg-white p-5">
+<h2>Direct Reports</h2><br>
+    <div id="employeeContainerRow" class="row">
+        {{#each searchEmployees as |emp|}}
+        {{> employee-cards emp}}
+        {{/each}}
+    </div>
+</div>

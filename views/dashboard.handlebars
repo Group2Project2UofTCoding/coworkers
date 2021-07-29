@@ -32,8 +32,8 @@
               </div>
             </li>
           </ul> --}}
-          <form class="search-form form d-flex my-2">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <form id="searchForm" class="search-form from d-flex my-2">
+            <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0 m-1 search-button" type="submit">Search</button>
             <button id="logout" class="btn btn-outline-danger my-2 my-sm-0 m-1 logout-button" type="click">Logout</button>
           </form>
@@ -66,6 +66,15 @@
         </div>
     </div>
 
+    <div id="SearchedEmployeeContainer" class="container rounded border un-box-shadow bg-white p-5">
+    <h2>Direct Reports</h2><br>
+        <div id="employeeContainerRow" class="row">
+            {{#each searchEmployees as |emp|}}
+            {{> employee-cards emp}}
+            {{/each}}
+        </div>
+    </div>
+
     {{> employee-charts}}
 
     {{> footer}}
@@ -76,3 +85,4 @@
     <script src="/assets/js/logout.js"></script>
     <script src="/assets/js/edit-employee.js"></script>
     <script src="/assets/js/delete-employee.js"></script>
+    <script src="/assets/js/search.js"></script>
