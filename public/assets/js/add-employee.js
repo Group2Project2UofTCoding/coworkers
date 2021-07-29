@@ -13,6 +13,7 @@ async function handleEmployeeModalSubmit(event) {
   const addressLine1 = document.getElementById("employeeAddress1").value;
   const addressLine2 = document.getElementById("employeeAddress2").value;
   const city = document.getElementById("employeeCity").value;
+  const province = document.getElementById("employeeProvince").value;
   const postalCode = document.getElementById("employeeZIP").value;
   const role_id = document.getElementById("employeeRole").value;
   const date_of_hire = document.getElementById("hireDate").value;
@@ -28,7 +29,8 @@ async function handleEmployeeModalSubmit(event) {
   console.log(photo);
 
   // Get the address values and combines into one string
-  const address = [addressLine1, addressLine2, city, postalCode].join(", ");
+  const address = [addressLine1, addressLine2, city, province, postalCode].join(", ");
+  console.log(address);
 
   // Create an employee's information object
   const employeeObject = { first_name, last_name, email, phone_number, address, sin, role_id, date_of_hire, photo };

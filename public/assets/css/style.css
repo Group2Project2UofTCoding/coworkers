@@ -1,4 +1,4 @@
-body {
+/* body {
     background-color: lightcyan;
 }
 
@@ -21,6 +21,8 @@ body {
     margin: 1%;
 }
 
+
+
 .editEmployeeButton, .removeEmployeeButton {
     margin: 5px;
 }
@@ -40,4 +42,41 @@ body {
     margin-right: auto;
     margin-bottom: 10%;
     width: 50%;
+} */
+
+
+.card-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.modal-dialog {
+    max-width: 700px;
+}
+
+.un-box-shadow {
+    box-shadow: 0 0.15rem 1.75rem 0 rgb(196 205 224 / 20%);
+}
+
+.btn-primary {
+    background-color: #48A9A6;
+    border-color: #48A9A6;
+}
+
+.btn-primary:hover {
+    background-color: #477998;
+}
+
+.btn-danger {
+    background-color: #E56F6B;
+    border-color: #E56F6B;
+}
+
+body {
+    background-color: #f1f4fb;
+}
+
+a {
+    color: #477998;
 }

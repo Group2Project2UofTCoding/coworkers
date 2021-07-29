@@ -40,14 +40,17 @@
 
     {{!-- <div>{{data.[0].[0].id}}</div>
     <div>{{data.[1].[0].id}}</div> --}}
-
+    <div class="container welcome-msg mt-5">
+      <h2>Hello {{data.[0].[0].first_name}}!</h2>
+      <h3>What would you like to do today?</h3>
+    </div>
     {{!-- <p>{{data.[0]}}</p> --}}
     {{> hero-cards data}}
 
     {{> add-employee data}}
     {{> edit-employee data}}
 
-    <div id="employeeContainer" class="container rounded border border-primary">
+    <div id="employeeContainer" class="container rounded border un-box-shadow bg-white p-5">
     <h2>Direct Reports</h2><br>
         <div id="employeeContainerRow" class="row">
             {{#each data.[1] as |employee|}}

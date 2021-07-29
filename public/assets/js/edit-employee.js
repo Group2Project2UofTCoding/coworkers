@@ -32,11 +32,11 @@ async function handleEditEmployeeModal(event) {
       last_name.value = data.last_name;
       email.value = data.email;
       phone_number.value = data.phone_number;
-      addressLine1.value = data.address.split(',')[0];
-      addressLine2.value = data.address.split(',')[1];
-      employeeCity.value = data.address.split(',')[2];
-      employeeProvince.value = data.address.split(',')[3];
-      postalCode.value = data.address.split(',')[3];
+      addressLine1.value = data.address.split(',')[0] ? data.address.split(',')[0]: "";
+      addressLine2.value = data.address.split(',')[1] ? data.address.split(',')[1]: "";
+      employeeCity.value = data.address.split(',')[2] ? data.address.split(',')[2]: "";
+      employeeProvince.value = data.address.split(',')[3] ? data.address.split(',')[3].trim() : "";
+      postalCode.value = data.address.split(',')[4] ? data.address.split(',')[4]: "";
       role_id.value = data.role_id;
       date_of_hire.value = data.date_of_hire;
       sin.value = data.sin;
