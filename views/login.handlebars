@@ -1,5 +1,11 @@
-<div class="container d-flex justify-content-center align-items-center mt-5">
-  <div class="log-form p-5 bg-white m-5 un-box-shadow rounded col-md-6">
+<div class="container d-flex flex-column justify-content-center align-items-center mt-5">
+  {{!-- alert modals --}}
+  <div class="mt-5 col-md-6 d-block p-0">
+    <div id="login-alert" class="alert alert-danger mx-0 invisible" role="alert">
+      <strong>Email or Password is incorrect! Please try again.</strong>
+    </div>
+  </div>
+  <div class="log-form p-5 bg-white mb-5 un-box-shadow rounded col-md-6">
      <div class="d-flex justify-content-center">
        <img id="logo" src="./assets/images/logo.png" alt="Coworkers Logo" width="250">
      </div>

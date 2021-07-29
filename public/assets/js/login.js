@@ -2,7 +2,6 @@
 
 async function loginFormHandler(event) {
   event.preventDefault();
-  console.log("login js");
   const email = document.querySelector('#exampleInputEmail1').value.trim();
   const password = document.querySelector('#exampleInputPassword1').value.trim();
 
@@ -19,7 +18,7 @@ async function loginFormHandler(event) {
       if(response.ok) {
           document.location.replace('/dashboard');
       } else {
-          alert(response.statusText);
+        $('#login-alert').removeClass('invisible').addClass('visible');
       }
   }
 }

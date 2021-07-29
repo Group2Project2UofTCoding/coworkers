@@ -1,5 +1,11 @@
-<div class="container d-flex justify-content-center align-items-center mt-5">
-  <div class="log-form p-5 bg-white m-5 un-box-shadow rounded col-md-6">
+<div class="container d-flex flex-column justify-content-center align-items-center mt-5">
+   {{!-- alert modals --}}
+  <div class="mt-5 col-md-6 d-block p-0">
+    <div id="signup-alert" class="alert alert-danger mx-0 invisible" role="alert">
+      Oops.. Somthing's not right! <strong>Please check the ID.</strong>
+    </div>
+  </div>
+  <div class="log-form p-5 bg-white mb-5 un-box-shadow rounded col-md-6">
      <div class="d-flex justify-content-center">
        <img id="logo" src="./assets/images/logo.png" alt="Coworkers Logo" width="250">
      </div>
@@ -26,7 +32,7 @@
       {{!-- <!-- Password input --> --}}
       <div class="form-group">
         <label for="password-signup">Password</label>
-        <input type="password" class="form-control" id="password-signup" placeholder="Password" required>
+        <input type="password" class="form-control" id="password-signup" placeholder="Password (min 8 characters)" required>
         <small id="passwordHelp" class="form-text text-muted">Minimum 8 characters</small>
       </div>
         {{!-- {{Manager's ID}} --}}

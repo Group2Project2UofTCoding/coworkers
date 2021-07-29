@@ -28,7 +28,7 @@ async function signupFormHandler(event) {
       if (response.ok) {
           document.location.replace('/dashboard');
       } else {
-          alert(response.statusText);
+        $('#signup-alert').removeClass('invisible').addClass('visible');
       }
   }
 }
