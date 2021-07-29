@@ -1,44 +1,50 @@
-<img id="logo" src="./assets/images/logo.png" alt="Coworkers Logo" width="500">
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="log-form p-5 bg-white m-5 un-box-shadow rounded col-md-6">
+     <div class="d-flex justify-content-center">
+       <img id="logo" src="./assets/images/logo.png" alt="Coworkers Logo" width="250">
+     </div>
 
-<form class="signup-form" id="signInForm">
-  {{!-- {{Manager's Name}} --}}
-  {{!-- <div class="form-group">
-    <label for="manager-name">Name</label>
-    <input type="text" class="form-control" id="manager-name" aria-describedby="nameHelp" placeholder="Enter name" required>
-    <small id="nameHelp" class="form-text text-muted">Please enter your name</small>
-  </div> --}}
-  {{!-- {{Manager's Department}} --}}
-  {{!-- <div class="form-group">
-    <label for="manager-dept">Department</label>
-    <input type="text" class="form-control" id="manager-dept" aria-describedby="deptHelp" placeholder="Enter department" required>
-    <small id="deptHelp" class="form-text text-muted">Please enter your department</small>
-  </div> --}}
-  {{!-- <!-- Email input --> --}}
-  <div class="form-group">
-    <label for="email-signup">Email</label>
-    <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp" placeholder="Enter email" required>
-    <small id="emailHelp" class="form-text text-muted">Please enter your email id</small>
-  </div>
-  {{!-- <!-- Password input --> --}}
-  <div class="form-group">
-    <label for="password-signup">Password</label>
-    <input type="password" class="form-control" id="password-signup" placeholder="Password" required>
-    <small id="passwordHelp" class="form-text text-muted">Minimum 8 characters</small>
-  </div>
-    {{!-- {{Manager's ID}} --}}
-  <div class="form-group">
-    <label for="manager-dept">Employee ID</label>
-    <input type="text" class="form-control" id="manager-id" placeholder="Enter the ID" required>
-    <small id="man-ID" class="form-text text-muted">Please enter the employee ID given to you</small>
-  </div>
-    {{!-- <!-- Submit form data --> --}}
-  <div class="d-grid gap-2 mx-auto">
-    <button id="signUp" type="submit" class="btn btn-primary mt-3 w-100">Sign Up</button>
-  </div>
-  <div>
-    <a href="/login">Login instead</a>
-  </div>
+     <form class="signup-form" id="signInForm">
+      {{!-- {{Manager's Name}} --}}
+      {{!-- <div class="form-group">
+        <label for="manager-name">Name</label>
+        <input type="text" class="form-control" id="manager-name" aria-describedby="nameHelp" placeholder="Enter name" required>
+        <small id="nameHelp" class="form-text text-muted">Please enter your name</small>
+      </div> --}}
+      {{!-- {{Manager's Department}} --}}
+      {{!-- <div class="form-group">
+        <label for="manager-dept">Department</label>
+        <input type="text" class="form-control" id="manager-dept" aria-describedby="deptHelp" placeholder="Enter department" required>
+        <small id="deptHelp" class="form-text text-muted">Please enter your department</small>
+      </div> --}}
+      {{!-- <!-- Email input --> --}}
+      <div class="form-group">
+        <label for="email-signup">Email</label>
+        <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp" placeholder="Enter email" required>
+        <small id="emailHelp" class="form-text text-muted">Please enter your email id</small>
+      </div>
+      {{!-- <!-- Password input --> --}}
+      <div class="form-group">
+        <label for="password-signup">Password</label>
+        <input type="password" class="form-control" id="password-signup" placeholder="Password" required>
+        <small id="passwordHelp" class="form-text text-muted">Minimum 8 characters</small>
+      </div>
+        {{!-- {{Manager's ID}} --}}
+      <div class="form-group">
+        <label for="manager-dept">Employee ID</label>
+        <input type="text" class="form-control" id="manager-id" placeholder="Enter the ID" required>
+        <small id="man-ID" class="form-text text-muted">Please enter the employee ID given to you</small>
+      </div>
+        {{!-- <!-- Submit form data --> --}}
+      <div class="d-grid gap-2 mx-auto">
+        <button id="signUp" type="submit" class="btn btn-primary mt-3 w-100">Sign Up</button>
+      </div>
+      <div>
+        <a href="/login">Login instead</a>
+      </div>
 
-</form>
+    </form>
+  </div>
+</div>
 
 <script src="/assets/js/signup.js"></script>

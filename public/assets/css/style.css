@@ -2,33 +2,54 @@
     background-color: lightcyan;
 }
 
-#tabs {
+/* Login page logo styling */
+/* #logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 25%;
+} */
+
+/* Login page form styling */
+/* #signInForm {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    width: 50%;
+} */
+
+/* Tabs styling on dashboard page */
+/* #tabs {
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 1%;
     margin-bottom: 1%;
     padding: 1%;
     background-color: lightgoldenrodyellow;
-}
+} */
 
-#employeeContainer {
+/* Direct Reports container styling on dashboard page */
+/* #employeeContainer {
     margin-bottom: 2%;
     padding: 1%;
     background-color: lightgoldenrodyellow;
-}
+} */
 
-.card {
+/* Direct Report card styling on dashboard page */
+/* .card {
     margin: 1%;
-}
+} */
 
 
 
-.editEmployeeButton, .removeEmployeeButton {
+/* .editEmployeeButton, .removeEmployeeButton {
     margin: 5px;
-}
+} */
 
 
-#logo{
+/* #logo{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -42,8 +63,11 @@
     margin-right: auto;
     margin-bottom: 10%;
     width: 50%;
-} */
+}   */
 
+body {
+    min-height: 90vh;
+}
 
 .card-text {
     white-space: nowrap;
@@ -73,6 +97,31 @@
     border-color: #E56F6B;
 }
 
+.btn-danger:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-outline-danger {
+    color: #E56F6B;
+    border-color: #E56F6B;
+}
+
+.btn-outline-success {
+    color: #48A9A6;
+    border-color: #48A9A6;
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #477998;
+    border-color: #477998;
+}
+
+.btn-outline-success:focus {
+    box-shadow: 0 0 0 0.2rem rgb(40 120 167 / 50%);
+}
+
 body {
     background-color: #f1f4fb;
 }
@@ -80,3 +129,46 @@ body {
 a {
     color: #477998;
 }
+
+.info-text {
+    font-size: large;
+}
+
+.info-content {
+    max-width: 500px;
+}
+
+.card-img-top {
+    max-height: 325px;
+}
+
+@media only screen and (max-width: 990px) {
+    .search-button {
+        width: 30%;
+    }
+
+    .logout-button {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .container {
+        width: 90%;
+        padding: 20px !important;
+    }
+
+    .search-form {
+        display: inline !important;
+    }
+
+    .search-button {
+        width: 100%;
+        margin: 10px auto !important;
+    }
+
+    .logout-button {
+        width: 100%;
+        margin: 0 auto !important;
+    }
+  }

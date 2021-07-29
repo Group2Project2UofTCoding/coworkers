@@ -22,10 +22,26 @@
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-        <!-- Employee's Tab Content -->
-        <div class="tab-pane fade show active" id="manager" role="tabpanel" aria-labelledby="manager-tab">
-          <div class="my-2">Manager Name: <strong>{{[0].[0].first_name}}</strong></div>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat et dolor hic quae dolores dignissimos quisquam autem deleniti, minima suscipit, rem delectus sequi sit! Laboriosam reiciendis corporis ad praesentium harum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae reiciendis obcaecati in atque doloremque, sapiente culpa placeat maxime vero inventore porro velit nemo laborum. Delectus, velit quaerat? A, debitis beatae?</div>
+      <!-- Employee's Tab Content -->
+      <div class="tab-pane fade show active py-4" id="manager" role="tabpanel" aria-labelledby="manager-tab">
+        <div class="d-flex flex-wrap">
+          <div class="image col-lg-4 col-md-12 col-sm-12 d-flex align-items-center">
+            <div class="">
+              <img class="card-img" src="/assets/images/avatar.png" alt="" style="width: 300px;">
+            </div>
+          </div>  
+        <div class="m-3 col-lg-7 col-md-12 col-sm-12">
+          <h2 class=""><i class="fas fa-user-tie"></i> &nbsp<strong>{{[0].[0].first_name}} {{[0].[0].last_name}}</strong></h2>
+          <p class="info-text mb-0"><i class="fas fa-user-tag"></i> &nbsp {{[0].[0].role.role_name}}</p>
+          <p class="info-text mb-0"><i class="fas fa-envelope"></i> &nbsp {{[0].[0].email}}</p>
+          <p class="info-text mb-0"><i class="fas fa-phone"></i> &nbsp {{[0].[0].phone_number}}</p>
+          <p class="info-text mb-0"><i class="fas fa-map-marker-alt"></i> &nbsp {{[0].[0].address}}</p>
+          <div class="info-content">
+              <p><i class="fas fa-list"></i> &nbsp Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque reprehenderit quod fuga hic deleniti sit necessitatibus voluptatum vitae minus, ipsum tempore, reiciendis iure vel? Quae at suscipit aperiam ut dignissimos! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam mollitia enim, est esse culpa, fuga corporis sed nesciun</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
         <!-- Team's Tab Content -->
         <div class="tab-pane fade" id="team" role="tabpanel" aria-labelledby="team-tab">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque reprehenderit quod fuga hic deleniti sit necessitatibus voluptatum vitae minus, ipsum tempore, reiciendis iure vel? Quae at suscipit aperiam ut dignissimos! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam mollitia enim, est esse culpa, fuga corporis sed nesciunt expedita voluptates autem tenetur eos, aliquam quae vero porro nulla delectus obcaecati?</div>
