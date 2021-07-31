@@ -1,24 +1,61 @@
 const router = require('express').Router();
 const { Employee, Department, Manager, Role } = require('../../models');
+const { Op } = require("sequelize");
 
 // Get all employees
 router.get('/', (req, res) => {
-  Employee.findAll({
-    include: [
-      'employees',
-      'report_to',
-      {
-        model: Role,
-        attributes: ['role_name', 'salary'],
+  console.log(req.query.search)
+  let searchQuery;
+  if(req.query.search) {
+    console.log('passed');
+    searchQuery = {
+      where: {
+        [Op.or] : {
+            first_name: {
+              [Op.substring]: req.query.search
+            },
+            last_name: {
+              [Op.substring]: req.query.search
+            }
+        }
+      },
+      include: [
+        'employees',
+        'report_to',
+        {
+          model: Role,
+          attributes: ['role_name', 'salary'],
+          include: [
+            {
+              model: Department,
+              attributes: ['department_name']
+            }
+          ]
+        }
+      ]
+    } 
+    } else {
+      searchQuery = {
         include: [
+          'employees',
+          'report_to',
           {
-            model: Department,
-            attributes: ['department_name']
+            model: Role,
+            attributes: ['role_name', 'salary'],
+            include: [
+              {
+                model: Department,
+                attributes: ['department_name']
+              }
+            ]
           }
         ]
-      }
-    ]
-  })
+      };
+    }
+
+  Employee.findAll(
+    searchQuery
+  )
     .then(dbEmployeeData => {
       res.json(dbEmployeeData);
     })

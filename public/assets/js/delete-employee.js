@@ -20,3 +20,4 @@ async function handleEditEmployeeModal(event) {
 }
 
 empContainer.addEventListener('click', handleEditEmployeeModal);
+searchEmpContainer.addEventListener('click', handleEditEmployeeModal);

@@ -1,4 +1,5 @@
 const empContainer = document.querySelector('#employeeContainer');
+const searchEmpContainer = document.querySelector('#searchEmployeeContainer');
 const editForm = document.getElementById('emloyeeEditForm');
 
 // define the id from values
@@ -22,7 +23,6 @@ let photo = document.getElementById("editPhoto");
 async function handleEditEmployeeModal(event) {
   if(event.target.classList.contains('editEmployeeButton')) {
     empId = event.target.value;
-    console.log(empId);
 
     await fetch(`/api/employee/${empId}`, {})
     .then(result => result.json())
@@ -88,7 +88,6 @@ async function editEmployeeSubmitHandler (event) {
       alert('Error: ' + response.statusText);
     })
     .then(postResponse => {
-      console.log(postResponse);
       alert('The employee has been successfully updated!');
       document.location.reload();
     })
@@ -100,4 +99,5 @@ async function editEmployeeSubmitHandler (event) {
 
 // event handlers
 empContainer.addEventListener('click', handleEditEmployeeModal);
+searchEmpContainer.addEventListener('click', handleEditEmployeeModal);
 editForm.addEventListener('submit', editEmployeeSubmitHandler);

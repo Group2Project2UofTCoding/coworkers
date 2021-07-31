@@ -1,3 +1,14 @@
+{{> header}}
+
+<div id="employeeContainer" class="container rounded border un-box-shadow bg-white p-5">
+<h2>Direct Reports</h2><br>
+    <div id="employeeContainerRow" class="row">
+        {{#each data.[1] as |employee|}}
+        {{> employee-cards employee}}
+        {{/each}}
+    </div>
+</div>
+
 <div id="SearchedEmployeeContainer" class="container rounded border un-box-shadow bg-white p-5">
 <h2>Direct Reports</h2><br>
     <div id="employeeContainerRow" class="row">
@@ -6,3 +17,12 @@
         {{/each}}
     </div>
 </div>
+
+{{> add-employee data}}
+{{> edit-employee data}}
+
+ {{> footer}}
+
+<script src="/assets/js/logout.js"></script>
+<script src="/assets/js/edit-employee.js"></script>
+<script src="/assets/js/delete-employee.js"></script>
