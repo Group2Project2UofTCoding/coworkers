@@ -4,19 +4,22 @@ const { Op } = require("sequelize");
 
 // Get all employees
 router.get('/', (req, res) => {
-  console.log(req.query.search)
+  console.log('this is the result',req.query.search)
   let searchQuery;
   if(req.query.search) {
     console.log('passed');
     searchQuery = {
       where: {
-        [Op.or] : {
+        [Op.and]:  {
+          manager_id: req.session.manager_id,
+          [Op.or] : {
             first_name: {
               [Op.substring]: req.query.search
             },
             last_name: {
               [Op.substring]: req.query.search
             }
+          }
         }
       },
       include: [
@@ -36,6 +39,12 @@ router.get('/', (req, res) => {
     } 
     } else {
       searchQuery = {
+        where: {
+          manager_id: req.session.manager_id,
+          [Op.not]: {
+            id: req.session.manager_id
+          }
+        },
         include: [
           'employees',
           'report_to',
