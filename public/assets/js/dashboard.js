@@ -60,7 +60,7 @@ const employeeObject7 = { "firstName": "Tom", "lastName": "Bradley", "username":
 const employeeObject8 = { "firstName": "Justin", "lastName": "Bieber", "username": "JustinBieber", "email": "justin.bieber@gmail.com", "password": "password", "phoneNumber": "45634534534", "addressLine1": "1234 Main Street", "addressLine2": "Apartment Suite # 10", "city": "Toronto", "province": "Ontario", "zip": "K5F-2F5", "sin": "12", "role": "Data Scientist", "level": "Junior", "department": "Production", "salary": "$250,000.00", "contactName": "John Doe", "contactNumber": "45634534534", "certification": "certification" };
 
 // Initializing employees object and array
-var employeesObject = {"0": employeeObject1, "1": employeeObject2, "2": employeeObject3, "3": employeeObject4, "4": employeeObject5, "5": employeeObject6, "6": employeeObject7, "7": employeeObject8, };
+var employeesObject = { "0": employeeObject1, "1": employeeObject2, "2": employeeObject3, "3": employeeObject4, "4": employeeObject5, "5": employeeObject6, "6": employeeObject7, "7": employeeObject8, };
 var employeesArray = [];
 
 // __________
@@ -177,10 +177,10 @@ function handleEmployeeModalSubmit(targetEvent) {
 
   // Create an employee's information object
   const employeeObject = { "firstName": firstName, "lastName": lastName, "username": username, "email": email, "password": password, "phoneNumber": phoneNumber, "addressLine1": addressLine1, "addressLine2": addressLine2, "city": city, "province": province, "zip": zip, "sin": sin, "role": role, "level": level, "department": department, "salary": salary, "contactName": contactName, "contactNumber": contactNumber, "certification": certification };
-  
+
   // Check to see if the employee already exists inside the employeesObject; if so, then update that employee's information
   for (const [key, value] of Object.entries(employeesObject)) {
-    if (value.sin == sin){
+    if (value.sin == sin) {
       employeesObject[key] = employeeObject;
 
       // Update the dashboard
@@ -200,23 +200,22 @@ function handleEmployeeModalSubmit(targetEvent) {
 
   // POST updated employeesObject to the database
   fetch('api/employees', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(employeesObject)
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(employeesObject)
+  })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      alert('Error: ' + response.statusText);
     })
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        alert('Error: ' + response.statusText);
-      })
-      .then(postResponse => {
-        console.log(postResponse);
-        alert('Thank you for adding/updating employee(s)');
-      });
+    .then(postResponse => {
+      alert('Thank you for adding/updating employee(s)');
+    });
 }
 
 // Handle removing an employee's information
@@ -245,25 +244,24 @@ function handleEmployeeRemoveSubmit(targetEvent) {
         alert('Error: ' + response.statusText);
       })
       .then(postResponse => {
-        console.log(postResponse);
         alert('Thank you for removing employee(s)');
       });
-  }  
+  }
 }
 
 //Search for and display employee(s)
 function searchForEmployee(searchedEmployee) {
   // Intializing search-related constant
   const searchedEmployeesObject = {};
-  
+
   // Lowercase searched employee
   const lowercaseSearch = searchedEmployee.toLowerCase();
-  
+
   // Loop through employeesObject to find employee(s)
   for (const [key, value] of Object.entries(employeesObject)) {
-    if (lowercaseSearch == (value.firstName).toLowerCase()){
+    if (lowercaseSearch == (value.firstName).toLowerCase()) {
       searchedEmployeesObject[key] = employeesObject[key]
-    }        
+    }
   }
 
   // If employee(s) is/are found, print them to the page
@@ -271,8 +269,8 @@ function searchForEmployee(searchedEmployee) {
     generateEmployeeTiles(searchedEmployeesObject);
   }
   // Else, employee was not found
-  else {      
-  window.alert(`We cannot find ${search.value}!`)
+  else {
+    window.alert(`We cannot find ${search.value}!`)
   }
 }
 
@@ -280,7 +278,7 @@ function searchForEmployee(searchedEmployee) {
 // Event Handlers
 // __________
 
-addEmployeeButton.addEventListener("click", function(){
+addEmployeeButton.addEventListener("click", function () {
   employeeFirstName.value = "";
   employeeLastName.value = "";
   employeeUsername.value = "";
@@ -303,23 +301,23 @@ addEmployeeButton.addEventListener("click", function(){
 });
 
 // Event listener for adding a new employee in the Employee Information modal form
-addEditEmployeeForm.addEventListener("submit", function(event) {
+addEditEmployeeForm.addEventListener("submit", function (event) {
   // Prevent default event behaviours
   event.preventDefault();
 
   const targetEvent = event;
-  
+
   // Submit the modal's information
   handleEmployeeModalSubmit(targetEvent);
 });
 
 // Event listener for viewing or removing an employee's information in a modal
-employeeContainer.addEventListener("click", function(event) {
+employeeContainer.addEventListener("click", function (event) {
   // Prevent default event behaviours
   event.preventDefault();
 
   const targetEvent = event.target;
-  
+
   // Event listener for determining if the user wants to edit/view or remove and employee's information
   if (targetEvent.className == "btn btn-primary editEmployeeButton") {
     handleEmployeeModalView(targetEvent);
@@ -330,7 +328,7 @@ employeeContainer.addEventListener("click", function(event) {
 });
 
 // Event listener for search
-searchButton.addEventListener("click", function(){
+searchButton.addEventListener("click", function () {
   // Intializing search-related constant
   const searchedEmployee = search.value;
 
@@ -345,7 +343,7 @@ searchButton.addEventListener("click", function(){
 });
 
 // Does not do anything at the moment
-logout.addEventListener("click", function(){});
+logout.addEventListener("click", function () { });
 
 // __________
 // Script

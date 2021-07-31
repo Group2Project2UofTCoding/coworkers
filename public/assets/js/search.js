@@ -12,15 +12,15 @@ async function searchSubmitHandler(event) {
   // document.location.replace('/dashboard/search')
   const res = await fetch(`/api/employee/?search=${searchInput}`);
 
-  if(res.ok) {
+  if (res.ok) {
     res.json().then(data => {
       // hide and show the container
       empContainer.classList.add('d-none');
       searchEmpContainer.classList.remove('d-none');
 
       // Check the returned results
-      if(data.length !== 0) {
-         template = Handlebars.compile(`
+      if (data.length !== 0) {
+        template = Handlebars.compile(`
             {{#each searchEmployees as |employee|}}
             <div class="col-lg-4 col-md-12 mb-4">
               <div class="card" emp-id="{{id}}">
@@ -59,9 +59,9 @@ async function searchSubmitHandler(event) {
         </div>`);
       }
 
-    const searchContainer = document.querySelector('#searchEmployeeContainerRow');
-    
-    searchContainer.innerHTML = template({searchEmployees: data});
+      const searchContainer = document.querySelector('#searchEmployeeContainerRow');
+
+      searchContainer.innerHTML = template({ searchEmployees: data });
     });
   } else {
     alertDanger.classList.remove('d-none');

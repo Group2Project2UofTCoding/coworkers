@@ -22,20 +22,17 @@ async function handleEmployeeModalSubmit(event) {
 
   let photo = document.getElementById("photoUrl").value;
 
-  if(!photo){
+  if (!photo) {
     photo = '/assets/images/avatar.png'
   }
 
-  console.log(photo);
-
   // Get the address values and combines into one string
   const address = [addressLine1, addressLine2, city, province, postalCode].join(", ");
-  console.log(address);
 
   // Create an employee's information object
   const employeeObject = { first_name, last_name, email, phone_number, address, sin, role_id, date_of_hire, photo };
-  
-    // POST updated employeesObject to the database
+
+  // POST updated employeesObject to the database
   await fetch('api/employee', {
     method: 'POST',
     headers: {
@@ -51,7 +48,6 @@ async function handleEmployeeModalSubmit(event) {
       alert('Error: ' + response.statusText);
     })
     .then(postResponse => {
-      console.log(postResponse);
       alert('The employee has been successfully added!');
       document.location.reload();
     })
