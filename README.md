@@ -13,7 +13,7 @@ A simple portfolio to showcase my skills and recent projects. This portfolio was
 - [Demo App Link](#-deployed-application-link) 
 - [License](#-license) 
 - [Contributing](#-contributing) 
-- [Final Output GIF](#%EF%B8%8F-final-output-gif) 
+- [Final Output](#%EF%B8%8F-final-output) 
 - [Questions](#-questions) 
 
 ## ⚙️ Installation 
