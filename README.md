@@ -5,7 +5,7 @@
 
 ## 📜 Description 
 
-A simple portfolio to showcase my skills and recent projects. This portfolio was created using React. 
+A simple employee management system that tracks employees in an organization from a manager’s perspective.
 
 ## 📋 Table Of Contents 
 - [Installation](#%EF%B8%8F-installation)
