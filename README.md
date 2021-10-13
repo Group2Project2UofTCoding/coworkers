@@ -18,7 +18,7 @@ A simple employee management system that tracks employees in an organization fro
 
 ## ⚙️ Installation 
 
-If you would like to try this application or want to use this as a demo, please clone the repo, and run the following command 
+If you would like to try this application or want to use this as a demo, please clone the repo to your local machine, and run the following command 
 
 ``` 
 npm install
